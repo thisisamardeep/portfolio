@@ -13,10 +13,111 @@
                 of the vtables that vtable table points to are called construction vtables, and they are only
                 used for object construction and destruction.</p>
 
-            <p><b>Necessitatibus nihil impedit! Ex nisi eveniet, dolor aliquid consequuntur repudiandae.</b>
+            <h4>Virtual Table for Construction and Destruction</h4>
+
+            <p>
+                Although some programmers are not aware of it, C++ vtables are needed for object construction and
+                destructions as well.
+
+                Let’s look at a quick example, even if it just uses non-virtual inheritance.
             </p>
-            <p>Magnam in repellat enim harum omnis aperiam! Explicabo illo, commodi, dolor blanditiis
-                cupiditate harum nisi vero accusamus laudantium voluptatibus dolores quae obcaecati.</p>
+
+            <textarea>
+
+    class A
+    {
+    public:
+    A()
+    {
+    std::cout << "A::A() is called" << std::endl;
+    foo();
+    }
+    virtual ~A()
+    {
+    std::cout << "A::~A() is called" << std::endl;
+    bar();
+    }
+    virtual void foo() const { std::cout << "A::foo() is called" << std::endl; }
+    virtual void bar() const { std::cout << "A::bar() is called" << std::endl; }
+    virtual void baz() const { std::cout << "A::baz() is called" << std::endl; }
+    };
+
+    class B : public A
+    {
+    public:
+    B()
+    {
+    std::cout << "B::B() is called" << std::endl;
+    foo();
+    }
+    ~B()
+    {
+    std::cout << "B::~B() is called" << std::endl;
+    bar();
+    }
+    virtual void foo() const override
+    {
+    std::cout << "B::foo() is called" << std::endl;
+    }
+    virtual void bar() const override
+    {
+    std::cout << "B::bar() is called" << std::endl;
+    }
+    virtual void baz() const override
+    {
+    std::cout << "B::baz() is called" << std::endl;
+    }
+    };
+
+    class C : public B
+    {
+    public:
+    C()
+    {
+    std::cout << "C::C() is called" << std::endl;
+    foo();
+    }
+    ~C()
+    {
+    std::cout << "C::~C() is called" << std::endl;
+    bar();
+    }
+    void foo() const override
+    {
+    std::cout << "C::foo() is called" << std::endl;
+    }
+    void bar() const override
+    {
+    std::cout << "C::bar() is called" << std::endl;
+    }
+    virtual void baz() const override
+    {
+    std::cout << "C::baz() is called" << std::endl;
+    }
+    };
+
+    int main()
+    {
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "C Construction..." << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    C const* const ptr_c = new C{};
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "C Construction Complete." << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    B const* const ptr_b = dynamic_cast<B const* const>(ptr_c);
+    std::cout << "Calling baz From Base B Class Pointer..." << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    ptr_b->baz();
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "C Destruction..." << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    delete ptr_c;
+    std::cout << "---------------------------------------------" << std::endl;
+    std::cout << "C Destruction complete." << std::endl;
+    std::cout << "---------------------------------------------" << std::endl;
+    }
+</textarea>
 
         </div>
     </div>
