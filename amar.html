@@ -22,7 +22,7 @@
                 Let’s look at a quick example, even if it just uses non-virtual inheritance.
             </p>
 
-            <textarea>
+            <pre>
 
     class A
     {
@@ -96,28 +96,8 @@
     }
     };
 
-    int main()
-    {
-    std::cout << "---------------------------------------------" << std::endl;
-    std::cout << "C Construction..." << std::endl;
-    std::cout << "---------------------------------------------" << std::endl;
-    C const* const ptr_c = new C{};
-    std::cout << "---------------------------------------------" << std::endl;
-    std::cout << "C Construction Complete." << std::endl;
-    std::cout << "---------------------------------------------" << std::endl;
-    B const* const ptr_b = dynamic_cast<B const* const>(ptr_c);
-    std::cout << "Calling baz From Base B Class Pointer..." << std::endl;
-    std::cout << "---------------------------------------------" << std::endl;
-    ptr_b->baz();
-    std::cout << "---------------------------------------------" << std::endl;
-    std::cout << "C Destruction..." << std::endl;
-    std::cout << "---------------------------------------------" << std::endl;
-    delete ptr_c;
-    std::cout << "---------------------------------------------" << std::endl;
-    std::cout << "C Destruction complete." << std::endl;
-    std::cout << "---------------------------------------------" << std::endl;
-    }
-</textarea>
+
+</pre>
 
         </div>
     </div>
