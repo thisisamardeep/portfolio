@@ -42,13 +42,17 @@ Every item can either be in our result set or it cannot be.
 
 Case 1) Item at position 3 is in our result set.In that can we can reduce our knapstack problem
 to 2 items.So our final result is profit of last item plus knapstack result of n-1 items.
+This time when we reduce our knapstack problem we reduce both n and the pending weight of the knapstack
+since we have already included this item.
 
 Case 2) Item at position 3 is not in our result set.
 So we can reduce our knapstack problem to size 2.
+This time when we reduce our knapstack problem we reduce only n since we have not included this item.
 
 Case 3) Size of last item is more that the maximum weight knapstack can hold.
 We just leave this case since we know that this item cannot be part of final result.
 But even in this case we need to run the knapstack over the reaming n-1 items.
+This time when we reduce our knapstack problem we reduce only n since we have not included this item.
 
 Let us start with 2 simple c++ files the driver code and our recursive code:
 
