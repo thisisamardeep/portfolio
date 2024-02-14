@@ -24,15 +24,15 @@ maximum value.We use a combination of both ways.
 
 >Inputs:
 
->profit[] = { 160, 1000, 120 }; 
+>profit[ ] = { 160, 1000, 120 }; 
 
->int weight[] = { 10, 20, 30 };
+>int weight[ ] = { 10, 20, 30 };
 
 The above 2 arrays have the profit and weight of each item.
 
 >W =50    W is the weight of the knapstack.
 
-
+>int n =3  n number of items
 
 
 Let us start with a simple program that immediately 'panics' when it is run:
