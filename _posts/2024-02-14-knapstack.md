@@ -147,4 +147,3 @@ Rust's flexibility truly does not cease to amaze and I will diligently continue 
 other enthusiasts should be aware of and use.
 
 
-Please share your thoughts on [Twitter](https://twitter.com/dbdanilov/status/1399435722441084931?s=20), or [LinkedIn](https://www.linkedin.com/posts/ddanilov_terminating-with-panic-in-rust-dmitry-activity-6805200803901530112-zQGX?utm_source=share&utm_medium=member_desktop).
