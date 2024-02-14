@@ -118,6 +118,3 @@ return max(val[n-1]+knapSack( W-val[n-1], wt, val, n-1)// item having index n-1 
 } 
 ```
 
- >\ 
-   \
-    \
