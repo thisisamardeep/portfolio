@@ -47,7 +47,8 @@ Case 2) Item at position 3 is not in our result set.
 So we can reduce our knapstack problem to size 2.
 
 Case 3) Size of last item is more that the maximum weight knapstack can hold.
-We just return from this case since we know that this item cannot be part of final result.
+We just leave this case since we know that this item cannot be part of final result.
+But even in this case we need to run the knapstack over the reaming n-1 items.
 
 Let us start with 2 simple c++ files the driver code and our recursive code:
 
@@ -104,9 +105,9 @@ return knapSack( W, wt, val, n-1);
 }
 
 
-return max(val[n-1]+knapSack( W-val[n-1],// item having index n-1 is  included
+return max(val[n-1]+knapSack( W-val[n-1], wt, val, n-1)// item having index n-1 is  included
 
-wt, val, n-1), knapSack( W, wt, val, n-1)) // item having index n-1 is not included
+, knapSack( W, wt, val, n-1)) // item having index n-1 is not included
 
 
 // to be done
