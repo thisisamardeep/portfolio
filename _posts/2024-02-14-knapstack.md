@@ -1,12 +1,12 @@
 ---
-title: Terminating with panic! in Rust
+title: 0/1 Knapsack Problem
 published: true
 share-description: ""
 tags: [leetcode]
 share-img: /img/rust.png
 readtime: true
-permalink: "/panic-in-rust"
-share-description: "Various process terminating methodologies using panic! in Rust"
+permalink: "/0-1-Knapsack-problem"
+share-description: "0/1 Knapsack problem and its variations"
 comments: false
 ---
 
