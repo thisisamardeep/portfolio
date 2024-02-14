@@ -90,7 +90,7 @@ So at this point we are here.
 It is important to note that the paramter n is the nth item of the vector.
 But nth item of the  vector has index n-1 ..So we use wt[n-1] > W
 
-Now if
+
 ```cpp
 // Recursive  Function
 using namespace std;
