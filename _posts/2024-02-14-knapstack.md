@@ -10,10 +10,9 @@ share-description: "0/1 Knapsack problem and its variations"
 comments: false
 ---
 
-The Rust programming language provides a few ways to terminate a program when it reaches an unrecoverable state by calling
-the macro `std::panic!` - a reference to kernel panic that I have found quite amusing.<br>
-It comes in handy when an assert needs to used within code, such as for unit tests, and it is eventually called by the
-method `unwrap` of the `Option` and `Result` enums.
+We are given N items where each item has some weight (wi) and value (vi) associated with it.
+We are also given a bag with capacity W. The target is to put the items into the bag such that
+the sum of values associated with them is the maximum possible.Note that here we can either put an item completely into the bag or cannot put it at all.
 
 From my experience as a C/C++ engineer (I hope C and C++ enthusiasts, as well as the almighty coding standard Gods, will
         forgive me for this blasphemy of placing a slash between the two languages), `panic!` was initially a synonym of
