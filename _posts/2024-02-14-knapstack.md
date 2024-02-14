@@ -21,6 +21,13 @@ There are 2 ways in which we can start reducing our universe,we can reduce our u
 which cannot be part of the result or we can iterate over the result and find the subset having the
 maximum value.We use a combination of both ways.
 
+Inputs:
+profit[] = { 160, 1000, 120 }; 
+int weight[] = { 10, 20, 30 };
+The above 2 arrays have the profit and weight of each item.
+W =50  
+W is the weight of the knapstack.
+
 
 Let us start with a simple program that immediately 'panics' when it is run:
 
