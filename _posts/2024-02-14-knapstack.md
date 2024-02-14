@@ -78,14 +78,18 @@ return 0;
 ```
 
 Now in every call we reduce n (the last paramter.).Since we are using this to iterate over the vector
-so techically we reduce our universe.If there is nothing left n is 0 or the size of last item in more than the
-size of the knapstack we just return 0.But where does this 0 go it goes in the calculation of max up in the call
-stack.Since our function has to return int even if n==0 or the size of last item in more than the
-size of the knapstack we have to return 0.It is possible that 0 is the result .. i.e the edge case when all items
+so techically we reduce our universe.If there is nothing left n is 0 .Where does this 0 go it goes in the calculation of max up in the call
+stack.Since our function has to return int even if n==0 so we return 0.
+It is possible that 0 is the result .. i.e the edge case when all items
 are of size greater than the knapstack.
+
+If the size of last item in more than the size of the knapstack we just ignore that item and the problem gets reduced to n-1 items.
+
 So at this point we are here.
 It is important to note that the paramter n is the nth item of the vector.
 But nth item of the  vector has index n-1 ..So we use wt[n-1] > W
+
+Now if
 ```cpp
 // Recursive  Function
 using namespace std;
@@ -95,131 +99,16 @@ if (n ==0){
 return 0;
 }
 if (wt[n-1] > W){
+// item having index n-1 is not included
 return knapSack( W, wt, val, n-1);
 }
 
 
+return max(val[n-1]+knapSack( W-val[n-1],// item having index n-1 is  included
+
+wt, val, n-1), knapSack( W, wt, val, n-1)) // item having index n-1 is not included
+
+
 // to be done
-return 0;
 } 
 ```
-
-The program is terminated and the output reveals where the panic was triggered. As a bonus, the application can be
-configured via an environment variable to show its backtrace (stack unwinding).
-
-```plain
-$ cargo run
-Hello, world!
-thread 'main' panicked at 'Panic in the main thread!', src/main.rs:2:5
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-```
-
-It becomes even more intriguing when the exit code of the process is checked right after termination:
-
-```plain
-$ echo $?
-101
-```
-
-Rust sets the exit code to `101` explicitly when a process panics by calling the `exit` function, while `abort` signals
-the kernel to kill the process (a detailed explanation of how `abort` works on Unix systems can be found in an earlier
-[post](/how-signals-are-handled-in-a-docker-container){:target="_blank"}). In practice, this means that no core dumps
-are
-generated in the default configuration.
-
-Now, let us take a look at what happens when `panic!` is called from a sub-thread:
-
-```rust
-use std::thread;
-
-fn main() {
-
-    let handle = thread::spawn( || {
-        println!("Thread started!");
-        panic!("Panic in a thread!");
-    });
-
-    handle.join();
-
-    println!("Hello, world!");
-}
-```
-
-Output:
-
-```plain
-$ cargo run
-Thread started!
-thread '<unnamed>' panicked at 'Panic in a thread!', src/main.rs:7:9
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-Hello, world!
-
-$ echo $?
-0
-```
-
-The output clearly states that the thread has panicked but the main thread continues running, even after calling `join`!
-It can thus be concluded that `panic` does not exit the entire process, but rather only the current thread; this is
-completely different from C’s `abort`!
-
-My continued interest in the Rust language grows precisely due to features such as this, where the language provides
-elegant methods for terminating a process in the case where a background thread crashes.
-
-If we were to force an ultimatum on the result of `join`, the shortest way is to `unwrap` the return value:
-
-```rust
-...
-handle.join().unwrap();
-...
-```
-
-The result contains an error and unwrapping leads to panic in the main thread:
-
-```plain
-$ cargo run
-Thread started!
-thread '<unnamed>' panicked at 'Panic in a thread!', src/main.rs:7:9
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-thread 'main' panicked at 'called `Result::unwrap()` on an `Err` value: Any', src/main.rs:10:19
-```
-
-Another way to manipulate the output of `join` is to check the result and decide what to do during runtime; the
-following example uses `match`:
-
-```rust
-match handle.join() {
-    Ok(_) => println!("Joined!"),
-    Err(_) => println!("Join failed"),
-};
-```
-
-Note that this example only prints the error and the program still exits with `0`.
-
-But wait, there's more!
-For those who are not big fans of change, Rust even provides the possibility to configure `panic!` to call `abort`; this
-can be done via Cargo.toml in the project:
-
-```toml
-[profile.dev]
-panic = "abort"
-
-[profile.release]
-panic = "abort"
-```
-
-The result is the same as calling `abort` in C: the application is terminated with `SIGABRT` and if the system is
-configured, a core dump is generated:
-
-```plain
-$ cargo run
-Thread started!
-thread '<unnamed>' panicked at 'Panic in a thread!', src/main.rs:7:9
-note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
-[1]    67943 abort      cargo run
-134
-```
-
-Rust's flexibility truly does not cease to amaze and I will diligently continue to provide such examples which I believe
-other enthusiasts should be aware of and use.
-
-
