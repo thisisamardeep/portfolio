@@ -146,6 +146,5 @@ note: run with `RUST_BACKTRACE=1` environment variable to display a backtrace
 Rust's flexibility truly does not cease to amaze and I will diligently continue to provide such examples which I believe
 other enthusiasts should be aware of and use.
 
-*Special thanks to [Rina Volovich](https://www.linkedin.com/in/rina-volovich/){:target="_blank"} for editing.*
 
 Please share your thoughts on [Twitter](https://twitter.com/dbdanilov/status/1399435722441084931?s=20), or [LinkedIn](https://www.linkedin.com/posts/ddanilov_terminating-with-panic-in-rust-dmitry-activity-6805200803901530112-zQGX?utm_source=share&utm_medium=member_desktop).
