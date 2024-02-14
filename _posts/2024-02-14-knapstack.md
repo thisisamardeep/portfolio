@@ -15,6 +15,7 @@ We are also given a bag with capacity W. The target is to put the items into the
 the sum of values associated with them is the maximum possible.Note that here we can either put an item completely into the bag or cannot put it at all.
 
 First Approach:
+
 Ideally this is a enhanced recursion or so called dynamic programming problem.
 Consider the universe of all possible subsets of items.We need to find the subset having the maximum value.
 There are 2 ways in which we can start reducing our universe,we can reduce our universe to exclude subsets
