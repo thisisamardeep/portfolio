@@ -51,6 +51,7 @@ We just return from this case since we know that this item cannot be part of fin
 Let us start with 2 simple c++ files the driver code and our recursive code:
 
 ```c++
+// Driver Code
 using namespace std;
 int main() 
 { 
@@ -59,6 +60,37 @@ int main()
     int W = 50; 
     int n = 3; 
     cout << knapSack(W, weight, profit, n); 
+    return 0; 
+} 
+```
+
+```c++
+// Recursive  Function
+using namespace std;
+int knapSack(int W, int wt[], int val[], int n) 
+{ 
+   // to be done
+    return 0; 
+} 
+```
+
+Now in every call we reduce  n (the last paramter.).Since we are using this to iterate over the vector
+so techically we reduce our universe.If there is nothing left n  is 0 or the size of last item in more than the 
+size of the knapstack we just return 0.But where does this 0 go it goes in the calculation of max up in the call
+stack.Since our function has to return int even if  n==0 or the size of last item in more than the
+size of the knapstack we have to return 0.It is possible that 0 is the result .. i.e the edge case when all items 
+are of size greater than the knapstack.
+So at this point we are here.
+
+```c++
+// Recursive  Function
+using namespace std;
+int knapSack(int W, int wt[], int val[], int n) 
+{ 
+    if (n ==0){
+        return 
+    }
+   // to be done
     return 0; 
 } 
 ```
