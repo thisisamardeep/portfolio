@@ -48,13 +48,19 @@ So we can reduce our knapstack problem  to size 2.
 Case 3) Size of last item is more that the maximum weight knapstack can hold.
 We just return from this case since we know that this item cannot be part of final result.
 
-Let us start with a simple program that immediately 'panics' when it is run:
+Let us start with 2 simple c++ files the driver code and our recursive code:
 
-```rust
-fn main() {
-    panic!("Panic in the main thread!");
-    println!("Hello, world!");
-}
+```c++
+using namespace std;
+int main() 
+{ 
+    int profit[] = { 60, 100, 120 }; 
+    int weight[] = { 10, 20, 30 }; 
+    int W = 50; 
+    int n = 3; 
+    cout << knapSack(W, weight, profit, n); 
+    return 0; 
+} 
 ```
 
 The program is terminated and the output reveals where the panic was triggered. As a bonus, the application can be
