@@ -19,7 +19,7 @@ Ideally this is a enhanced recursion or so called dynamic programming problem.
 Consider the universe of all possible subsets of items.We need to find the subset having the maximum value.
 There are 2 ways in which we can start reducing our universe,we can reduce our universe to exclude subsets
 which cannot be part of the result or we can iterate over the result and find the subset having the
-maximum value.
+maximum value.We use a combination of both ways.
 
 
 Let us start with a simple program that immediately 'panics' when it is run:
