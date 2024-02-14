@@ -95,8 +95,10 @@ if (n ==0){
 return 0;
 }
 if (wt[n-1] > W){
-return 0;
+return knapSack( W, wt, val, n-1);
 }
+
+
 // to be done
 return 0;
 } 
