@@ -14,10 +14,13 @@ We are given N items where each item has some weight (wi) and value (vi) associa
 We are also given a bag with capacity W. The target is to put the items into the bag such that
 the sum of values associated with them is the maximum possible.Note that here we can either put an item completely into the bag or cannot put it at all.
 
-From my experience as a C/C++ engineer (I hope C and C++ enthusiasts, as well as the almighty coding standard Gods, will
-        forgive me for this blasphemy of placing a slash between the two languages), `panic!` was initially a synonym of
-`abort` in C and C++, but with a few more features, such as stack unwinding. The goal of this post is to shed some light
-on a few of the differences between `panic!` and `abort` that I have personally encountered.
+First Approach:
+Ideally this is a enhanced recursion or so called dynamic programming problem.
+Consider the universe of all possible subsets of items.We need to find the subset having the maximum value.
+There are 2 ways in which we can start reducing our universe,we can reduce our universe to exclude subsets
+which cannot be part of the result or we can iterate over the result and find the subset having the
+maximum value.
+
 
 Let us start with a simple program that immediately 'panics' when it is run:
 
