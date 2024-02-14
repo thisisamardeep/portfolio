@@ -34,7 +34,15 @@ The above 2 arrays have the profit and weight of each item.
 
 >int n =3  n number of items
 
+Basically we try to reduce our universe.
+We start from the end of the vector profit.Whether we start from end or from start or from any order
+is not important.What is important is that we pick each item only one.
+Every item can either be in our result set or it cannot be.
 
+Case 1) Item at position 3 is in our result set.In  that can we can reduce our knapstack problem
+to 2 items.So our final result is profit of last item plus knapstack result of n-1 items.
+
+Case 2) 
 Let us start with a simple program that immediately 'panics' when it is run:
 
 ```rust
