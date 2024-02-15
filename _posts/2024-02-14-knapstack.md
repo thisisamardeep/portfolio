@@ -118,4 +118,9 @@ return max(val[n-1]+knapSack( W-val[n-1], wt, val, n-1)// item having index n-1 
 }
 ```
 
-Here time Complexity is O(2^N)
+Here time Complexity is O(2^N). Why ? Suppose you had 10 items and now you have 1 more item.
+So For every item there are 2 possibilites in the final result or not in the final result.
+So it becomes exponetial of 2.
+
+Space Complexity in O(N).The Space Complexity can be visualized as depth of the call stack.
+If n increases by 1 in worse case scenario the call stack increased by 1 so space complexity is O(N)
