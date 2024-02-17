@@ -103,5 +103,5 @@ But the line Square s(MyInteger(t)); declares a function named s which returns a
 t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
 But how can we prove this.Here comes the library type_traits .The sole purpose of type traits is to give a good insight
-into the inner thinking of the compiler.
+into the  mysterious type world of c++ and inner thinking of the compiler.
 
