@@ -105,7 +105,7 @@ Here we have a class which takes a integer and is supposed to square it and retu
 But the line Square s(MyInteger(t)); declares a function named s which returns a Square and takes as input a paramter called 
 t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
-But how can we prove this.This Awsome website [cpp insights]()
+But how can we prove this.
 
 ![image info](./amar1.png)
 
