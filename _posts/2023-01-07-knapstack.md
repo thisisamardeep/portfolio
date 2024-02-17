@@ -78,6 +78,9 @@ by adding parentheses around the argument. "
 
 class MyInteger {
 public:
+    MyInteger(int t) : m_i(t) {
+    }
+public:
     int m_i;
 };
 
@@ -102,6 +105,7 @@ Here we have a class which takes a integer and is supposed to square it and retu
 But the line Square s(MyInteger(t)); declares a function named s which returns a Square and takes as input a paramter called 
 t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
-But how can we prove this.Here comes the library type_traits .The sole purpose of type traits is to give a good insight
-into the  mysterious type world of c++ and inner thinking of the compiler.
+But how can we prove this.This Awsome website [cpp insights]()
+
+![image info](./amar1.png)
 
