@@ -106,6 +106,7 @@ But the line Square s(MyInteger(t)); declares a function named s which returns a
 t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
 But how can we prove this.
+<img src="./amar1.png">
 
-![image info](./amar1.png)
+[//]: # (![image info]&#40;./amar1.png&#41;)
 
