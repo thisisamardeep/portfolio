@@ -106,6 +106,6 @@ t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
 But how can we prove this.
 
-<img alt="rrrrrrrrr" class="avatar-img" src="/img/amar1.png" />
+<img alt="rrrrrrrrr" class="avatar-img" src="/portfolio/img/amar1.png" />
 
 uuuuuuuuuuuuu
