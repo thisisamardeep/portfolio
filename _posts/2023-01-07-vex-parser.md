@@ -108,5 +108,5 @@ But how can we prove this.
 
 <img src="amar1.png"
      alt="Markdown Monster icon"
-     style="float: left; margin-right: 10px;" />
+     />
 uuuuuuuuuuuuu
