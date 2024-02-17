@@ -59,3 +59,49 @@ Now how will our compiler understand that we are creating a object or declaring 
 
 Now we will try to explain with 2 real world looking examples.
 
+First i need to explain a type decay rule in c++ .If a function object is declared as a paramter,
+
+First let me quote straight from the c++ standard.
+
+"The ambiguity arising from the similarity between a function-style cast and a declaration mentioned in 9.8
+can also occur in the context of a declaration. In that context, the choice is between a function declaration
+with a redundant set of parentheses around a parameter name and an object declaration with a function-style
+cast as the initializer. Just as for the ambiguities mentioned in 9.8, the resolution is to consider any construct
+that could possibly be a declaration a declaration. [ Note: A declaration can be explicitly disambiguated
+by adding parentheses around the argument. "
+
+
+
+
+```cpp
+#include "iostream"
+
+class MyInteger {
+public:
+    int m_i;
+};
+
+class Square {
+public:
+    Square(MyInteger i) : my_int(i) {
+    }
+    int squared() {
+        return my_int.m_i * my_int.m_i;
+    }
+private:
+    MyInteger my_int;
+};
+
+int main() {
+    int t = 100;
+    Square s(MyInteger(t));
+}
+```
+
+Here we have a class which takes a integer and is supposed to square it and return it.
+But the line Square s(MyInteger(t)); declares a function named s which returns a Square and takes as input a paramter called 
+t of type MyInteger.
+So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
+But how can we prove this.Here comes the library type_traits .The sole purpose of type traits is to give a good insight
+into the inner thinking of the compiler.
+
