@@ -57,3 +57,5 @@ foo myobj()
 
 Now how will our compiler understand that we are creating a object or declaring a function. This is root of the problem.
 
+Now we will try to explain with 2 real world looking examples.
+
