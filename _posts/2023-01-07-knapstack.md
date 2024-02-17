@@ -20,7 +20,9 @@ In case of ambiguity between a variable declaration using the direct-initializat
 Suppose we have a class foo. There are three ways post C++11 to create object of class foo
 
  foo obj;
+
  foo obj();  --> This is the cause of the ambiguity.
+
  foo obj{};
 
 Function Declaration
