@@ -105,5 +105,5 @@ But the line Square s(MyInteger(t)); declares a function named s which returns a
 t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
 But how can we prove this.
-![Memory layout](/img/amar1.jpeg)
+![Memory layout](/img/404-southpark.jpg)
 
