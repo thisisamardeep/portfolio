@@ -56,9 +56,8 @@ foo myobj()
 
 Now how will our compiler understand that we are creating a object or declaring a function. This is root of the problem.
 
-Now we will try to explain with 2 real world looking examples.
+Now we will try to explain with a real world looking example.
 
-First i need to explain a type decay rule in c++ .If a function object is declared as a paramter,
 
 First let me quote straight from the c++ standard.
 
@@ -68,7 +67,6 @@ with a redundant set of parentheses around a parameter name and an object declar
 cast as the initializer. Just as for the ambiguities mentioned in 9.8, the resolution is to consider any construct
 that could possibly be a declaration a declaration. [ Note: A declaration can be explicitly disambiguated
 by adding parentheses around the argument. "
-
 
 
 
@@ -161,3 +159,4 @@ int main()
 See the compiler has converted MyInteger(t) into MyInteger t as the specifiction says.
 Hope vex parser is not vex anymore.
 There are more edge cases and more ambiguities related to this as mentioned in the standard but they are not covered in this article.
+As always standard is the best book to understand c++.
