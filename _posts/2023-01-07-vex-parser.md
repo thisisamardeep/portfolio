@@ -3,7 +3,6 @@ title: Vexing Parse Cause and Scenarios
 published: true
 share-description: ""
 tags: [ c++ ]
-share-img: /img/rust.png
 readtime: true
 permalink: "/0-1-vexing-parse"
 share-description: "Vexing Parse"
