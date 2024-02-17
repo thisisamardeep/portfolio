@@ -1,5 +1,5 @@
 ---
-title: Vexing Parse Cause and Secnarios
+title: Vexing Parse Cause and Scenarios
 published: true
 share-description: ""
 tags: [ c++ ]
@@ -10,10 +10,9 @@ share-description: "Vexing Parse"
 comments: false
 ---
 
-We are given N items where each item has some weight (wi) and value (vi) associated with it.
-We are also given a bag with capacity W. The target is to put the items into the bag such that
-the sum of values associated with them is the maximum possible.Note that here we can either put an item completely into
-the bag or cannot put it at all.
+First Let me share the [wiki](https://en.wikipedia.org/wiki/Most_vexing_parse)  
+and the [cpp reference](https://en.cppreference.com/w/cpp/language/direct_initialization)  (see notes section) 
+which mentions this problem.
 
 First Approach:
 
