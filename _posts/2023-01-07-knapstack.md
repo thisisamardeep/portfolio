@@ -49,11 +49,11 @@ class foo { }
 
 We create a function declaration that return a object of class foo and takes no arguments.
 
-Foo myfunction()
+foo myfunction()
 
 We create a object of class foo (remember the option 2 above)
 
-Foo myobj()
+foo myobj()
 
 Now how will our compiler understand that we are creating a object or declaring a function. This is root of the problem.
 
