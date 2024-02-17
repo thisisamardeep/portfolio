@@ -106,6 +106,3 @@ t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
 But how can we prove this.
 
-<p align="center">
-  <img src="/img/404-southpark.jpg" title="Strace logo">
-</p>
