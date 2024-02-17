@@ -104,9 +104,60 @@ Here we have a class which takes a integer and is supposed to square it and retu
 But the line Square s(MyInteger(t)); declares a function named s which returns a Square and takes as input a paramter called 
 t of type MyInteger.
 So it is taking MyInteger(t) as a paramter of type t.This is due to the above rule in the standard.
-But how can we prove this.
+But how can we prove this.There is a awsome website [cpp insights](https://cppinsights.io/) .Copy the above code in cppinsights
+and see the output
 
-<img src="amar1.png"
-     alt="Markdown Monster icon"
-     />
-uuuuuuuuuuuuu
+Cpp Insights output 
+
+```cpp
+#include "iostream"
+
+class MyInteger
+{
+  
+  public: 
+  inline MyInteger(int t)
+  : m_i{t}
+  {
+  }
+  
+  
+  public: 
+  int m_i;
+  // inline constexpr MyInteger(const MyInteger &) noexcept = default;
+};
+
+
+
+class Square
+{
+  
+  public: 
+  inline Square(MyInteger i)
+  : my_int{MyInteger(i)}
+  {
+  }
+  
+  inline int squared()
+  {
+    return this->my_int.m_i * this->my_int.m_i;
+  }
+  
+  
+  private: 
+  MyInteger my_int;
+};
+
+
+
+int main()
+{
+  int t = 100;
+  Square s(MyInteger t); // See the compiler has converted MyInteger(t) into MyInteger t
+  return 0;
+}
+
+```
+See the compiler has converted MyInteger(t) into MyInteger t as the specifiction says.
+Hope vex parser is not vex anymore.
+There are more edge cases and more ambiguities related to this as mentioned in the standard but they are not covered in this article.
