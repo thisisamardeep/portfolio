@@ -70,7 +70,7 @@ Now we cover those edge cases where implicit is actually needed.There are just v
 
 Technically there is only one concept of constructor.
 
-
+there is only the notion of constructor. When the compiler decides a copy needs to be made, it looks for a constructor that can be called by passing in a single object of type T. Because of this special use case, we conventionally call the constructor chosen a "copy" constructor.
 
 
 
