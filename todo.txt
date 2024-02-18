@@ -10,3 +10,14 @@ https://www.learncpp.com/cpp-tutorial/value-categories-lvalues-and-rvalues/
 Need to write on topic of virtul fuinctions
 
 CHAPTER 10: DISCOVERING INHERITANCE TECHNIQUES Do this chapter
+
+
+======================================
+
+What is needed before interview
+
+100 leetcode
+100 post c++
+oss contributiuons in dask//taskflow//quantlib
+portfolio projects allocators//
+============================================
