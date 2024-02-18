@@ -23,8 +23,94 @@ constructor may be an explicit constructor; such a constructor will be used to p
 or value-initialization (11.6)
 
 
-Actually constructors not marked as explicit try to do one implicit conversion (without the compiler generating any warning) which may be lead to very subtle bugs in production.
+Actually constructors not marked as explicit try to do one implicit conversion (without the compiler generating any warning for some conversions some compilers do some dont) which may be lead to very subtle bugs in production.
 explicit keyword just tells the compiler not to try any of those conversions.
+
+We will create 2 classes ImplicitFoo and ExplicitFoo to show how explicit reduces the number of ways objects can be created and reduce the numbers of bugs we need
+to fix when we have a 100k line code base with classes and namespaces all messed in different compilation units (as is always the case in most legacy code)
+
+
+
+
+```cpp
+#include "iostream"
+
+class MyInteger
+{
+  
+  public: 
+  inline MyInteger(int t)
+  : m_i{t}
+  {
+  }
+  
+  
+  public: 
+  int m_i;
+  // inline constexpr MyInteger(const MyInteger &) noexcept = default;
+};
+
+
+
+class Square
+{
+  
+  public: 
+  inline Square(MyInteger i)
+  : my_int{MyInteger(i)}
+  {
+  }
+  
+  inline int squared()
+  {
+    return this->my_int.m_i * this->my_int.m_i;
+  }
+  
+  
+  private: 
+  MyInteger my_int;
+};
+
+
+
+int main()
+{
+  int t = 100;
+  Square s(MyInteger t); // See the compiler has converted MyInteger(t) into MyInteger t
+  return 0;
+}
+
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 In case of ambiguity between a variable declaration using the direct-initialization syntax (1) (with round parentheses) and a function declaration, the compiler always chooses function declaration. This disambiguation rule is sometimes counter-intuitive and has been called the most vexing parse.
 
