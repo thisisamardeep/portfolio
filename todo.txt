@@ -12,3 +12,20 @@ Need to write on topic of virtul fuinctions
 CHAPTER 10: DISCOVERING INHERITANCE TECHNIQUES Do this chapter
 
 
+leetcode
+https://leetcode.com/problems/next-permutation/description/
+
+=================
+solve all these first
+Break down the problem
+
+First just find the number of posible permutations
+Then fine the list of all permutations
+then order the permutation by lexographically
+Then find the next permutation.
+
+https://www.geeksforgeeks.org/different-ways-to-generate-permutations-of-an-array/
+
+Need to understand this
+
+===================================
