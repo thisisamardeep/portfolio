@@ -15,4 +15,4 @@ We have array of 3 numbers [1,2,3].We need to find list of all possible permutat
 Backtracking is just enhanced recursion (may or may not be memoized).
 
 
-![strace](/img/diagram.jpg)
+![strace](/portfolio/img/diagram.jpg)
