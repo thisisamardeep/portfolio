@@ -9,10 +9,8 @@ share-description: "Explcit keyword "
 comments: false
 ---
 
-First Let me share  the [cpp reference](https://en.cppreference.com/w/cpp/language/explicit)  .
-
-Explicit is technically a specifier that can be used in a constructor , conversion function or deduction guide(template arg deduction).
-To keep the scope limited we just consider cases where explicit is used with a constructor but we must know that explicit has other usages also besides a 
+First Let me share  the [cpp reference](https://en.cppreference.com/w/cpp/language/explicit)  . Explicit is technically a specifier that can be used in a constructor ,
+conversion function or deduction guide(template arg deduction). To keep the scope limited we just consider cases where explicit is used with a constructor but we must know that explicit has other usages also besides a 
 constructor.
 
 The Official Explanation [c++ 17 standard](https://timsong-cpp.github.io/cppwp/n4659/) :
@@ -26,58 +24,44 @@ or value-initialization (11.6)
 Actually constructors not marked as explicit try to do one implicit conversion (without the compiler generating any warning for some conversions some compilers do some dont) which may be lead to very subtle bugs in production.
 explicit keyword just tells the compiler not to try any of those conversions.
 
-We will create 2 classes ImplicitFoo and ExplicitFoo to show how explicit reduces the number of ways objects can be created and reduce the numbers of bugs we need
+We will create class Foo to show how explicit reduces the number of ways objects can be created and reduce the numbers of bugs we need
 to fix when we have a 100k line code base with classes and namespaces all messed in different compilation units (as is always the case in most legacy code)
 
 
 
 
 ```cpp
-#include "iostream"
-
-class MyInteger
-{
-  
-  public: 
-  inline MyInteger(int t)
-  : m_i{t}
-  {
-  }
-  
-  
-  public: 
-  int m_i;
-  // inline constexpr MyInteger(const MyInteger &) noexcept = default;
+class Foo {
+public:
+    explicit Foo();
+    explicit Foo(int);
+    explicit Foo(int, int);
+};
+Foo::Foo() {
+}
+Foo::Foo(int i) {
+}
+Foo::Foo(int i, int j) {
+}
+void read_foo(const Foo &) {
+// Some external legacy api which reads Foo
 };
 
-
-
-class Square
-{
-  
-  public: 
-  inline Square(MyInteger i)
-  : my_int{MyInteger(i)}
-  {
-  }
-  
-  inline int squared()
-  {
-    return this->my_int.m_i * this->my_int.m_i;
-  }
-  
-  
-  private: 
-  MyInteger my_int;
-};
-
-
-
-int main()
-{
-  int t = 100;
-  Square s(MyInteger t); // See the compiler has converted MyInteger(t) into MyInteger t
-  return 0;
+int main() {
+    Foo i1;
+    Foo i2 = Foo();
+    Foo i3 = Foo(1);
+    Foo i4 = Foo(1, 2);
+    // The below ways of creation will not work if explicit is marked but they will work if explicit is removed.So our code base becomes much clean and less
+    //error prone
+    Foo i5 = {};
+    Foo i6 = 1;
+    Foo i7 = {1};
+    Foo i8 = {1, 2};
+    read_foo({});
+    read_foo(1);
+    read_foo({1});
+    read_foo({1, 2});
 }
 
 ```
