@@ -6,3 +6,7 @@ Need to do move semantics book once.
 Need to understand this http://thbecker.net/articles/rvalue_references/section_01.html
 https://learn.microsoft.com/en-us/cpp/cpp/lvalues-and-rvalues-visual-cpp?view=msvc-170
 https://www.learncpp.com/cpp-tutorial/value-categories-lvalues-and-rvalues/
+
+Need to write on topic of virtul fuinctions
+
+CHAPTER 10: DISCOVERING INHERITANCE TECHNIQUES Do this chapter
