@@ -66,7 +66,9 @@ int main() {
 
 ```
 
+Now we cover those edge cases where implicit is actually needed.There are just very special edge cases.
 
+Technically there is only one concept of constructor.
 
 
 
