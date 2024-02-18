@@ -9,12 +9,13 @@ share-description: "Explcit keyword "
 comments: false
 ---
 
-First Let me share the [wiki](https://en.wikipedia.org/wiki/Most_vexing_parse) and the [cpp reference](https://en.cppreference.com/w/cpp/language/direct_initialization)  (see notes section) 
-which mentions this problem.
+First Let me share  the [cpp reference](https://en.cppreference.com/w/cpp/language/explicit)  .
 
-It is very important to note that this a not a error but a ambiguity due to historical reasons(pre C++11).Some times we need the ambiguity when we declare functions.
+Explicit is technically a specifier that can be used in a constructor , conversion function or deduction guide(template arg deduction).
+To keep the scope limited we just consider cases where explicit is used with a constructor but we must know that explicit has other usages also besides a 
+constructor.
 
-The Official Explanation :
+The Official Explanation c++ standard :
 
 In case of ambiguity between a variable declaration using the direct-initialization syntax (1) (with round parentheses) and a function declaration, the compiler always chooses function declaration. This disambiguation rule is sometimes counter-intuitive and has been called the most vexing parse.
 
