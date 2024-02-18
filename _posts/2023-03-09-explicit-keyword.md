@@ -15,7 +15,16 @@ Explicit is technically a specifier that can be used in a constructor , conversi
 To keep the scope limited we just consider cases where explicit is used with a constructor but we must know that explicit has other usages also besides a 
 constructor.
 
-The Official Explanation c++ standard :
+The Official Explanation [c++ 17 standard](https://timsong-cpp.github.io/cppwp/n4659/) :
+
+An explicit constructor constructs objects just like non-explicit constructors, but does so only where
+the direct-initialization syntax (11.6) or where casts (8.2.9, 8.4) are explicitly used; see also 16.3.1.4. A default
+constructor may be an explicit constructor; such a constructor will be used to perform default-initialization
+or value-initialization (11.6)
+
+
+Actually constructors not marked as explicit try to do one implicit conversion (without the compiler generating any warning) which may be lead to very subtle bugs in production.
+explicit keyword just tells the compiler not to try any of those conversions.
 
 In case of ambiguity between a variable declaration using the direct-initialization syntax (1) (with round parentheses) and a function declaration, the compiler always chooses function declaration. This disambiguation rule is sometimes counter-intuitive and has been called the most vexing parse.
 
