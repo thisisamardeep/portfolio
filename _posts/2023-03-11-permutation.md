@@ -91,3 +91,46 @@ Let me explain the logic here.We need to make sure that in position last_fixed_i
 Where do we get the all possible elements  --> From the counter i of the loop.So our swap function takes 3 arguments swaps the elements ar position i and j thats it.
 Now once we swap we know the we have got the element of the partial candidate ..so we push the element to temp and note we also need to remove this later.
 Why ? Because in the next iteration temp will change so basically after we done will calling findpermutations we revert temo to its original state.
+
+Final working code
+
+```cpp
+#include "vector"
+
+using namespace std;
+
+void swapme(vector<int> &swap_me, size_t i, size_t j) {
+int t1 = swap_me[i];
+swap_me[i] = swap_me[j];
+swap_me[j] = t1;
+
+}
+
+void findpermutations(vector<int> &input, size_t n, vector<int> &temp,
+vector<vector<int>> &finalresult, int last_fixed_index) {
+if (temp.size() == n) {
+finalresult.push_back(temp);
+return;
+}
+
+    for (size_t i = last_fixed_index; i < n; i++) {
+        swapme(input, last_fixed_index, i);
+        temp.push_back(input[last_fixed_index]);
+        findpermutations(input, n, temp, finalresult, last_fixed_index + 1);
+        temp.pop_back();
+        swapme(input, i, last_fixed_index);
+    }
+
+
+};
+
+int main() {
+vector<int> input{1, 2, 3};
+size_t n = 3;
+vector<int> temp{};
+vector<vector<int>> finalresult{};
+findpermutations(input, n, temp, finalresult, 0);
+return 0;
+}
+
+```
