@@ -71,3 +71,7 @@ int main() {
     return 0;
 }
 ```
+
+If you see the diagram above as we go down the level, the index of the element which we have fixed increases.We started with nothing so let us keep it as 0.
+After first call we are at level 2 of the diagram.But note that we need to know the fixed index at level 1 since level 2 is just child of level 1.
+Let us say it this way "" for our program to go to level2 from level 1 i need to know the index at level 1 ".
