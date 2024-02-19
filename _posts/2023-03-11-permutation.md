@@ -50,16 +50,23 @@ after the function call.Also we need to pass reference of finalresult .This will
 
 Now if size_temp  == n then it means our partial candidate is a actual candidate
 
+
+If you see the diagram above as we go down the level, the index of the element which we have fixed increases.We started with nothing so let us keep it as 0.
+After first call we are at level 2 of the diagram.But note that we need to know the fixed index at level 1 since level 2 is just child of level 1.
+Let us say it this way "" for our program to go to level2 from level 1 i need to know the index at level 1 ".
+
+
 Current state of our code.
 
 ```cpp
 #include "vector"
 using namespace std;
 vector<vector<int>> findpermutations(vector<int> &input, size_t n, vector<int> temp,
-                                     vector<vector<int>> finalresult) {
+                                     vector<vector<int>> finalresult, int last_fixed_index) {
     if (temp.size() == n) {
         finalresult.push_back(temp);
     }
+    
     return {};
 };
 int main() {
@@ -67,11 +74,7 @@ int main() {
     size_t n = 3;
     vector<int> temp{};
     vector<vector<int>> finalresult{};
-    vector<vector<int>> result = findpermutations(input, n, temp, finalresult);
+    vector<vector<int>> result = findpermutations(input, n, temp, finalresult, 0);
     return 0;
 }
 ```
-
-If you see the diagram above as we go down the level, the index of the element which we have fixed increases.We started with nothing so let us keep it as 0.
-After first call we are at level 2 of the diagram.But note that we need to know the fixed index at level 1 since level 2 is just child of level 1.
-Let us say it this way "" for our program to go to level2 from level 1 i need to know the index at level 1 ".
