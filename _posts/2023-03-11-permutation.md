@@ -45,5 +45,29 @@ int main() {
 Now the main question is our function findpermutations will have what parameters?
 This question is the most important in any dynamic programming problem. Once this is done almost 50% of the work is done.
 We need to pass reference to our input array since we will be swapping and swap back the elements so it will not be const.
-Also we need to pass the number of elements in our array.Also we need to track the size of our temporary array as we generate it.
-Let us give it name tempsize.It is not the size of the final result but the size of the element of the final result.
+Also we need to pass the number of elements in our array. Also note temp  is  valid value after the function is called.I mean temp refers to the partial candidate we have
+after the function call.Also we need to pass reference of finalresult .This will be our final result.
+
+Now if size_temp  == n then it means our partial candidate is a actual candidate
+
+Current state of our code.
+
+```cpp
+#include "vector"
+using namespace std;
+vector<vector<int>> findpermutations(vector<int> &input, size_t n, vector<int> temp,
+                                     vector<vector<int>> finalresult) {
+    if (temp.size() == n) {
+        finalresult.push_back(temp);
+    }
+    return {};
+};
+int main() {
+    vector<int> input{1, 2, 4};
+    size_t n = 3;
+    vector<int> temp{};
+    vector<vector<int>> finalresult{};
+    vector<vector<int>> result = findpermutations(input, n, temp, finalresult);
+    return 0;
+}
+```
