@@ -134,3 +134,5 @@ return 0;
 }
 
 ```
+
+The tough part in backtracking is not the code but understanding layers and layers beneath the code.Once you get used to it ,it becomes very easy.
