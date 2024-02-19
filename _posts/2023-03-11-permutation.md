@@ -88,4 +88,6 @@ at first index 0.
 
 Once we start the loop we swap the elements i and the element last_fixed_index. Why ?
 Let me explain the logic here.We need to make sure that in position last_fixed_index we try to place all possible elements.
-Where do we 
+Where do we get the all possible elements  --> From the counter i of the loop.So our swap function takes 3 arguments swaps the elements ar position i and j thats it.
+Now once we swap we know the we have got the element of the partial candidate ..so we push the element to temp and note we also need to remove this later.
+Why ? Because in the next iteration temp will change so basically after we done will calling findpermutations we revert temo to its original state.
