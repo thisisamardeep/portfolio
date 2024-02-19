@@ -24,3 +24,26 @@ How do we make sure that they get covered.So we swap the first element with seco
 Also note that in our code we would also need to swap second element with first after we are done with that case since we want the vector to come
 back to its original state.
 I will come to that later.
+Find the below driver code and the starter code of our function.
+
+```cpp
+#include "vector"
+using namespace std;
+vector<vector<int>> findpermutations() {
+    return {};
+};
+
+int main() {
+    int input[] = {1, 2, 3};
+    int n = 3;
+    vector<vector<int>> result = findpermutations(vector<int> &input,const int &n,int tempsize);
+    return 0;
+}
+```
+
+
+Now the main question is our function findpermutations will have what parameters?
+This question is the most important in any dynamic programming problem. Once this is done almost 50% of the work is done.
+We need to pass reference to our input array since we will be swapping and swap back the elements so it will not be const.
+Also we need to pass the number of elements in our array.Also we need to track the size of our temporary array as we generate it.
+Let us give it name tempsize.It is not the size of the final result but the size of the element of the final result.
