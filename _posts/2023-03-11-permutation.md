@@ -29,14 +29,13 @@ Find the below driver code and the starter code of our function.
 ```cpp
 #include "vector"
 using namespace std;
-vector<vector<int>> findpermutations() {
-    return {};
+void findpermutations() {
 };
 
 int main() {
     int input[] = {1, 2, 3};
     int n = 3;
-    vector<vector<int>> result = findpermutations(vector<int> &input,const int &n,int tempsize);
+    findpermutations(vector<int> &input,const int &n,int tempsize);
     return 0;
 }
 ```
@@ -47,6 +46,8 @@ This question is the most important in any dynamic programming problem. Once thi
 We need to pass reference to our input array since we will be swapping and swap back the elements so it will not be const.
 Also we need to pass the number of elements in our array. Also note temp  is  valid value after the function is called.I mean temp refers to the partial candidate we have
 after the function call.Also we need to pass reference of finalresult .This will be our final result.
+We need to pass temp by reference but why ? C++ is notorious for making copies of paramters.Also we can have only one partial candidate at one point of time.
+So there are 2 ways either use a reference and add and delete to our partial candidate or work with copies which is very cumbersome.
 
 Now if size_temp  == n then it means our partial candidate is a actual candidate
 
@@ -61,20 +62,30 @@ Current state of our code.
 ```cpp
 #include "vector"
 using namespace std;
-vector<vector<int>> findpermutations(vector<int> &input, size_t n, vector<int> temp,
-                                     vector<vector<int>> finalresult, int last_fixed_index) {
+
+void findpermutations(vector<int> &input, size_t n, vector<int> &temp,
+                      vector<vector<int>> &finalresult, int last_fixed_index) {
     if (temp.size() == n) {
         finalresult.push_back(temp);
+        return;
     }
-    
-    return {};
+    // pending
 };
+
 int main() {
-    vector<int> input{1, 2, 4};
+    vector<int> input{1, 2, 3};
     size_t n = 3;
     vector<int> temp{};
     vector<vector<int>> finalresult{};
-    vector<vector<int>> result = findpermutations(input, n, temp, finalresult, 0);
+    findpermutations(input, n, temp, finalresult, 0);
     return 0;
 }
 ```
+
+Now for last_fixed_index == 0 for the first call.There are 3 elements that can be fixed at this place 1 ,2,3.
+So we start a loop from the fixed index iterate over the rest of array .The reason why we loop is since we  need to change the element
+at first index 0.
+
+Once we start the loop we swap the elements i and the element last_fixed_index. Why ?
+Let me explain the logic here.We need to make sure that in position last_fixed_index we try to place all possible elements.
+Where do we 
