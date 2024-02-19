@@ -17,7 +17,7 @@ Backtracking is just enhanced recursion (may or may not be memoized).
 
 ![strace](/portfolio/img/diagram.jpg)
 
-In the above diagram .We start with 2 arrays on this the array which we have one is the new array which will be part of the final
+In the above diagram .We start with 2 arrays .The right array is the new array which will be part of the final
 solution.Think of the right array in terms of fixing the element.So first we try to fix the element at position 1.
 We take the first element from the left array and fix it at position 1.Now there are other elements also which can be fixed at position 1.
 How do we make sure that they get covered.So we swap the first element with second.Then we swap the first element with third and so one.
