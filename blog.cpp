@@ -48,9 +48,12 @@ public:
 };
 
 int main() {
-    vector<int> rr = {1, 2, 3};
-    Solution r{};
-    r.nextPermutation(rr);
+//    vector<int> rr = {1, 2, 3};
+//    Solution r{};
+//    r.nextPermutation(rr);
+
+
+
     return 0;
 }
 
