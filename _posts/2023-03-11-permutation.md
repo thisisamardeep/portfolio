@@ -142,4 +142,8 @@ Many times we need to find results in lxographic order in dynamic programming pr
 Let us try to understand why this method does not produce results in lexographic order.Suppose we start with input ={3,2,1}.
 Just to be clear the output of our program for this input is [[3,2,1] ,[3,1,2],[2,3,1],[2,1,3],[1,2,3],[1,3,2]]
 Since we run loop from index our ,this ensures that all candidates starting from 3 appear before all candidates starting from 2 and so on.But this happens only at the first level.
-See the sublevel 1 [1,2,3][1,3,2]  .Here {1,2,3} has appeared before {1,3,2}.
+See the sublevel 1 [1,2,3][1,3,2]  .Here {1,2,3} has appeared before {1,3,2}.See how did we get 1 in both these results we had swapped with 3.
+But once 1 came after swapping with 3.
+
+{3,2,1} had become {1,2,3}  (This case was the last case of the first loop). Then in th sub loops 2 swapped with itself and 3 swapped with itself and we got {1,2,3}
+After than 2 swapped with 3 so we got {1,3,2}.So only at the first level we were able to maintain the order once we entered into subloops we were just swapping without maintaining the ordering.
