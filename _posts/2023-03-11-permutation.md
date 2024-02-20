@@ -136,3 +136,7 @@ return 0;
 ```
 
 The tough part in backtracking is not the code but understanding layers and layers beneath the code.Once you get used to it ,it becomes very easy.
+Also note in this approach the order on the resultset is not in lexographic order.
+Many times we need to find results in lxographic order in dynamic programming problems.In this case we cannot use this method.
+
+Let us try to understand why this method does not produce results in lexographic order.

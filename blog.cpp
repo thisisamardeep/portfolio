@@ -13,10 +13,13 @@ void swapme(vector<int> &swap_me, size_t i, size_t j) {
 
 }
 
-void findpermutations(vector<int> &input, size_t n, vector<int> &temp,
+void findpermutations(vector<int> input, size_t n, vector<int> temp,
                       vector<vector<int>> &finalresult, int last_fixed_index) {
     if (temp.size() == n) {
         finalresult.push_back(temp);
+        return;
+    }
+    if (temp.size() > n) {
         return;
     }
 
@@ -32,7 +35,7 @@ void findpermutations(vector<int> &input, size_t n, vector<int> &temp,
 };
 
 int main() {
-    vector<int> input{1, 2, 3};
+    vector<int> input{3, 2, 1};
     size_t n = 3;
     vector<int> temp{};
     vector<vector<int>> finalresult{};
