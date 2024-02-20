@@ -1,6 +1,6 @@
 ---
 title: 0/1 Knapsack Problem
-published: true
+published: false
 share-description: ""
 tags: [ leetcode ]
 share-img: /img/rust.png
