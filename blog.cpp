@@ -55,7 +55,14 @@ int main() {
     s.insert("abc");
     s.insert("abc1");
     s.insert("abc1");
-    auto it = s.find("abc");
+    auto it1 = s.find("abc");
+    for (auto i = it1->begin(); i < it1->end(); i++) {
+        std::cout << *i << std::endl;
+    }
+
+    for(auto ss:s){
+        std::cout << ss << std::endl;
+    }
 
 
     return 0;
