@@ -1,44 +1,57 @@
 //
 // Created by amardeep on 18/02/24.
 //
-
-#include "vector"
+// C++ Program to print all permutations
+// of a string in sorted order.
+#include <bits/stdc++.h>
 
 using namespace std;
 
-void swapme(vector<int> &swap_me, size_t i, size_t j) {
-    int t1 = swap_me[i];
-    swap_me[i] = swap_me[j];
-    swap_me[j] = t1;
+class Solution {
+public:
+    void nextPermutation(vector<int> &nums) {
+        if (nums.size() == 1)
+            return;
+        set<pair<int, int>> s;
+        bool found = false;
+        s.insert({nums[nums.size() - 1], nums.size() - 1});
+        for (int i = nums.size() - 2; i >= 0; i--) {
+            int current_no = nums[i];
+            pair<int, int> z = {INT_MAX, INT_MAX};
+            bool flag = false;
+            for (auto it: s) {
+                if (it.first > current_no) {
+                    flag = true;
+                    z = min(z, it);
+                }
+            }
+            if (flag) {
+                found = true;
+                s.erase(z);
+                s.insert({current_no, i});
+                nums[i] = z.first;
+                int j = i + 1;
+                for (auto it: s) {
+                    nums[j] = it.first;
+                    j++;
+                }
+                break;
+            }
+            s.insert({nums[i], i});
+        }
+        if (!found) {
+            return sort(nums.begin(), nums.end());
+        }
+        //stl provided by c++ next_permutation(nums.begin(),nums.end());
 
-}
-
-void findpermutations(vector<int> input, size_t n, vector<int> temp,
-                      vector<vector<int>> &finalresult, int last_fixed_index) {
-    if (temp.size() == n) {
-        finalresult.push_back(temp);
-        return;
     }
-    if (temp.size() > n) {
-        return;
-    }
-
-    for (size_t i = last_fixed_index; i < n; i++) {
-        swapme(input, last_fixed_index, i);
-        temp.push_back(input[last_fixed_index]);
-        findpermutations(input, n, temp, finalresult, last_fixed_index + 1);
-        temp.pop_back();
-        swapme(input, i, last_fixed_index);
-    }
-
-
 };
 
 int main() {
-    vector<int> input{3, 2, 1};
-    size_t n = 3;
-    vector<int> temp{};
-    vector<vector<int>> finalresult{};
-    findpermutations(input, n, temp, finalresult, 0);
+    vector<int> rr = {1, 2, 3};
+    Solution r{};
+    r.nextPermutation(rr);
     return 0;
 }
+
+// This is code is contributed by rathbhupendra
