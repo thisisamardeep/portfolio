@@ -1,8 +1,4 @@
-//
-// Created by amardeep on 18/02/24.
-//
-// C++ Program to print all permutations
-// of a string in sorted order.
+
 #include <bits/stdc++.h>
 using namespace std;
 class Solution {
