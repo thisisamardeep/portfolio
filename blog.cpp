@@ -55,6 +55,7 @@ int main() {
     s.insert("abc");
     s.insert("abc1");
     s.insert("abc1");
+    auto it = s.find("abc");
 
 
     return 0;

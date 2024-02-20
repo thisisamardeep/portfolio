@@ -17,3 +17,6 @@ s.insert("abc");
 s.insert("abc1");
 s.insert("abc1");
  --> inserts elements into a set
+
+auto it = s.find("abc");  --> returns a iterator.
+Used to find element of a set.
