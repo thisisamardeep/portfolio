@@ -60,10 +60,13 @@ int main() {
         std::cout << *i << std::endl;
     }
 
-    for(auto ss:s){
+    for (auto ss: s) {
         std::cout << ss << std::endl;
     }
 
+    for (auto i = s.begin(); i != s.end(); i++) {
+        std::cout << *i << std::endl;
+    }
 
     return 0;
 }

@@ -35,3 +35,8 @@ Loop over all elements of a set
         std::cout << ss << std::endl;
     }
 
+Loop over all elements of a set using iterators
+
+    for (auto i = s.begin(); i != s.end(); i++) {
+        std::cout << *i << std::endl;
+    }
