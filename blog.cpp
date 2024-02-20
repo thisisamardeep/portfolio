@@ -51,7 +51,10 @@ int main() {
 //    vector<int> rr = {1, 2, 3};
 //    Solution r{};
 //    r.nextPermutation(rr);
-
+    std::set<string> s;
+    s.insert("abc");
+    s.insert("abc1");
+    s.insert("abc1");
 
 
     return 0;
