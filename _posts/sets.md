@@ -40,3 +40,6 @@ Loop over all elements of a set using iterators
     for (auto i = s.begin(); i != s.end(); i++) {
         std::cout << *i << std::endl;
     }
+
+
+s.erase("abc");  --> Removes elements from a set

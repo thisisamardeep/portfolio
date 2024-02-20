@@ -68,6 +68,11 @@ int main() {
         std::cout << *i << std::endl;
     }
 
+    s.erase("abc");
+    std::cout << 55 << std::endl;
+    for (auto i = s.begin(); i != s.end(); i++) {
+        std::cout << *i << std::endl;
+    }
     return 0;
 }
 
