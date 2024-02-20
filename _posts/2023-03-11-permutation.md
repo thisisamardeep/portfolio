@@ -147,3 +147,4 @@ But once 1 came after swapping with 3.
 
 {3,2,1} had become {1,2,3}  (This case was the last case of the first loop). Then in th sub loops 2 swapped with itself and 3 swapped with itself and we got {1,2,3}
 After than 2 swapped with 3 so we got {1,3,2}.So only at the first level we were able to maintain the order once we entered into subloops we were just swapping without maintaining the ordering.
+That is the reason this method fails to generated lexographic permutations.
