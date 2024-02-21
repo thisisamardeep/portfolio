@@ -33,9 +33,18 @@ Case 2) All other cases.So there is always one index k such that element at inde
 
 New let us not try to find the next possible number after 1234 but focus on the largest possible number 4321.
 
-                    [1234][]
-    Start from right find the first element which is less than it right neighbour. it is 3 in this case. Since the array to right is empty move 4 to this array.
+                     1234
+                    [123 ] [4] 
+                     1243
                     [12][43]
+                    1342
+                    [13][42]
+                    
+                    
+
+
+
+
     Now again start from right from the last element 3,find the the index k such that element at index k is greater than element at index k+1.So we have found element 2 here.
     Now in the second subarray start from right and find the first number which is greater than 2. it is 3 in this case. So swap them
                     [13][42]

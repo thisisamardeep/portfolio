@@ -30,7 +30,7 @@ public:
 };
 
 int main() {
-    vector<int> rr = {1, 2, 3};
+    vector<int> rr = {1, 2, 4, 3};
     Solution r{};
     r.nextPermutation(rr);
     return 0;
