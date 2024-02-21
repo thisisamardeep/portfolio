@@ -40,4 +40,5 @@ New let us not try to find the next possible number after 1234 but focus on the 
     Now in the second subarray start from right and find the first number which is greater than 2. it is 3 in this case. So swap them
                     [13][42]
     
-        Now swap 3 and 4
+    Now swap 3 and 4
+        
