@@ -38,3 +38,7 @@ Need to understand the below data strcutures
 
 set unorederset and multiset and pair and sort in stl algo
 =======================================
+
+How addition happens in iterators
+
+=======================
