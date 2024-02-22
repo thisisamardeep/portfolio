@@ -46,4 +46,25 @@ So we get 1324 and so on.
 
 The exact same concept can be applied to this problem using number of strings or anything which has a order.
 
+Now let le leave thoery and start coding.
+We have the starter code below.We have used reference so we just alter the input vector which we get.
+```cpp
+using namespace std;
+
+class Solution {
+public:
+    void nextPermutation(vector<int> &nums) {
+       // Need to implement this
+    }
+};
+
+
+int main() {
+    vector<int> input = {1, 2, 3, 4};
+    Solution s{};
+    s.nextPermutation(input);
+    return 0;
+}
+```
+
 

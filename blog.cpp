@@ -3,12 +3,17 @@
 
 using namespace std;
 
+class Solution {
+public:
+    void nextPermutation(vector<int> &nums) {
+       // Need to implement this
+    }
+};
+
 
 int main() {
-    vector<int> test = {1, 2, 3, 4, 5, 6};
-
-    std::reverse(test.begin() + 2, test.end());
-
-//    { 1, 2, 6, 5, 4, 3 }
+    vector<int> input = {1, 2, 3, 4};
+    Solution s{};
+    s.nextPermutation(input);
     return 0;
 }
