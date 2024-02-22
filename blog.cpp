@@ -1,48 +1,39 @@
-
-#include <bits/stdc++.h>
-
-using namespace std;
-
 class Solution {
 public:
     void nextPermutation(vector<int> &nums) {
-        int idx = -1;
-        for (int i = nums.size() - 2; i >= 0; i--) {
-            if (nums[i] < nums[i + 1]) {
-                idx = i;
-                break;
-            }
-        }
-
-        if (idx == -1) {
-            // edge case
-            reverse(nums.begin(), nums.end());
+        if (nums.size() == 1)
             return;
-
-        } else {
-            // need to handle the normal case
-            int rightidx = -1;
-            //Now we start from right and find rightidx such that number at idx is less than number at rightidx
-            for (int j = nums.size() - 1; j > idx; j--) {
-                if (nums[idx] < nums[j]) {
-                    rightidx = j;
-                    break;
+        set <pair<int, int>> s;
+        bool found = false;
+        s.insert({nums[nums.size() - 1], nums.size() - 1});
+        for (int i = nums.size() - 2; i >= 0; i--) {
+            int current_no = nums[i];
+            pair<int, int> z = {INT_MAX, INT_MAX};
+            bool flag = false;
+            for (auto it: s) {
+                if (it.first > current_no) {
+                    flag = true;
+                    z = min(z, it);
                 }
             }
-            if (rightidx == -1) {
-                // this will never be the case
-            } else {
-                swap(nums[idx], nums[rightidx]);
-                reverse(nums.begin() + idx + 1, nums.end());
-                return;
+            if (flag) {
+                found = true;
+                s.erase(z);
+                s.insert({current_no, i});
+                nums[i] = z.first;
+                int j = i + 1;
+                for (auto it: s) {
+                    nums[j] = it.first;
+                    j++;
+                }
+                break;
             }
+            s.insert({nums[i], i});
         }
+        if (!found) {
+            return sort(nums.begin(), nums.end());
+        }
+        //stl provided by c++ next_permutation(nums.begin(),nums.end());
+
     }
 };
-
-int main() {
-    vector<int> input = {3, 2, 1};
-    Solution s{};
-    s.nextPermutation(input);
-    return 0;
-}

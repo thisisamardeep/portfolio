@@ -15,6 +15,9 @@ CHAPTER 10: DISCOVERING INHERITANCE TECHNIQUES Do this chapter
 leetcode
 https://leetcode.com/problems/next-permutation/description/
 
+Need to understand another sample solution and then write it in cpp and python and then previous onr also in python.
+
+
 =================
 solve all these first
 Break down the problem
