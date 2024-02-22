@@ -10,7 +10,7 @@ share-description: "Find the next lexicographic permutation"
 comments: false
 ---
 
-Problem Link:[https://leetcode.com/problems/next-permutation/description/]
+[Problem Link](https://leetcode.com/problems/next-permutation/description/)
 
 We have array of 4 numbers [1,2,3,4].We need to find the next permutation. By next permutation we mean the next
 lexicographic permutation.
