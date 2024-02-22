@@ -54,6 +54,11 @@ using namespace std;
 class Solution {
 public:
     void nextPermutation(vector<int> &nums) {
+        int idx=-1;
+        for(int i=nums.size();i >=0;i++){
+            
+        }
+        
        // Need to implement this
     }
 };
@@ -67,4 +72,45 @@ int main() {
 }
 ```
 
+We start from right and find the index idx such that input[idx] < input[idx+1].
+If we dont find anything we mark it as -1 and just reverse the digits(edge case.)
 
+```cpp
+
+
+#include <bits/stdc++.h>
+
+using namespace std;
+
+class Solution {
+public:
+void nextPermutation(vector<int> &nums) {
+int idx = -1;
+for (int i = nums.size() - 2; i >= 0; i++) {
+if (nums[i] < nums[i + 1]) {
+idx = i;
+break;
+}
+}
+
+if (idx == -1) {
+// edge case
+reverse(nums.begin(),nums.end());
+return;
+
+} else {
+// need to handle the normal case
+}
+}
+};
+
+int main() {
+vector<int> input = {1, 2, 3, 4};
+Solution s{};
+s.nextPermutation(input);
+return 0;
+}
+
+
+
+```
