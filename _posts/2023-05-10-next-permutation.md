@@ -1,53 +1,50 @@
 ---
-title: Find the next lexographic permutation
+title: Possible ways to find permutations
 published: true
 share-description: ""
 tags: [ leetcode ]
 share-img: /img/rust.png
 readtime: true
-permalink: "/next-lexographic-possible"
-share-description: "Find the next lexographic permutation"
+permalink: "/permutation-possible-ways"
+share-description: "Different Possible ways to find permutations using backtracking"
 comments: false
 ---
 
-Problem:
-We have array of 3 numbers [1,2,3].We need to find list of all possible permutations using backtracking.
-Backtracking is just enhanced recursion (may or may not be memoized).
+Problem Link:
+https://leetcode.com/problems/next-permutation/description/
+
+We have array of 4 numbers [1,2,3,4].We need to find the next permutation. By next permutation we mean the next
+lexicographic permutation.
+
+First let us leave the problem and try to find the solution for another problem
+Suppose you have a number 1234.You need to find the smallest next number you can form using these digits only once.
+Just note the largest number we can form is 4321.
+
+So along the path 1234 --> 4321 some others numbers are also present .We need to find the first number in that path.
+
+One thing is clear the next number will be larger than 1234.So it means we need to exactly 2 digits of 1234(leaving a edge case)
+such that the smaller digits goes to right and greater digit comes to left,then only we get to the next number.
+
+Let us start from right end of 1234.We find the first index i such that digit at i is less than digit at i+1.
+In this case i=2 since 3 < 4.
+
+So we split our array into 2 parts 123 4.
+let us mark index of 3 with idx=2.
+Now again we start from right and find the first number which is greater than 3 and then swap it with 3.
+Here that number is 4. So we swap 3 and 4.We reverse the digits of the second array here it is only 4 so it does not matter. We get 1243.
+
+So next permutation of 1234 is 1243.
+
+Now again we start to find the next permutation.
+
+Let us start from right end of 1243.We find the first index i such that digit at i is less than digit at i+1.
+here it is 1 and digit is 2 .So we split our array 12 43.
+let us mark index of 2 with idx=1.
+
+Now again we start from right and find the first number which is greater than 2 and then swap it with 2.
+3 is greater than 2. So we swap 2 and 3 .We get 13 42 but note it does not end here.We need to reverse the second array..
+So we get 1324 and so on.
+
+The exact same concept can be applied to this problem using number of strings or anything which has a order.
 
 
-First let us try to rephare and find solution to another problem.
-
-Suppose you have a number 1234 and you need to find the smallest number larger than this number which can
-be formed from the digits 1,2,3,4 using the digits only once.
-How will you find ? or better how write psedu code to be able to find it.
-Ome thing is clear since we need to find a number larger than this number so we need to swap 2 digits.
-And the digits which we swap should be such that the digit to the left after swap should be greater than the digit to the right.
-
-Now we need to understand another thing 2  cases are possible
-
-Case 1)
- 4->3 -> 2 ->1  (As we start from right to left the next digit is greater than or equal to the previous digit)
-
-Case 2) All other cases.So there is always one index k such that element at index k is less than the element at index k+1.
-      This is called the inflection point
-
-New let us not try to find the next possible number after 1234 but focus on the largest possible number 4321.
-
-                     1234
-                    [123 ] [4] 
-                     1243
-                    [12][43]
-                    1342
-                    [13][42]
-                    
-                    
-
-
-
-
-    Now again start from right from the last element 3,find the the index k such that element at index k is greater than element at index k+1.So we have found element 2 here.
-    Now in the second subarray start from right and find the first number which is greater than 2. it is 3 in this case. So swap them
-                    [13][42]
-    
-    Now swap 3 and 4
-        
