@@ -76,12 +76,8 @@ We start from right and find the index idx such that input[idx] < input[idx+1].
 If we dont find anything we mark it as -1 and just reverse the digits(edge case.)
 
 ```cpp
-
-
 #include <bits/stdc++.h>
-
 using namespace std;
-
 class Solution {
 public:
 void nextPermutation(vector<int> &nums) {
@@ -110,7 +106,5 @@ Solution s{};
 s.nextPermutation(input);
 return 0;
 }
-
-
 
 ```
