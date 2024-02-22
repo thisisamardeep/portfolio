@@ -1,12 +1,12 @@
 ---
-title: Possible ways to find permutations
+title: Find the next permutation
 published: true
 share-description: ""
 tags: [ leetcode ]
 share-img: /img/rust.png
 readtime: true
-permalink: "/permutation-possible-ways"
-share-description: "Different Possible ways to find permutations using backtracking"
+permalink: "/permutation-next"
+share-description: "Find the next lexicographic permutation"
 comments: false
 ---
 
