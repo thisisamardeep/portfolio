@@ -72,6 +72,7 @@ int main() {
 
 We start from right and find the index idx such that input[idx] < input[idx+1].
 If we dont find anything we mark it as -1 and just reverse the digits(edge case.)
+The we again start from right and find righidx such that nums[idx] < nums[j].
 
 ```cpp
 using namespace std;
