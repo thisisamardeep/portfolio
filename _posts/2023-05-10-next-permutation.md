@@ -121,3 +121,5 @@ int main() {
 }
 
 ```
+
+This the the final solution.This is good example of the power of multiple pointers or indexes.
