@@ -87,7 +87,6 @@ public:
                 break;
             }
         }
-
         if (idx == -1) {
             // edge case
             reverse(nums.begin(), nums.end());
