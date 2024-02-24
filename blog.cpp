@@ -26,7 +26,7 @@ int main() {
     e.someother();
     e.someMethod();
     Base r;
-    r.
+//    r.
 
     return 0;
 }
