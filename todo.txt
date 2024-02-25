@@ -62,3 +62,19 @@ https://en.cppreference.com/w/cpp/language/value_category
 Do these articles and finish the book  on move
 =========================================================================
 
+$ g++ -g -fdump-lang-class inheritance.cpp -o inheritance
+g++ -fdump-lang-class blog.cpp
+g++ -g -fdump-lang-class blog.cpp -o inheritance
+/usr/bin/g++  -g3  -g -std=gnu++17  -o ihgfggg -fdump-lang-class /home/amardeep/Desktop/mysources/portfolio/blog.cpp
+
+g++ -fdump-lang-class blog.cpp -o amar111
+-fcallgraph-info ¶
+
+  g++ -fdump-lang-class=blog.cpp.txt blog.cpp
+  g++ -fcallgraph-info=amar555.txt blog.cpp
+
+
+
+https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
+
+selection sort//bubble sort//insertion sort//merge sort//rec bubble sort //rec insertiikn szort //.quyick sort
