@@ -4,3 +4,29 @@ how to slice and keep copies and replace in part
 
 python slicing examples
 
+slice has 3 parameters start,stop,step
+
+start is the index included
+stop is not included
+step is just step
+
+Slice creates a new object
+
+
+er = [2, 3, 4, 5, 6]
+
+test = er[0:2:1]
+print(test)
+[2, 3]
+print(id(er) != id(test))
+True
+
+er = [2, 3, 4, 5, 6]
+
+test = er[::-1]  --> full reverse and new object
+print(test)
+
+[6, 5, 4, 3, 2]
+
+er = [2, 3, 4, 5, 6]
+rrt = er.reverse() --> inplace reverse and return none
