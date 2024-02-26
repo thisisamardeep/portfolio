@@ -123,3 +123,52 @@ int main() {
 ```
 
 This the the final solution.This is good example of the power of multiple pointers or indexes.
+The below is the same solution but in python since python objects are passed by reference and work different so some things are different.
+
+
+
+```python
+from typing import List
+
+
+class Solution:
+    def nextPermutation(self, nums: List[int]) -> None:
+      #  We need to modify nums in place
+        if len(nums) == 0:
+            return None
+        if len(nums) == 1:
+            return None
+        swalpleft = -1  #left index to be swapped
+        swalright = -1  #right index to be swapped
+        for i in range(len(nums) - 2, -1, -1):
+            if nums[i] < nums[i + 1]:
+                swalpleft = i
+                break
+        if swalpleft == -1:
+            nums.reverse() # we need to use reverse() here since it modifies in place and returns none .Cannot use nums[::-1] here 
+            return
+        else:
+            for j in range(len(nums) - 1, swalpleft, -1):
+                if nums[j] > nums[swalpleft]:
+                    swalright = j
+                    break
+
+            if swalright == -1:
+                pass
+                #this case never comes
+            else:
+                left = nums[swalpleft]
+                right = nums[swalright]
+                nums[swalpleft] = right
+                nums[swalright] = left
+            nums[swalpleft + 1::1] = nums[swalpleft + 1::1][::-1]
+            # we play trick here nums[swalpleft + 1::1] creates a new list.Then we reverse it using [::-1] and again create a copy
+            # but we need to modify  nums in place so we assign it back to  nums[swalpleft + 1::1] 
+            return
+
+test = Solution()
+inp = [1, 3, 2]
+test.nextPermutation(inp)
+ 
+# (result is [2,1,3])
+```
