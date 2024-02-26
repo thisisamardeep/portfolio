@@ -30,3 +30,8 @@ print(test)
 
 er = [2, 3, 4, 5, 6]
 rrt = er.reverse() --> inplace reverse and return none
+
+
+Very tricky to change the paramter name in place in python
+.If you create a local varialbe with same name as paramter name.
+you override it.

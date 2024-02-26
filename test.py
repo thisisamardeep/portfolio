@@ -21,8 +21,19 @@ class Solution:
                 if nums[j] > nums[swalpleft]:
                     swalright = j
                     break
+            if swalright == -1:
+                pass
+            else:
+                left = nums[swalpleft]
+                right = nums[swalright]
+                nums[swalpleft] = left
+                nums[swalright] = right
 
-
+            leftseg = nums[0: swalpleft + 1: 1]
+            rightseg = nums[swalpleft + 1:: 1]
+            rightseg.reverse()
+            nums = leftseg + rightseg
+            return
 
 
 sd = Solution()
