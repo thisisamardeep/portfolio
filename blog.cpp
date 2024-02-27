@@ -41,15 +41,13 @@ public:
         if (!found) {
             return sort(nums.begin(), nums.end());
         }
-        //stl provided by c++ next_permutation(nums.begin(),nums.end());
-
     }
 };
 
 
 int main() {
     std::pair<int, int> pp(10, 20);
-    pp.swap(10);
+//    pp.swap(10);
     std::pair<int, int> pp11 = std::make_pair(34, 45);
 
     int f = pp.first;
