@@ -1,0 +1,13 @@
+3 articles
+https://leimao.github.io/blog/CPP-Effective-Move-Semantics/
+https://pspdfkit.com/blog/2019/when-cpp-doesnt-move/
+https://leimao.github.io/blog/CPP-Virtual-Table-Table/
+https://leimao.github.io/blog/CPP-Virtual-Table/
+https://leimao.github.io/blog/CPP-Base-Class-Destructors/
+https://leimao.github.io/blog/CPP-lvalue-rvalue-Reference/
+3 leetcode course
+https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/ finish step 2
+3 leetcode questions
+https://leetcode.com/problems/climbing-stairs/description/
+https://leetcode.com/problems/coin-change/description/
+https://leetcode.com/problems/longest-increasing-subsequence/description/
