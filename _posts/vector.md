@@ -31,3 +31,9 @@ Reverse vector in part from front
 //    { 1, 2, 6, 5, 4, 3 }
 
 ========================
+
+    vector<int> inp = {7, 5, 9, 2, 8};
+    vector<int> inp11 = {7, 5, 9, 112, 8};
+    std::swap(inp[0], inp11[3]);
+This works swap can swap array but also swap elements of same or different vectors
+========================================
