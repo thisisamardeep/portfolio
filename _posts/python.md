@@ -35,3 +35,8 @@ rrt = er.reverse() --> inplace reverse and return none
 Very tricky to change the paramter name in place in python
 .If you create a local varialbe with same name as paramter name.
 you override it.
+
+Python has something called integer divisoon.
+It is basically integer floor division.
+so 5// 2 gives 2
+and -5 //2 gives -3
