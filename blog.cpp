@@ -43,6 +43,17 @@ public:
 
         }
     }
+
+    std::vector<int> amar(std::vector<int> nums) {
+        int t = 56;
+    };
+
+    void mergesortalgo(std::vector<int> &nums) {
+
+        std::vector<int> er = amar(nums);
+        int ty6 = 56;
+
+    }
 };
 
 
@@ -54,6 +65,7 @@ int main() {
     Solution df{};
 //    df.selectionsort(inp);
 //    df.bubblesort(inp);
-    df.insertsort(inp);
+//    df.insertsort(inp);
+    df.mergesortalgo(inp);
     return 0;
 }
