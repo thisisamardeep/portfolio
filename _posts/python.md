@@ -40,3 +40,7 @@ Python has something called integer divisoon.
 It is basically integer floor division.
 so 5// 2 gives 2
 and -5 //2 gives -3
+
+cpp also gives the result as integer but it is not floor division.It just truncates the fractional part
+    std::cout << 5 / 2 << std::endl; result 2
+    std::cout << -5 / 2 << std::endl; wresul 2

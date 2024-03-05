@@ -44,28 +44,33 @@ public:
         }
     }
 
-    std::vector<int> amar(std::vector<int> nums) {
-        int t = 56;
-    };
-
-    void mergesortalgo(std::vector<int> &nums) {
-
-        std::vector<int> er = amar(nums);
-        int ty6 = 56;
+    void mergrec(std::vector<int> &nums, size_t start, size_t end) {
+        if (start == end) {
+            return;
+        }
+        size_t middle = (start + end) / 2;
 
     }
+
+    void mergesort(std::vector<int> &nums) {
+        mergrec(nums, 0, nums.size() - 1);
+    }
+
+
 };
 
 
 int main() {
     int ty = 67;
-    vector<int> inp = {7, 5, 9, 2, 8};
+    vector<int> nums = {7, 5, 9, 2, 8};
+    std::cout << 5 / 2 << std::endl;
+    std::cout << -5 / 2 << std::endl;
 
 
     Solution df{};
 //    df.selectionsort(inp);
 //    df.bubblesort(inp);
 //    df.insertsort(inp);
-    df.mergesortalgo(inp);
+//    df.mergesort(nums);
     return 0;
 }
