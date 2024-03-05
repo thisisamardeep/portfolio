@@ -50,6 +50,13 @@ public:
         }
         size_t middle = (start + end) / 2;
 
+        mergrec(nums, start, middle);
+        mergrec(nums, middle + 1, end);
+        std::cout << "-------------------" << std::endl;
+        std::cout << start  << std::endl;
+        std::cout << end  << std::endl;
+
+
     }
 
     void mergesort(std::vector<int> &nums) {
@@ -62,15 +69,15 @@ public:
 
 int main() {
     int ty = 67;
-    vector<int> nums = {7, 5, 9, 2, 8};
-    std::cout << 5 / 2 << std::endl;
-    std::cout << -5 / 2 << std::endl;
+    vector<int> nums = {7, 5, 9, 2};
+//    std::cout << 5 / 2 << std::endl;
+//    std::cout << -5 / 2 << std::endl;
 
 
     Solution df{};
 //    df.selectionsort(inp);
 //    df.bubblesort(inp);
 //    df.insertsort(inp);
-//    df.mergesort(nums);
+    df.mergesort(nums);
     return 0;
 }
