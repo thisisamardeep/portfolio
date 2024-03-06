@@ -44,40 +44,66 @@ public:
         }
     }
 
+    std::vector<int> mergme(std::vector<int> &nums, size_t start, size_t middle, size_t end) {
+        size_t i = start;
+        size_t j = middle + 1;
+        std::vector<int> res{};
+        while ((i <= middle) || (j <= end)) {
+            if ((i <= middle) && (j <= end)) {
+                if (nums[i] <= nums[j]) {
+                    res.push_back(nums[i]);
+                    i = i + 1;
+                } else {
+                    res.push_back(nums[j]);
+                    j = j + 1;
+                }
+            } else if ((i <= middle) && (j > end)) {
+                res.push_back(nums[i]);
+                i = i + 1;
+            } else if ((i > middle) && (j <= end)) {
+                res.push_back(nums[j]);
+                j = j + 1;
+            }
+        }
+        return res;
+    }
+
+
     void mergrec(std::vector<int> &nums, size_t start, size_t end) {
         if (start == end) {
             return;
         }
         size_t middle = (start + end) / 2;
-
         mergrec(nums, start, middle);
         mergrec(nums, middle + 1, end);
-        std::cout << "-------------------" << std::endl;
-        std::cout << start  << std::endl;
-        std::cout << end  << std::endl;
-
-
+        std::vector<int> temp1 = mergme(nums, start, middle, end);
+        size_t c = start;
+        while (c <= end) {
+            nums[c] = temp1[c - start];
+            c = c + 1;
+        }
     }
-
-    void mergesort(std::vector<int> &nums) {
+    std::vector<int> sortArray(std::vector<int> &nums) {
         mergrec(nums, 0, nums.size() - 1);
+        return nums;
     }
-
-
 };
 
 
 int main() {
     int ty = 67;
     vector<int> nums = {7, 5, 9, 2};
+    vector<int> nums11{};
+//    nums11=nums(nums.begin(),nums.end());
+
 //    std::cout << 5 / 2 << std::endl;
 //    std::cout << -5 / 2 << std::endl;
 
 
     Solution df{};
-//    df.selectionsort(inp);
-//    df.bubblesort(inp);
-//    df.insertsort(inp);
+////    df.selectionsort(inp);
+////    df.bubblesort(inp);
+////    df.insertsort(inp);
     df.mergesort(nums);
     return 0;
 }
