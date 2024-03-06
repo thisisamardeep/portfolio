@@ -23,18 +23,6 @@ using namespace std;
 int main() {
 
 
-    vector<vector<int>> bottomLeft{{3, 2},
-                                   {1, 1},
-
-    };
-
-    vector<vector<int>> topRight{{4, 5},
-                                 {5, 4},
-    };
-
-    Solution r = Solution{};
-    auto rrr = r.largestSquareArea(bottomLeft, topRight);
-    std::cout << rrr << std::endl;
 
     return 0;
 }
