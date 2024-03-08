@@ -23,9 +23,9 @@ its value category.(lvalue,rvalue,prvalue,glvalue,xvalue). static_cast(if succes
 
 always changes  the type of the expression and gives a new expression which has the 
 
-new type.But it may or may not change the value category of the expression. This is clear
+new type.But it may or may not change the value category of the expression. This is 
 
-for the standard [static _cast](https://en.cppreference.com/w/cpp/language/static_cast) .
+clear from  the standard [static _cast](https://en.cppreference.com/w/cpp/language/static_cast).
 
 So if we use static cast we need to also take into account the value category of the input 
 
