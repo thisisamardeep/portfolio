@@ -19,11 +19,13 @@ Collect all articles you need to write and tesrt first
 
 https://leimao.github.io/blog/CPP-lvalue-rvalue-Reference/
 https://www.internalpointers.com/post/c-rvalue-references-and-move-semantics-beginners
+https://www.internalpointers.com/post/understanding-meaning-lvalues-and-rvalues-c
 https://mbevin.wordpress.com/2012/11/20/move-semantics/
 https://www.artima.com/articles/a-brief-introduction-to-rvalue-references
 https://stackoverflow.com/questions/4986673/c11-rvalues-and-move-semantics-with-return-statement/4986802#4986802
 https://cpppatterns.com/patterns/rule-of-five.html
 https://cpppatterns.com/patterns/copy-and-swap.html
-https://learn.microsoft.com/en-us/cpp/cpp/lvalues-and-rvalues-visual-cpp?view=msvc-170
+https://learn.microsoft.com/en-us/cpp/cpp/lvalues-and-rvalues-visual-cpp?view=msvc-170  done
 https://learn.microsoft.com/en-us/cpp/cpp/rvalue-reference-declarator-amp-amp?view=msvc-170
+http://thbecker.net/articles/rvalue_references/section_01.html
 ==================================================
