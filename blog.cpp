@@ -30,12 +30,7 @@ void printFoo2(const Foo foo) {
 }
 
 int main() {
-    std::string str1 = "Hello";
-    std::string str2 = " Underworld";
-    std::string str3 = str1 + str2;
-    std::string& str_lref = str3; // Cannot do lvalue reference std::string& str_lref = str1 + str2, because str1 + str2 is rvalue expression
-//    std::string& str_lref1 = str1 + str2; // Cannot do lvalue reference std::string& str_lref = str1 + str2, because str1 + str2 is rvalue expression
-    std::string&& str_rref = str1 + str2; // rvalue reference
-
+    float f;
+    auto i = static_cast<int>(f);
     return 0;
 }

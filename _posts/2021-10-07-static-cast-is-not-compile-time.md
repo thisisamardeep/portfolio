@@ -29,7 +29,11 @@ clear from  the standard [static _cast](https://en.cppreference.com/w/cpp/langua
 
 So if we use static cast we need to also take into account the value category of the input 
 
-and output expression.
+and output expression. static_cast being a explicit cast performs some compile time 
+
+checks and compiler will warn whether it sees any issues in conversion but there are
+
+some rum time aspects to it.
 
 
 
