@@ -6,31 +6,22 @@
 
 using namespace std;
 
+
 class Foo {
-public:
-    Foo() {
+    int test;
+    float test_float;
 
+    explicit operator float() const {
+        return test;
     }
-
-    Foo(int x) : mX{x} {
-
-    }
-
-public:
-    int mX = 0;
+//    explicit operator float () const {
+//        return test_float;
+//    }
 };
-
-void printFoo1(const Foo &foo) {
-    std::cout << foo.mX << std::endl;
-
-}
-
-void printFoo2(const Foo foo) {
-    std::cout << foo.mX << std::endl;
-}
 
 int main() {
     float f;
     auto i = static_cast<int>(f);
+    std::cout << f << std::endl;
     return 0;
 }

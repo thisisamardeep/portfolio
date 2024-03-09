@@ -35,5 +35,6 @@ checks and compiler will warn whether it sees any issues in conversion but there
 
 some rum time aspects to it.
 
+Suppose we have class Foo which we want to convert to float.
 
 
