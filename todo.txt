@@ -73,8 +73,10 @@ g++ -fdump-lang-class blog.cpp -o amar111
   g++ -fdump-lang-class=blog.cpp.txt blog.cpp
   g++ -fcallgraph-info=amar555.txt blog.cpp
 
-
+https://jeremimucha.com/2021/03/cmake-generator-expressions/
 
 https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2/
 
 selection sort//bubble sort//insertion sort//merge sort//rec bubble sort //rec insertiikn szort //.quyick sort
+
+write a article of pkg-config
