@@ -37,3 +37,13 @@ Reverse vector in part from front
     std::swap(inp[0], inp11[3]);
 This works swap can swap array but also swap elements of same or different vectors
 ========================================
+
+How to  concat 2 arrays in cpp
+
+std::vector<int> first = {1, 2, 3};
+std::vector<int> second = {4, 5};
+              -->
+    first.insert(first.end(), --> the iterator of the first array at the end of which new array will be inserted.
+second.begin(),  --> The begin iterator of the array to be inserted
+second.end())     --> The end iterator of the array to be inserted
+
