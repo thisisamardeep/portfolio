@@ -17,10 +17,8 @@ public:
                 zero.push_back(0);
             } else if (nums[i] == 1) {
                 one.push_back(1);
-
             } else if (nums[i] == 2) {
                 two.push_back(2);
-
             }
         }
         zero.insert(zero.end(), one.begin(), one.end());
