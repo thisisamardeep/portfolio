@@ -9,21 +9,28 @@ using namespace std;
 class Solution {
 public:
     void sortColors(vector<int> &nums) {
-        vector<int> zero{};
-        vector<int> one{};
-        vector<int> two{};
+        int count_zeros = 0;
+        int count_ones = 0;
+        int count_twos = 0;
         for (int i = 0; i < nums.size(); i++) {
             if (nums[i] == 0) {
-                zero.push_back(0);
+                count_zeros = count_zeros + 1;
             } else if (nums[i] == 1) {
-                one.push_back(1);
+                count_ones = count_ones + 1;
             } else if (nums[i] == 2) {
-                two.push_back(2);
+                count_twos = count_twos + 1;
             }
         }
-        zero.insert(zero.end(), one.begin(), one.end());
-        zero.insert(zero.end(), two.begin(), two.end());
-        nums = zero;
+        for (int i = 0; i < nums.size(); i++) {
+            if (i < count_zeros) {
+                nums[i] = 0;
+            } else if (i >= count_zeros && i < count_ones + count_zeros) {
+                nums[i] = 1;
+            } else if (i >= count_ones && i < nums.size()) {
+                nums[i] = 2;
+            }
+        }
+
     }
 };
 
