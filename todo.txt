@@ -80,3 +80,6 @@ https://takeuforward.org/strivers-a2z-dsa-course/strivers-a2z-dsa-course-sheet-2
 selection sort//bubble sort//insertion sort//merge sort//rec bubble sort //rec insertiikn szort //.quyick sort
 
 write a article of pkg-config
+
+own
+https://leetcode.com/problems/median-of-two-sorted-arrays/description/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions

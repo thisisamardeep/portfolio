@@ -18,11 +18,8 @@
 using namespace std;
 
 
-
-
 int main() {
-
-
-
+    float f;
+    auto i = static_cast<int>(f);
     return 0;
 }

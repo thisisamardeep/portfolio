@@ -35,6 +35,32 @@ checks and compiler will warn whether it sees any issues in conversion but there
 
 some rum time aspects to it.
 
-Suppose we have class Foo which we want to convert to float.
+First we see how static cast works for numerics.
+
+```cpp
+int main() {
+    float f;
+    auto i = static_cast<int>(f);
+    return 0;
+}
+
+```
+
+See the always reliable assembly  
+
+
+```cpp
+movss   xmm0, DWORD PTR [rbp-4]
+cvttss2si       eax, xmm0
+mov     DWORD PTR [rbp-8], eax
+```
+
+
+So we just convert from float to int using the conversion instruction cvttss2si and place it in eax.
+
+Then we move to rbp-8 location since we have 2 local variables ..  f and i ..so we compiler uses offsets to 
+
+track the location of these variables.
+
 
 
