@@ -58,12 +58,18 @@ public:
 
     }
 };
+struct S {
+    int i;
 
+    explicit operator float() const {
+        return i;
+    }
+};
 
 int main() {
-    int rt = 56;
-    float rt1 = 34.566;
-    std::cout << sizeof(rt) << std::endl;
-    std::cout << sizeof(rt1) << std::endl;
+
+
+    S s{1};
+    auto f = static_cast<float>(s);
     return 0;
 }

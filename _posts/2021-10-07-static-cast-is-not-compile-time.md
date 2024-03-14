@@ -46,7 +46,7 @@ int main() {
 
 ```
 
-See the always reliable assembly  
+See the always reliable assembly  code
 
 
 ```cpp
@@ -58,7 +58,7 @@ mov     DWORD PTR [rbp-8], eax
 
 So we just convert from float to int using the conversion instruction cvttss2si and place it in eax.
 
-Then we move to rbp-8 location since we have 2 local variables ..  f and i ..so we compiler uses offsets to 
+Then we move to rbp-8 location since we have 2 local variables ..  f and i ..so assembly uses offsets to 
 
 track the location of these variables.
 
