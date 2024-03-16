@@ -17,9 +17,17 @@
 
 using namespace std;
 
+struct S {
+    int i;
+    explicit operator float() const {
+        return i;
+    }
+};
+
 
 int main() {
-    float f;
-    auto i = static_cast<int>(f);
+
+    S s{1};
+    auto f = static_cast<float>(s);
     return 0;
 }

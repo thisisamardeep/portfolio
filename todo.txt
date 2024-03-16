@@ -82,4 +82,4 @@ selection sort//bubble sort//insertion sort//merge sort//rec bubble sort //rec i
 write a article of pkg-config
 
 own
-https://leetcode.com/problems/median-of-two-sorted-arrays/description/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions
+https://leetcode.com/pr131oblems/median-of-two-sorted-arrays/description/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions
