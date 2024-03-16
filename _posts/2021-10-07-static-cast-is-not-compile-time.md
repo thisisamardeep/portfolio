@@ -56,15 +56,17 @@ mov     DWORD PTR [rbp-8], eax
 ```
 
 
-So we just convert from float to int using the conversion instruction cvttss2si and place it in eax.
+So we just convert from float to int using the conversion instruction cvttss2si and
 
-Then we move to rbp-8 location since we have 2 local variables ..  f and i ..since assembly uses offsets to 
+place it in eax. Then we move to rbp-8 location since we have 2 local variables .. 
 
-track the location of these variables.
+f and i since assembly uses offsets to track the location of these variables.
 
-Also note static_cast operator cannot cast away the const, volatile, or __unaligned attributes.
+Also note static_cast operator cannot cast away the const, volatile,
 
-Now let us see how we can convert a user defined type to float using static cast.
+or __unaligned attributes. Now let us see how we can convert a user defined type
+
+to float using static cast.
 
 
 ```cpp
