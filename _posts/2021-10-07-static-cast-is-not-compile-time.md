@@ -86,15 +86,15 @@ auto f = static_cast<float>(t);
 See the assembly code below with each line explained
 
 
-
-lea     rax, [rbp-8]   --> This is a just a address copy in assembly terms
-mov     rdi, rax       --> This is a just a copy in assembly terms
+```cpp
+lea     rax, [rbp-8]  //This is a just a address copy in assembly terms
+mov     rdi, rax       // This is a just a copy in assembly terms
 call    Test::operator float() const  
---See a call happens and branches to new address in assembly terms.
+//See a call happens and branches to new address in assembly terms.
 movd    eax, xmm0
 mov     DWORD PTR [rbp-4], eax
 
-
+```
 This call happens at run time.So it is clear then static cast 
 
 can have run time implications. I have generated all assembly with optimizations 
