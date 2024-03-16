@@ -27,6 +27,12 @@ new type.But it may or may not change the value category of the expression. This
 
 clear from  the standard [static _cast](https://en.cppreference.com/w/cpp/language/static_cast).
 
+Also note that static_cast uses a combination of implicit and user defined
+
+conversions so it is always advisable to use it explicitly otherwise it 
+
+might not do what you want it to do.
+
 So if we use static cast we need to also take into account the value category of the 
 
 input and output expression. static_cast being a explicit cast performs some compile 
@@ -101,4 +107,6 @@ can have run time implications. I have generated all assembly with optimizations
 
 disabled.For a simple example like this compiler can optimize away 
 
-but in large production code bases with structs being passed around things can be very different.
+but in large production code bases with structs being passed around things can be 
+
+very different.
