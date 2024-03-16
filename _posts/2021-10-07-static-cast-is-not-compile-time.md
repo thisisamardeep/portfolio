@@ -27,11 +27,11 @@ new type.But it may or may not change the value category of the expression. This
 
 clear from  the standard [static _cast](https://en.cppreference.com/w/cpp/language/static_cast).
 
-So if we use static cast we need to also take into account the value category of the input 
+So if we use static cast we need to also take into account the value category of the 
 
-and output expression. static_cast being a explicit cast performs some compile time 
+input and output expression. static_cast being a explicit cast performs some compile 
 
-checks and compiler will warn whether it sees any issues in conversion but there are
+time checks and compiler will warn whether it sees any issues in conversion but there are
 
 some rum time aspects to it.
 
