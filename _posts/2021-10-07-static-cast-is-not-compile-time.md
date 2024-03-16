@@ -31,9 +31,9 @@ So if we use static cast we need to also take into account the value category of
 
 input and output expression. static_cast being a explicit cast performs some compile 
 
-time checks and compiler will warn whether it sees any issues in conversion but there are
+time checks and compiler will warn whether it sees any issues in conversion but there
 
-some rum time aspects to it.
+are some run  time aspects to it.
 
 First we see how static cast works for numerics.
 
@@ -89,7 +89,8 @@ See the assembly code below with each line explained
 
 lea     rax, [rbp-8]   --> This is a just a address copy in assembly terms
 mov     rdi, rax       --> This is a just a copy in assembly terms
-call    Test::operator float() const   --> See a call happens and branches to new address in assembly terms.
+call    Test::operator float() const  
+--See a call happens and branches to new address in assembly terms.
 movd    eax, xmm0
 mov     DWORD PTR [rbp-4], eax
 
