@@ -1,5 +1,5 @@
 ---
-title: Static cast does not know at compile time
+title: Static cast does not know everything at compile time
 published: true
 tags: [ c++ ]
 readtime: true
