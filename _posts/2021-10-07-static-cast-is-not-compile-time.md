@@ -94,8 +94,10 @@ movd    eax, xmm0
 mov     DWORD PTR [rbp-4], eax
 
 
-This call happens at run time.So it is clear then static cast can have run time implications.
+This call happens at run time.So it is clear then static cast 
 
-I have generated all assembly with optimizations disabled.For a simple example like this compiler can optimize away 
+can have run time implications. I have generated all assembly with optimizations 
+
+disabled.For a simple example like this compiler can optimize away 
 
 but in large production code bases with structs being passed around things can be very different.
