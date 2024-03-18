@@ -81,7 +81,7 @@ selection sort//bubble sort//insertion sort//merge sort//rec bubble sort //rec i
 
 write a article of pkg-config
 
-
+https://www.modernescpp.com/index.php/table-of-content/
 
 write artiucle on eepctions
 own

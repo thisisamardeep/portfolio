@@ -1,15 +1,10 @@
-//https://leetcode.com/contest/weekly-contest-386/problems/find-the-largest-area-of-square-inside-two-rectangles/
+
+
+//https://leetcode.com/pr131oblems/median-of-two-sorted-arrays/description/?envType=featured-list&envId=top-100-liked-questions?envType=featured-list&envId=top-100-liked-questions
 
 
 
 
-
-
-
-
-//take any 2 rectables find if interaction matches
-// take any 2 rectabgles find if lenght is not equal to breasth
-// tske any 2 rectables return area
 
 
 #include "iostream"
@@ -17,10 +12,11 @@
 
 using namespace std;
 
-struct S {
-    int i;
-    explicit operator float() const {
-        return i;
+
+class Solution {
+public:
+    double findMedianSortedArrays(vector<int> &nums1, vector<int> &nums2) {
+
     }
 };
 
