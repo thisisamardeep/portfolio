@@ -47,3 +47,10 @@ std::vector<int> second = {4, 5};
 second.begin(),  --> The begin iterator of the array to be inserted
 second.end())     --> The end iterator of the array to be inserted
 
+======================================
+
+
+Module operator 
+x 3  y 1
+
+	std::cout << "The remainder is: " << x % y << '\n'; 1 
