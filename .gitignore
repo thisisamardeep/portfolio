@@ -3,3 +3,4 @@ blog.cpp
 cmake-build-debug
 .idea
 venv
+.idea/
