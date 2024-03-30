@@ -47,8 +47,15 @@ How addition happens in iterators
 ================================================================================================
 
 do this article https://www.fluentcpp.com/2017/04/25/move-iterators/
+
+
 https://mbevin.wordpress.com/2012/11/20/move-semantics/
 https://leimao.github.io/blog/CPP-Effective-Move-Semantics/
+https://hackingcpp.com/cpp/lang/move_semantics.html
+
+https://iamsorush.com/posts/cpp-constexpr/
+https://www.learncpp.com/cpp-tutorial/constexpr-and-consteval-functions/#:~:text=According%20to%20the%20C%2B%2B%20standard,either%20compile%2Dtime%20or%20runtime.
+
 https://hackingcpp.com/cpp/lang/move_semantics.html
 https://andreasfertig.blog/2022/02/why-you-should-use-stdmove-only-rarely/
 https://herbsutter.com/2020/02/17/move-simply/
