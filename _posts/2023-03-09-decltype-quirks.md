@@ -1,7 +1,6 @@
 ---
 title: Decltype in Depth
 published: true
-share-description: "Decltype in Depth"
 tags: [ c++ ]
 readtime: true
 permalink: "/decltype-quirks"
