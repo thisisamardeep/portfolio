@@ -28,8 +28,9 @@ public:
                     if (nums[i] > curr - i) {
                         canpass = true;
                         break;
-                    } else if ((nums[i] = curr - i) && (curr == nums.size() - 1)) {
-
+                    } else if ((nums[i] >= curr - i) && (curr == nums.size() - 1)) {
+                        canpass = true;
+                        break;
                     }
 
                 }
