@@ -14,7 +14,7 @@ using namespace std;
 class Solution {
 public:
     bool canJump(vector<int> &nums) {
-        if (nums.size() == 1 && nums[0] == 0) {
+        if (nums.size() == 1) {
             return true;
         }
 
