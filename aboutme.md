@@ -24,4 +24,4 @@ My summarized interests and the general categories for my blog posts can be foun
 * Distributed systems
 * Backend Distributed Compute
 
-Please feel free to get in touch with me at lazyamarblog@gmail.com if you have a topic or question that is of interest or if you have any suggestions for future posts!
+Please feel free to get in touch with me if you have a topic or question that is of interest or if you have any suggestions for future posts!
