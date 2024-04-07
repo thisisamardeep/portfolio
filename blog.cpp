@@ -1,17 +1,7 @@
 #include "set"
 #include "iostream"
 #include "vector"
-#include "climits"
-#include "algorithm"
 
-
-//using namespace std;
-//
-//decltype(auto) f() {
-//    static int i = 0;
-//    std::cout << i << std::endl;
-//    return (i);
-//}
 
 class Foo {
 

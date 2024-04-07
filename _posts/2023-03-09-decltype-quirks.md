@@ -12,12 +12,11 @@ First Let me share  the cpp reference [DeclType](https://en.cppreference.com/w/c
 It is clear from reference that decltype has 2 syntaxes decltype ( entity ) and decltype ( expression ).
 And it has different rules it follows to deduce types.
 Having a good understanding of decltype in critical when you deal with super complex template code
-in libraries since we need to know how compiler is decuding the return types.
+in libraries since we need to know how compiler is deducing the return types.
 Consider a integer variable and let us try to use decltype on it.
-
-(i) is a expression. So it is treated differently and we get a reference to int.
-
+i is a variable of type int (i) is a expression. So it is treated differently and we get a reference to int.
 Similarty (obj) and obj are different.
+
 ```cpp
 
 #include "cassert"
