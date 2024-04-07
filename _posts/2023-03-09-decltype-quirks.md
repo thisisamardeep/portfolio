@@ -14,7 +14,7 @@ And it has different rules it follows to deduce types.
 Having a good understanding of decltype in critical when you deal with super complex template code
 in libraries since we need to know how compiler is deducing the return types.
 Consider a integer variable and let us try to use decltype on it.
-i is a variable of type int (i) is a expression. So it is treated differently and we get a reference to int.
+i is a variable of type int and (i) is a expression of type int so it is treated differently and we get a reference to int.
 Similarty (obj) and obj are different.
 
 ```cpp
@@ -75,7 +75,7 @@ auto TemplTestFun() {
 int main() {
 
     TemplTestFun();
-    TemplTestFun()++;  // This does not compile since TemplTestFun return int by value
+    TemplTestFun()++;  // This does not compile since TemplTestFun returns int by value
     TemplTestFun();
 
     return 0;
@@ -97,7 +97,7 @@ decltype(auto) TemplTestFun() {
 int main() {
 
     TemplTestFun();
-    TemplTestFun()++; // This does not compile since decltype(auto) deduces the type as int not int&
+    TemplTestFun()++; // This does not compile since decltype(auto) deduces the type as int and not int&
     TemplTestFun();
 
     return 0;
@@ -110,7 +110,7 @@ int main() {
 decltype(auto) TemplTestFun() {
     static int i = 0;
     std::cout << i << std::endl;
-    return (i);
+    return (i);  // (i) is a parentheszed expression 
 }
 
 int main() {
