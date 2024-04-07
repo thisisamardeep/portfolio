@@ -1,6 +1,6 @@
 ---
 title: Possible ways to find permutations
-published: true
+published: false
 share-description: ""
 tags: [ leetcode ]
 share-img: /img/rust.png

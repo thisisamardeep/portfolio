@@ -1,6 +1,6 @@
 ---
 title: Static cast does not know everything at compile time
-published: true
+published: false
 tags: [ c++ ]
 readtime: true
 permalink: "/static-cast-does-not--know-at-compile-time"

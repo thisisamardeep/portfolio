@@ -1,6 +1,6 @@
 ---
 title: Vexing Parse Cause and Scenarios
-published: true
+published: false
 share-description: ""
 tags: [ c++ ]
 readtime: true

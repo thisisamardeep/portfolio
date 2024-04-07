@@ -1,6 +1,6 @@
 ---
 title: Sort Colors
-published: true
+published: false
 tags: [ leetcode ]
 readtime: true
 permalink: "/sort-colors"
