@@ -149,7 +149,7 @@ int main() {
     return 0;
 }
 /**
- * TemplTestFun<int>(int)::i:
+ *  TemplTestFun<int>(int)::i:
         .zero   4
 decltype(auto) TemplTestFun<int>(int):
         push    rbp
@@ -217,7 +217,6 @@ main:
 .LC1:
         .long   0
         .long   1072693248
- * 
  */
 
 
@@ -239,6 +238,9 @@ template<> auto TemplTestFun<double>(double a) -> double & {
 ```
 It is clear from the compiler output that 2 TemplTestFun functions get created.
 One returns int & and other double & .
+At the assembly level there is no difference between int and int &.It only differs at c++ level.
+At the asembly level for reference it returns the off set see this line
+mov     eax, OFFSET FLAT:TemplTestFun<int>(int)::i.So technically move just copies the offset value to eax.
 This looks trivial here but when you have complex template functions and types moving all
 around it becomes critical to know what decltype does and when.
 
