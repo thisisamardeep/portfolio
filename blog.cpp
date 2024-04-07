@@ -7,17 +7,28 @@ class Foo {
 
 };
 
-#include "cassert"
+int &TestFun() {
+    static int i = 0;
+    std::cout << i << std::endl;
+    return i;
+}
+
+template<typename T>
+auto TemplTestFun(T a) -> decltype(auto) {
+    static T i = 0;
+    std::cout << i << std::endl;
+    return (i);
+}
 
 int main() {
 
-    int i = 67;
-    assert((std::is_same_v<decltype(i), int>));
-    assert((std::is_same_v<decltype((i)), int &>));
+    TemplTestFun(2);
+    TemplTestFun(2)++;
+    TemplTestFun(2);
 
-    Foo obj{};
-    assert((std::is_same_v<decltype(obj), Foo>));
-    assert((std::is_same_v<decltype((obj)), Foo &>));
+    TemplTestFun(2.4);
+    TemplTestFun(2.4)++;
+    TemplTestFun(2.4);
 
     return 0;
 }

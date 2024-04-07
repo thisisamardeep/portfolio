@@ -105,3 +105,7 @@ https://www.youtube.com/watch?v=E5L66fkNlpE
 freind function write article
 ==============================
 
+/usr/bin/clang++   -Xclang -ast-print -std=gnu++17  -fsyntax-only  /home/amardeep/Desktop/contribute/myeigen/bookexamples/main.cpp
+
+
+/usr/bin/clang++   -Xclang -ast-print -std=gnu++17  -fsyntax-only /home/amardeep/Desktop/mysources/portfolio/blog.cpp
