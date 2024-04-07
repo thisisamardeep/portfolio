@@ -104,7 +104,7 @@ int main() {
 }
 
 ```
-
+Now while returning we replace i with (i) and now the deduced type is int &.
 
 ```cpp
 decltype(auto) TemplTestFun() {
