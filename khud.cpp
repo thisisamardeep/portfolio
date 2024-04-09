@@ -14,52 +14,24 @@ using namespace std;
 class Solution {
 public:
     bool canJump(vector<int> &nums) {
-        if (nums.size() == 1) {
-            return true;
-        }
-
-        int curr = 0;
-        while (curr <= nums.size() - 1) {
-
-            if (nums[curr] == 0) {
-                bool canpass = false;
-
-                for (int i = 0; i < curr; i++) {
-                    if (nums[i] > curr - i) {
-                        canpass = true;
-                        break;
-                    } else if ((nums[i] >= curr - i) && (curr == nums.size() - 1)) {
-                        canpass = true;
-                        break;
-                    }
-
-                }
-
-                if (!canpass) {
-                    break;
-                } else {
-                    curr++;
-                }
-
+        bool res = true;
+        int reachable = 0;
+        for (int i = 0; i < nums.size(); i++) {
+            if (reachable < i) {
+                res = false;
+                break;
             } else {
-                curr++;
-            }
+                reachable = max(reachable, i + nums[i]);
+            };
         }
-
-        if (curr == nums.size()) {
-            return true;
-        } else {
-            return false;
-        }
-
-
+        return res;
     }
 };
 
 int main() {
     Solution df{};
-//    vector<int> nums{2, 3, 1, 1, 4};
-    vector<int> nums{2, 0, 0};
+    vector<int> nums{3, 2, 1, 0, 4};
+//    vector<int> nums{2, 0, 0};
 
     bool res = df.canJump(nums);
 
