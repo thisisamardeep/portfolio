@@ -30,6 +30,7 @@ public:
     bool canJump(vector<int> &nums) {
         int countofways = 0;
         myrec(nums, 0, countofways);
+        std::cout << countofways << std::endl;
         if (countofways == 0) {
             return false;
         } else {
