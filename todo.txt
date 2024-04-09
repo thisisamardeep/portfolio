@@ -109,3 +109,30 @@ freind function write article
 
 
 /usr/bin/clang++   -Xclang -ast-print -std=gnu++17  -fsyntax-only /home/amardeep/Desktop/mysources/portfolio/blog.cpp
+
+
+=======================to do before going back to eigen===========
+
+https://www.youtube.com/watch?v=iLiDezv_Frk&t=378s
+https://www.youtube.com/watch?v=gpsz8sc6mNU
+https://www.youtube.com/watch?v=OyNG4qiWnmU
+https://www.youtube.com/playlist?list=PLk6CEY9XxSICITtoUG_mJIBShyIYpeaoi
+https://www.sandordargo.com/blog/2020/04/01/private-inheritanc-vs-composition
+https://www.sandordargo.com/blog/2020/12/23/virtual-inheritance
+https://www.sandordargo.com/blog/2021/01/27/virtual-functions-with-default-arguments
+https://www.youtube.com/watch?v=jBnIMEb2GhA&t=529s
+https://www.youtube.com/watch?v=PSxo85L2lC0
+https://www.youtube.com/watch?v=PSxo85L2lC0
+https://www.youtube.com/watch?v=xpomlTd41hg
+https://friendlyuser.github.io/posts/tech/2023/C++_Virtual_Functions_and_Polymorphism_A_Comprehensive_Guide/
+https://www.youtube.com/watch?v=gVGtNFg4ay0
+https://www.youtube.com/watch?v=7-nHdQjSRe0&list=PLAe2BCBg8rkIicrIjA6LyjiMn8GFaS6pJ&index=8&t=2s
+https://www.youtube.com/watch?v=z5YfyOy_Vd4
+https://leimao.github.io/blog/CPP-Virtual-Table/
+https://leimao.github.io/blog/CPP-Polymorphisms/#Runtime-Polymorphism
+==================================================================================================
+
+
+
+
+
