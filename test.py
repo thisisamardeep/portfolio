@@ -3,32 +3,15 @@ from typing import List
 
 class Solution:
     def canJump(self, nums: List[int]) -> bool:
-        if len(nums) == 1:
-            return True
-        i = 0
-        while i < len(nums):
-            canPass = False
-            if nums[i] == 0:
-                if i == len(nums) - 1:
-                    canPass = True
-                else:
-                    j = 0
-                    while j < i:
-                        if i - j < nums[j]:
-                            canPass = True
-                            break
-                        j = j + 1
-                if canPass:
-                    i = i + 1
-                else:
-                    break
+        res = True
+        reachable = 0
+        for i in range(0, len(nums), 1):
+            if reachable < i:
+                res = False
+                break
             else:
-                i = i + 1
-
-        if i == len(nums):
-            return True
-        else:
-            return False
+                reachable = max(reachable, i + nums[i])
+        return res
 
 
 sd = Solution()
