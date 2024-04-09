@@ -130,6 +130,9 @@ https://www.youtube.com/watch?v=7-nHdQjSRe0&list=PLAe2BCBg8rkIicrIjA6LyjiMn8GFaS
 https://www.youtube.com/watch?v=z5YfyOy_Vd4
 https://leimao.github.io/blog/CPP-Virtual-Table/
 https://leimao.github.io/blog/CPP-Polymorphisms/#Runtime-Polymorphism
+https://blog.feabhas.com/2010/05/polymorphism-in-c/
+https://www.codeguru.com/cplusplus/polymorphism-and-template-based-designs/#page-1
+https://www.geeksforgeeks.org/virtual-function-cpp/
 ==================================================================================================
 
 
