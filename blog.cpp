@@ -1,34 +1,22 @@
-#include "set"
-#include "iostream"
+//#include "set"
+//#include "iostream"
 #include "vector"
 
-
-class Foo {
-
+class Complex {
+public:
+    int rt = 56;
+public:
+    Complex() = default;
 };
 
-int &TestFun() {
-    static int i = 0;
-    std::cout << i << std::endl;
-    return i;
-}
-
-template<typename T>
-auto TemplTestFun(T a) -> decltype(auto) {
-    static T i = 0;
-    std::cout << i << std::endl;
-    return (i);
-}
 
 int main() {
+    std::vector<int> gg{67, 777};
+//    int x1{1}, y1{2};
+    float x2{1.0}, y2{1.0};
+//    Complex x4{3, 5}, y3{3, 4};
+    Complex x4{6};
 
-    TemplTestFun(2);
-    TemplTestFun(2)++;
-    TemplTestFun(2);
-
-    TemplTestFun(2.4);
-    TemplTestFun(2.4)++;
-    TemplTestFun(2.4);
 
     return 0;
 }

@@ -110,7 +110,8 @@ freind function write article
 
 /usr/bin/clang++   -Xclang -ast-print -std=gnu++17  -fsyntax-only /home/amardeep/Desktop/mysources/portfolio/blog.cpp
 
-
+/usr/bin/g++   -g -std=gnu++17  -fdump-lang-all /home/amardeep/Desktop/mysources/portfolio/blog.cpp
+/usr/bin/g++   -g -std=gnu++17  -fdump-lang-all /home/amardeep/Desktop/contribute/untitled13/main.cpp working
 =======================to do before going back to eigen===========
 
 https://www.youtube.com/watch?v=iLiDezv_Frk&t=378s
