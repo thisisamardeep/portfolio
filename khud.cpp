@@ -40,8 +40,7 @@ public:
         temp.push_back(0);
         int countofways = 0;
         myrec(nums, 0, countofways, finalres, temp);
-        std::cout << countofways << std::endl;
-        if (countofways == 0) {
+        if (finalres.size() == 0) {
             return false;
         } else {
             return true;
