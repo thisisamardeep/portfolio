@@ -1,6 +1,6 @@
 ---
 title: Majority Element in a Array
-published: true
+published: false
 tags: [ leetcode ]
 readtime: true
 permalink: "/majority-element"
