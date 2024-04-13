@@ -3,6 +3,7 @@ project(blog)
 
 set(CMAKE_CXX_STANDARD 17)
 SET(CMAKE_CXX_FLAGS "-O0 -fno-elide-constructors")
+#SET(CMAKE_CXX_FLAGS "-O0 -fno-elide-constructors -ggdb3")
 #SET(CMAKE_CXX_FLAGS "-O0")
 set(CMAKE_VERBOSE_MAKEFILE ON)
 SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)

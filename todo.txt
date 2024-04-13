@@ -112,11 +112,14 @@ freind function write article
 
 /usr/bin/g++   -g -std=gnu++17  -fdump-lang-all /home/amardeep/Desktop/mysources/portfolio/blog.cpp
 /usr/bin/g++   -g -std=gnu++17  -fdump-lang-all /home/amardeep/Desktop/contribute/untitled13/main.cpp working
+
+/usr/bin/g++  -g -std=gnu++17  -fdump-lang-all /home/amardeep/Desktop/mysources/portfolio/blog.cpp
+
 =======================to do before going back to eigen===========
 
-https://www.youtube.com/watch?v=iLiDezv_Frk&t=378s
-https://www.youtube.com/watch?v=gpsz8sc6mNU
-https://www.youtube.com/watch?v=OyNG4qiWnmU
+https://www.youtube.com/watch?v=iLiDezv_Frk&t=378s done
+https://www.youtube.com/watch?v=gpsz8sc6mNU for threading not needed
+https://www.youtube.com/watch?v=OyNG4qiWnmU for threading not needed
 https://www.youtube.com/playlist?list=PLk6CEY9XxSICITtoUG_mJIBShyIYpeaoi
 https://www.sandordargo.com/blog/2020/04/01/private-inheritanc-vs-composition
 https://www.sandordargo.com/blog/2020/12/23/virtual-inheritance
@@ -138,5 +141,8 @@ https://www.geeksforgeeks.org/virtual-function-cpp/
 
 
 
+clang -Xclang -fdump-record-layouts <blah> dumps this kind of information (and -Xclang -fno-color-diagnostics makes it more machine-processable).
 
 
+
+/usr/bin/clang++   -Xclang -fdump-record-layouts -std=gnu++17 /home/amardeep/Desktop/mysources/portfolio/blog.cpp
