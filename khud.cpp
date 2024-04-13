@@ -15,7 +15,6 @@ public:
         if (nums.size() == 1) {
             return nums[0];
         }
-
         int majElement = 0;
         int majElementCount = 0;
         map<int, int> mymap{};
