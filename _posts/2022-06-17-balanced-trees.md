@@ -8,7 +8,7 @@ share-description: "Balanced Trees"
 comments: false
 ---
 
-We will solve  the  problem [Balanced Binary Tree(https://leetcode.com/problems/balanced-binary-tree/description/)  using 3 different ways .
+We will solve  the  problem [Balanced Binary Tree](https://leetcode.com/problems/balanced-binary-tree/description/)  using 3 different ways .
 
 Also we will solve 2 related problems.If a tree is not balanced, make it balanced by removing the 
 
