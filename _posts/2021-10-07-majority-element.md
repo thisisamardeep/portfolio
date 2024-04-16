@@ -69,3 +69,38 @@ class Solution:
 
 
 ```
+
+
+java solution
+
+
+```java
+
+class Solution {
+    public int majorityElement(int[] nums) {
+        if (nums.length == 1) {
+            return nums[0];
+        }
+        int resElement = 0;
+        int resElementCount = 0;
+        HashMap<Integer, Integer> temp = new HashMap<Integer, Integer>();
+        for (int i = 0; i < nums.length; i++) {
+            if (temp.containsKey(nums[i])) {
+                Integer currval = temp.get(nums[i]);
+                temp.put(nums[i], currval + 1);
+                if (resElementCount < temp.get(nums[i])) {
+                    resElement = nums[i];
+                    resElementCount = temp.get(nums[i]);
+                }
+            } else {
+                temp.put(nums[i], 1);
+            }
+        }
+        return resElement;
+    }
+
+    ;
+}
+
+
+```
