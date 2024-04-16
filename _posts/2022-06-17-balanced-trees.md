@@ -15,3 +15,5 @@ Also we will solve 2 related problems.If a tree is not balanced, make it balance
 least number of nodes needed to be removed.If a tree is not balanced ,make is balanced by
 
 removing the number of nodes needed to be removed and then pull the sum over to its parent.
+
+First we just try to find the height of a give binary tree.
