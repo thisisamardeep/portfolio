@@ -1,5 +1,5 @@
 ---
-title: All types of tree traversals BFS, DFS (IN ORDER PRE ORDER POST ORDER)
+title: All types of tree traversals 
 published: true
 tags: [ leetcode ]
 readtime: true
