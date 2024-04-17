@@ -21,3 +21,6 @@ Height of a node -->
 
 number of edges on the longest path from the node to a leaf.
 A leaf node will have a height of 0
+
+
+Height of a tree --> Height of the root node

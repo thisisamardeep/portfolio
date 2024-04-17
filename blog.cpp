@@ -1,28 +1,48 @@
 //#include "set"
 #include "iostream"
+#include "vector"
 
 using namespace std;
 
+/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+ *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+ * };
+ */
+struct TreeNode {
+    int val;
+    TreeNode *left;
+    TreeNode *right;
+
+    TreeNode() : val(0), left(nullptr), right(nullptr) {}
+
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+
+    TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
+};
+
 class Solution {
 public:
-    string multiply(string num1, string num2) {
-
-        // take first string as the lower string and second string as
-        // the upper string
-
-        // first we  run loop from back over the lower string
-
-
+    int maxDepth(TreeNode *root) {
 
     }
 };
 
 int main() {
-    int ty = 67;
-    int t5 = 4555;
-    int &yyy = ty;
-//    yyy = t5;
-//    &yyy = &t5;
+    TreeNode *root = new TreeNode{3};
+
+    root->left = new TreeNode{9};
+    root->right = new TreeNode{20};
+
+    root->right->left = new TreeNode{15};
+    root->right->right = new TreeNode{7};
+
 
     return 0;
 }
