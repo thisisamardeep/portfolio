@@ -3,16 +3,19 @@ title: All types of tree traversals
 published: true
 tags: [ leetcode ]
 readtime: true
-permalink: "/tree-traversals-BFS-DFS-all-three"
+permalink: "/tree-traversals-bfs-dfs-all-three"
 share-description: Tree Traversals
 comments: false
 ---
 
+We will first do BF Traversal in following ways
 
-eee
+Left to Right (Top to Bottom)
 
+Right to Left (Top to Bottom)
 
-rrr
+Left to Right (Bottom to Top)
 
+Left to Right (Bottom to Top)
 
 ![amar33](img/tree.png)  
