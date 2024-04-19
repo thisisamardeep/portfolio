@@ -1,6 +1,6 @@
 ---
 title: All types of tree traversals 
-published: true
+published: false
 tags: [ leetcode ]
 readtime: true
 permalink: "/tree-traversals-bfs-dfs-all-three"
