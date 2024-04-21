@@ -1,16 +1,8 @@
----
-title: queues in c++
-published: true
-tags: [ leetcode ]
-share-img: /img/rust.png
-readtime: true
-permalink: "/queues-in-cpp"
-share-description: "queues in c++"
-comments: false
----
-
 
 Queue is First in First out. Queue elements are pushed in the back of the queue an Queue is First in First out Queue elements are pushed in the back of the queue an
+
+
+
 
 
 
