@@ -9,13 +9,10 @@ share-description: "queues in c++"
 comments: false
 ---
 
-
-Queue is First in First out. Queue elements are pushed in the back of the 
-queue an rttttth tht tttttttttttttttttttttttttttttttttttt tyyyb tyuu rtryre 
-rrrryeeytreeee
-Queue is First in First out Queue elements are pushed in the back of the queue an
-
-
+Queue is First in First out. Queue elements are pushed in the back of the queue
+and come out from front of the queue. Removal of elements is from the Front
+Adding of elements is from the back of the Queue. cpp we can access elements
+from the back of the Queue or front of the Queue.
 
 ```cpp
 #include "vector"
