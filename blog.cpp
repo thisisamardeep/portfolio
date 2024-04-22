@@ -1,21 +1,13 @@
 //#include "set"
-#include "iostream"
-#include "vector"
 
+
+#include "queue"
 
 int main() {
-//    Coord rt{23, 45};
-//    Coord rt1{232, 45};
-//    -rt;
-    int tyy = 67;
-//    TreeNode *root = new TreeNode{3};
-//
-//    root->left = new TreeNode{9};
-//    root->right = new TreeNode{20};
-//
-//    root->right->left = new TreeNode{15};
-//    root->right->right = new TreeNode{7};
-
-
+    std::queue<int> numbers;
+    numbers.push(45);
+    auto front_of_queue = numbers.front();
+    auto back_of_queue = numbers.back();
+    numbers.pop();// Removes elements from front of the queue
     return 0;
 }
