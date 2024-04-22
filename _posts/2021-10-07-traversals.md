@@ -1,6 +1,6 @@
 ---
 title: All types of tree traversals 
-published: false
+published: true
 tags: [ leetcode ]
 readtime: true
 permalink: "/tree-traversals-bfs-dfs-all-three"
@@ -74,3 +74,4 @@ void levelOrder(std::vector<int> &res, Node *&root) {
 }
 ```
 
+Now we do a pre order traversal of a Binary Tree.
