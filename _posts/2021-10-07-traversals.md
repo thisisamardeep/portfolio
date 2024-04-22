@@ -23,11 +23,6 @@ Right to Left (Top to Bottom)
 
 Left to Right (Top to Bottom) Using Queues
 
-
-
-
-
-
 ```cpp
 #include "queue"
 void levelOrder(std::vector<int> &res, Node *&root) {
@@ -47,13 +42,7 @@ void levelOrder(std::vector<int> &res, Node *&root) {
 }
 ```
 
-
 Right to Left (Top to Bottom) Using Queues
-
-
-
-
-
 
 ```cpp
 #include "queue"
@@ -64,12 +53,13 @@ void levelOrder(std::vector<int> &res, Node *&root) {
         Node *frontElement = myqueu.front();
         myqueu.pop();
         res.push_back(frontElement->data);
-        if (frontElement->left != nullptr) {
-            myqueu.push(frontElement->left);
-        }
         if (frontElement->right != nullptr) {
             myqueu.push(frontElement->right);
         }
+        if (frontElement->left != nullptr) {
+            myqueu.push(frontElement->left);
+        }
+
     }
 }
 ```
