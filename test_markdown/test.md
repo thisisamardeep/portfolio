@@ -1,13 +1,3 @@
----
-title: All types of tree traversals 
-published: false
-tags: [ leetcode ]
-readtime: true
-permalink: "/tree-traversals-bfs-dfs-all-three"
-share-description: Tree Traversals
-comments: false
----
-
 
 
 
@@ -19,7 +9,7 @@ Right to Left (Top to Bottom)
 
 
 
-![amar33](img/tree.png)
+![amar33](tree.png)
 
 Left to Right (Top to Bottom) Using Queues
 
@@ -73,4 +63,3 @@ void levelOrder(std::vector<int> &res, Node *&root) {
     }
 }
 ```
-
