@@ -63,3 +63,7 @@ void levelOrder(std::vector<int> &res, Node *&root) {
     }
 }
 ```
+
+Pre Order Traversal
+
+

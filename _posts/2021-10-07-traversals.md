@@ -65,3 +65,69 @@ void levelOrder(std::vector<int> &res, Node *&root) {
 ```
 
 Now we do a pre order traversal of a Binary Tree.
+
+
+```cpp
+class Solution {
+public:
+    void preOrder(Node *&node, vector<int> &result) {
+        if (node == nullptr) {
+            return;
+        }
+        result.push_back(node->data);
+        if (node->left != nullptr) {
+            preOrder(node->left, result);
+        }
+        if (node->right != nullptr) {
+            preOrder(node->right, result);
+        }
+    }
+};
+```
+
+
+Now we do a in order traversal of a Binary Tree.
+
+
+```cpp
+class Solution {
+public:
+    void preOrder(Node *&node, vector<int> &result) {
+        if (node == nullptr) {
+            return;
+        }
+        if (node->left != nullptr) {
+            preOrder(node->left, result);
+        }
+                result.push_back(node->data);
+
+        if (node->right != nullptr) {
+            preOrder(node->right, result);
+        }
+    }
+};
+```
+
+
+Now we do a post order traversal of a Binary Tree.
+
+
+```cpp
+class Solution {
+public:
+    void preOrder(Node *&node, vector<int> &result) {
+        if (node == nullptr) {
+            return;
+        }
+        if (node->left != nullptr) {
+            preOrder(node->left, result);
+        }
+
+        if (node->right != nullptr) {
+            preOrder(node->right, result);
+        }
+                        result.push_back(node->data);
+
+    }
+};
+```
