@@ -88,21 +88,17 @@ int main() {
 
 Find element in a map by key
 
-
+This method uses count
 ```cpp
-
 #include <iostream>
 #include <map>
-
 int main ()
 {
   std::map<char,int> mymap;
   char c;
-
   mymap ['a']=101;
   mymap ['c']=202;
   mymap ['f']=303;
-
   for (c='a'; c<'h'; c++)
   {
     std::cout << c;
@@ -111,11 +107,35 @@ int main ()
     else 
       std::cout << " is not an element of mymap.\n";
   }
-
   return 0;
 }
+```
+
+There is another method using find
+
+```cpp
+#include <iostream>
+#include <map>
+int main ()
+{
+    std::map<char, int> mymap;
+    std::map<char, int>::iterator it;
 
 
+    mymap['a'] = 50;
+    mymap['b'] = 100;
+    mymap['c'] = 150;
+    mymap['d'] = 200;
 
+    it = mymap.find('b');
 
+    if (it != mymap.end()) {
+        std::cout << "elements in mymap:" << '\n';
+
+    } else {
+        std::cout << "elements not in mymap:" << '\n';
+
+    }
+  return 0;
+}
 ```

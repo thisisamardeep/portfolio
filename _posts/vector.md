@@ -17,7 +17,7 @@ vector<int> test = {1, 2, 3,4,5, 6};
     std::reverse(test.begin(), test.end());
 
 result {6,5,4,3,2,1}
-
+This reverses the vector in place.It does not return anything.
 =======================================================
 
 Reverse vector in part from front
