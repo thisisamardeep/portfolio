@@ -45,3 +45,6 @@ cpp also gives the result as integer but it is not floor division.
 It just truncates the fractional part
     std::cout << 5 / 2 << std::endl; result 2
     std::cout << -5 / 2 << std::endl; wresul 2
+
+=============================
+

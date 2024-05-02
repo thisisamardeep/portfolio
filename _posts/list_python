@@ -1,0 +1,3 @@
+create a python list of size 100 and each element should have value 4
+
+test=[4]*100
