@@ -53,3 +53,9 @@ Module operator
 x 3  y 1
 
 	std::cout << "The remainder is: " << x % y << '\n'; 1 
+================================================
+create a vector of size n with all values as 10
+
+vector<int> vect(n, 10); 
+
+==========================
