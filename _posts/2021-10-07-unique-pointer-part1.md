@@ -8,9 +8,17 @@ share-description: Unique Pointer
 comments: false
 ---
 
-In this series we will try to implement some of the proporties of unique 
+In this series we will try to implement some of the properties of unique 
 
-pointer.
+pointer.In this part part 1 we will implement the below 2 properties of 
+
+unique pointers.
+
+1) When the pointer goes out of scope it calls the destructor
+
+2) We can use arrow operator and deferencing operator on the object of
+
+   unique pointer.
 "static" keyword has many meanings in the context of c++ compiler.You can mark a
 
 variable as private, function call spanning,per call data.Just because static_cast 
