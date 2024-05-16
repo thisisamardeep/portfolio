@@ -1,31 +1,30 @@
-from typing import List
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 class Solution:
-    def maximumPopulation(self, logs: List[List[int]]) -> int:
-        pop_array = [0] * 2051
-        max_year = 0
-        max_pop = 0
-        for i in range(0, len(logs), 1):
-            for j in range(logs[i][0], logs[i][1], 1):
-                pop_array[j] = pop_array[j] + 1
-                if max_pop < pop_array[logs[i][0]]:
-                    max_year = logs[i][0]
-                    max_pop = pop_array[logs[i][0]]
-                elif max_pop == pop_array[logs[i][0]]:
-                    if max_year > logs[i][0]:
-                        max_year = logs[i][0]
-                else:
-                    pass
+    def minDepth(self, root: Optional[TreeNode]) -> int:
+        if not root:  # root is none(null)
+            return 0
+        q = [[root, 1]]  # start with root and depth 1
 
-        return max_year
-
-
-er = Solution()
-e4 = [[1993, 1999], [2000, 2010]]
-eeee = er.maximumPopulation(e4)
-
-e222 = [4] * 3
-e222 = [4] * 3
-
-print(eeee)
+        mn = 10 ** 9
+        while len(q) > 0:
+            # x,d=q.pop(0)# for bfs
+            x, d = q.pop(-1)  # for dfs
+            c = 0
+            if x.left:
+                q.append([x.left, d + 1])
+                c += 1
+            if x.right:
+                q.append([x.right, d + 1])
+                c += 1
+            if c == 0:  # if left and right children are none .leaf nodes
+                mn = min(mn, d)  # at leaf compare distance from root.update minimum
+        return mn

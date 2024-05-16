@@ -1,12 +1,11 @@
 ---
 title: pair in c++
 published: false
-share-description: ""
 tags: [ leetcode ]
 share-img: /img/rust.png
 readtime: true
-permalink: "/sets-in-cpp"
-share-description: "sets in c++"
+permalink: "/pair-in-cpp"
+share-description: "pair in c++"
 comments: false
 ---
 

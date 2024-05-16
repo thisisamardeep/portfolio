@@ -48,3 +48,7 @@ It just truncates the fractional part
 
 =============================
 
+
+
+== is tow objects have the same value
+is --references refer to the same object
