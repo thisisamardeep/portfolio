@@ -1,10 +1,10 @@
 ---
-title: Static cast does not know everything at compile time
+title: Unique Pointer Part1 
 published: true
 tags: [ c++ ]
 readtime: true
-permalink: "/static-cast-does-not--know-at-compile-time"
-share-description: Static cast 
+permalink: "/unique-pointer-part-1"
+share-description: Unique Pointer 
 comments: false
 ---
 
