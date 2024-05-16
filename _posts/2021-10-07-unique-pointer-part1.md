@@ -8,7 +8,9 @@ share-description: Unique Pointer
 comments: false
 ---
 
+In this series we will try to implement some of the proporties of unique 
 
+pointer.
 "static" keyword has many meanings in the context of c++ compiler.You can mark a
 
 variable as private, function call spanning,per call data.Just because static_cast 
