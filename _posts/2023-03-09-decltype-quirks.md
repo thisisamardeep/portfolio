@@ -14,7 +14,9 @@ It is clear from reference that decltype has 2 syntaxes decltype ( entity ) and
 decltype ( expression ).
 And it has different rules it follows to deduce types.
 Having a good understanding of decltype in critical when you deal with super
-complex template code
+complex template code.Think of move semantics and move assignment operators 
+moving objects between calls ,specifying the return type of move constructor
+and move assignment operators becomes critical.
 in libraries since we need to know how compiler is deducing the return types.
 Consider a integer variable and let us try to use decltype on it.
 i is a variable of type int and (i) is a expression of type int so it is treated
