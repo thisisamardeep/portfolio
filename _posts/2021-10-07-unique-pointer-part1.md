@@ -4,7 +4,7 @@ published: true
 tags: [ c++ ]
 readtime: true
 permalink: "/unique-pointer-part-1"
-share-description: Unique Pointer 
+share-description: Custom Unique Pointer 
 comments: false
 ---
 
