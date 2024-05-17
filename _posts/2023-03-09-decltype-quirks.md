@@ -120,6 +120,11 @@ int main() {
 
 ```
 
+
+Consider a integer variable and let us try to use decltype on it.
+i is a variable of type int and (i) is a expression of type int so it is 
+treated differently and we get a reference to int. Similarly (obj) and obj 
+are different.
 ```cpp
 
 #include
