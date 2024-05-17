@@ -127,20 +127,23 @@ treated differently and we get a reference to int. Similarly (obj) and obj
 are different.
 ```cpp
 
-#include "cassert"
+
+class Foo {
+    
+};
+
 int main() {
 
-int i = 67;
-assert((std::is_same_v<decltype(i), int>));
-assert((std::is_same_v<decltype((i)), int &>));
+    int i = 67;
+    static_assert((std::is_same_v<decltype(i), int>));
+    static_assert((std::is_same_v<decltype((i)), int &>));
 
-Foo obj{};
-assert((std::is_same_v<decltype(obj), Foo>));
-assert((std::is_same_v<decltype((obj)), Foo &>));
+    Foo obj{};
+    static_assert((std::is_same_v<decltype(obj), Foo>));
+    static_assert((std::is_same_v<decltype((obj)), Foo &>));
 
-return 0;
+    return 0;
 }
-
 ```
 
 decltype(auto) can be used to "perfect forward" a return value.
