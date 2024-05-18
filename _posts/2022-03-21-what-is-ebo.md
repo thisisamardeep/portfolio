@@ -115,4 +115,6 @@ default delete or user supplied deleter function.See the link [MSVC STL](https:/
 
 The default deleter does not add any extra space when it is used.If you are 
 
-a nerd you can look into this actual memory header file. [HEADER MSVC](https://github.com/microsoft/STL/blob/main/stl/inc/memory)
+a nerd.. which i am not you can look into this actual memory header file. 
+
+[HEADER MSVC](https://github.com/microsoft/STL/blob/main/stl/inc/memory)
