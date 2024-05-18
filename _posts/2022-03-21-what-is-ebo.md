@@ -113,4 +113,6 @@ See the unique pointer implementation .The unique pointer uses either the
 
 default delete or user supplied deleter function.See the link [MSVC STL](https://learn.microsoft.com/en-us/cpp/standard-library/unique-ptr-class?view=msvc-170)
 
-The default deleter does not add any extra space when it is used.
+The default deleter does not add any extra space when it is used.If you are 
+
+a nerd you can look into this actual memory header file. [HEADER MSVC](https://github.com/microsoft/STL/blob/main/stl/inc/memory)
