@@ -1,14 +1,14 @@
 ---
-title: Invariants in C++
+title: Empty base optimization  C++
 published: true
-tags: [ leetcode ]
+tags: [ c++ ]
 readtime: true
-permalink: "/invariants-and-their-importance"
-share-description: "Invariants in C++"
+permalink: "/empty-base-class-optimization"
+share-description: "Empty base optimization in  C++"
 comments: false
 ---
 
-Whenever we write good code or try to write good code in c++ invariants play 
+First Let me share the cpp reference [EBO](https://en.cppreference.com/w/cpp/language/ebo) .
 
 a important role in ensuring that our ours are what they are supposed to be.
 
