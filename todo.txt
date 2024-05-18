@@ -148,4 +148,4 @@ clang -Xclang -fdump-record-layouts <blah> dumps this kind of information (and -
 /usr/bin/clang++   -Xclang -fdump-record-layouts -std=gnu++17 /home/amardeep/Desktop/mysources/portfolio/blog.cpp
 
 
-write blog about decltype and cover examples from cpp reference.
+wrinte blog about small use case of empty base class optimization.
