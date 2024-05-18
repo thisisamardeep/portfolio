@@ -1,6 +1,6 @@
 ---
 title: Empty base optimization  C++
-published: true
+published: false
 tags: [ c++ ]
 readtime: true
 permalink: "/empty-base-class-optimization"
