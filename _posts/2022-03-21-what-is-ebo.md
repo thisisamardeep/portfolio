@@ -78,4 +78,39 @@ int main() {
 ```
 Now instead of using Base as a data member we use it a a public base class.
 
+```cpp
 
+class Base_is_a_version1 {
+    int i;
+};
+
+class Derived_is_a_version1 : public Base_is_a_version1 {
+    char c;
+};
+
+class Base_is_a_version2 {
+};
+
+class Derived_is_a_version2 : public Base_is_a_version2 {
+    char c;
+};
+
+int main() {
+    static_assert(sizeof(Derived_is_a_version1) == 5);
+    // Here we pay only what we use.
+    // our class has only 1 char so size is 1.
+    static_assert(sizeof(Derived_is_a_version2) == 1);
+    return 0;
+}
+
+```
+
+This a a toy example and might look not much beneficial but we have 1000's 
+
+of instances then  this gets added up.Now let us look at some real life uses.
+
+See the unique pointer implementation .The unique pointer uses either the 
+
+default delete or user supplied deleter function.See the link [MSVC STL](https://learn.microsoft.com/en-us/cpp/standard-library/unique-ptr-class?view=msvc-170)
+
+The default deleter does not add any extra space when it is used.
