@@ -10,45 +10,72 @@ comments: false
 
 First Let me share the cpp reference [EBO](https://en.cppreference.com/w/cpp/language/ebo) .
 
-a important role in ensuring that our ours are what they are supposed to be.
+Ebo is only useful when you have a class which may sometimes have 0 or more than
 
-By design c++ does not have invariant keyword but almost always when we write
+zero members ie Like base classes passed during template instantiation in 
 
-libraries we need to ensure that after we construct a object it holds 
+libraries.As per the principle of c++ policy based design we must pay only for
 
-certian conditions.It can also hold after a function which may or may not 
+what we use.So if we use a data member which does not have any members and may
 
-change the object has finished or after a move constructor.There are also cases
+be sometimes empty it is usually better to use it as a base class and 
 
-where we dont want to call our invariants like suppose we have a private 
+convert from has-a relationship to is-a relationship (provided we dont break 
 
-member function which can change the interface in a way in which other 
+or expose any other functionality or break abi or api).So when we say EBO it 
 
-public members cannot.
+means we optimize for the total space used by a derived class when it inherits 
 
-Third approach First we just write a for loop which iterators over the array and
+from a version of base class which does not have any data member.
 
-if nums [i] > nums [i + 1] it just swaps.
+Since we will use sizeof to show that we have optimized for space we need to use
 
+#pragma pack(1) so pack the elements together so that we can prove our point.
+
+We have 2 derived classes and they have data members of type Base_has_a_version1
+
+and Base_has_a_version2.Version 1 has a int so it has some size.
+
+First we use them as a "has a " relationship and then check the size of the
+
+derived classes.
 ```cpp
+#include <iostream>
 
-class Solution {
-public:
-    void sortColors(vector<int> &nums) {
-        for (int i = 0; i < nums.size() - 1; i++) {
-            if (nums[i] > nums[i + 1]) {
-                swap(nums[i], nums[i + 1]);
-            } else {
+#pragma pack(1)
 
-            }
-        }
-
-    }
+class Base_has_a_version1 {
+    int i;
 };
 
+class Base_has_a_version2 {
+};
+
+
+class Derived_has_a_version1 {
+    Base_has_a_version1 b;
+    char c;
+};
+
+class Derived_has_a_version2 {
+    Base_has_a_version2 b;
+    char c;
+};
+
+int main() {
+    static_assert(sizeof(Derived_has_a_version1) == 5);
+    
+    // We can see that Derived_has_a_version2 has one member char but still 
+   // size is 2 because 
+   // sizeof(Derived_has_a_version2) =sizeof(char)+sizeof(Base_has_a_version2)
+   // and sizeof(Base_has_a_version2) is 1 even though it is empty.
+   // So we pay for size of Base_has_a_version2 just because it is a member.
+    static_assert(sizeof(Derived_has_a_version2) == 2);
+    return 0;
+}
+
+
 ```
+Now instead of using Base as a data member we use it a a public base class.
 
-Now we need to create 2 pointers.. the rightest index where 0 was see and the
-
-righttest index where 1 was seen.
 
