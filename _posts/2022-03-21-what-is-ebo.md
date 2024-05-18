@@ -22,15 +22,15 @@ be sometimes empty it is usually better to use it as a base class and
 
 convert from has-a relationship to is-a relationship (provided we dont break 
 
-or expose any other functionality or break abi or api).So when we say EBO it 
+or expose any other functionality or break our abi or api).So when we say 
 
-means we optimize for the total space used by a derived class when it inherits 
+EBO it means we optimize for the total space used by a derived class when it inherits 
 
 from a version of base class which does not have any data member.
 
 Since we will use sizeof to show that we have optimized for space we need to use
 
-#pragma pack(1) so pack the elements together so that we can prove our point.
+#pragma pack(1) so  we pack the elements together so  we can prove our point.
 
 We have 2 derived classes and they have data members of type Base_has_a_version1
 
@@ -76,7 +76,7 @@ int main() {
 
 
 ```
-Now instead of using Base as a data member we use it a a public base class.
+Now instead of using Base as a data member we use it as a public base class.
 
 ```cpp
 
@@ -105,7 +105,7 @@ int main() {
 
 ```
 
-This a a toy example and might look not much beneficial but we have 1000's 
+This is a toy example and might look not much beneficial but if we have 1000's 
 
 of instances then  this gets added up.Now let us look at some real life uses.
 
@@ -117,4 +117,4 @@ The default deleter does not add any extra space when it is used.If you are
 
 a nerd.. which i am not you can look into this actual memory header file. 
 
-[HEADER MSVC](https://github.com/microsoft/STL/blob/main/stl/inc/memory)
+[HEADER MSVC](https://github.com/microsoft/STL/blob/main/stl/inc/memory#L1273)
