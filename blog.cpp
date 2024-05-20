@@ -11,19 +11,15 @@
 // do it in python
 
 
-class Foo {
-
-};
+#include "map"
 
 int main() {
 
-    int i = 67;
-    static_assert((std::is_same_v<decltype(i), int>));
-    static_assert((std::is_same_v<decltype((i)), int &>));
-
-    Foo obj{};
-    static_assert((std::is_same_v<decltype(obj), Foo>));
-    static_assert((std::is_same_v<decltype((obj)), Foo &>));
+    std::map<int, std::string> m;
+    m[1] = "ee"; // first way
+    m.insert(std::make_pair(23, "ee"));// second way
+    m.insert(std::pair(34, "333")); // third way
+    m.insert({2, "err"});  //fourth way
 
     return 0;
 }

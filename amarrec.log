@@ -1,0 +1,63 @@
+/home/amardeep/Desktop/mysources/portfolio/venv9/bin/python /home/amardeep/Desktop/mysources/portfolio/test.py
+ -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 0, [])
+    -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 1, [])
+       -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 2, [])
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [12])
+             <- None
+          <- None
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [9])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [9])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [9, 12])
+             <- None
+          <- None
+       <- None
+       -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 2, [6])
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [6])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [6])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [6, 12])
+             <- None
+          <- None
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [6, 9])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [6, 9])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [6, 9, 12])
+             <- None
+          <- None
+       <- None
+    <- None
+    -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 1, [3])
+       -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 2, [3])
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [3])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 12])
+             <- None
+          <- None
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [3, 9])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 9])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 9, 12])
+             <- None
+          <- None
+       <- None
+       -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 2, [3, 6])
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [3, 6])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 6])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 6, 12])
+             <- None
+          <- None
+          -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 3, [3, 6, 9])
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 6, 9])
+             <- None
+             -> amar(<__main__.Solution object at 0x7f62757909d0>, [3, 6, 9, 12], 4, [3, 6, 9, 12])
+             <- None
+          <- None
+       <- None
+    <- None
+ <- None

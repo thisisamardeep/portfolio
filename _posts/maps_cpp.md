@@ -14,7 +14,8 @@ normal map(values are sorted by key)
 
 unoredered map (values are not sorted by key)
 
-This descriways ways to insert/update/delete/search elements from both types of maps.
+This describes ways to insert/update/delete/search elements from both 
+types of maps.
 
 
 map // unoredered map  each element is a pair of values.
