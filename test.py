@@ -2,36 +2,41 @@ from typing import List
 
 
 class Solution:
+    def __init__(self):
+        self.result = []
 
-    def amar(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]], u: int,
-             v: int) -> List[int]:
-        flag = -1
-        curr = set()
-        while True:
-            for temp in prerequisites:
-                print(344)
-                if temp[1] == v:
-                    flag = 0
-                    curr.add(temp[0])
-                else:
-                    pass
-            if flag == 0 and :
-                flag = -1
-                continue
-            else:
-                break
-        ER = 45
-        return [3, 4]
+    def amar(self, nums: List[int], curr_index: int, temp: List[int]):
 
-    def checkIfPrerequisite(self, numCourses: int, prerequisites: List[List[int]], queries: List[List[int]]) -> List[
-        bool]:
-        err = self.amar(numCourses=2, prerequisites=[[1, 0]], queries=[[0, 1], [1, 0]], u=1, v=0)
-        resultDict = {}
-        return None
+        # print(curr_index)
+        if curr_index >= len(nums):
+            return
+
+        # if curr_index == len(nums) - 1:
+        #     pass
+        temp.append(curr_index)
+        for i in range(1, nums[curr_index] + 1, 1):
+            temp_index = curr_index + i
+            self.amar(nums, temp_index, temp)
+        if curr_index == len(nums) - 1:
+            print(temp)
+            self.result.append(temp)
+        # print(temp)
+        temp.pop()
+
+    def jump(self, nums: List[int]) -> int:
+        if len(nums) == 1:
+            return 0
+        if len(nums) == 2:
+            return 1
+        temp = []
+        self.amar(nums, 0, temp)
+        return 333
 
 
-df1 = Solution()
-
-res = df1.checkIfPrerequisite(numCourses=2, prerequisites=[[1, 0]], queries=[[0, 1], [1, 0]])
+df = Solution()
+nums = [2, 3, 1, 1, 4]
+# nums = [1, 2, 0, 1]
+# nums = [1, 2, 3]
+res = df.jump(nums=nums)
 
 print(res)

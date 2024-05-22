@@ -1,3 +1,9 @@
-from collections import defaultdict
+df = [34, 45]
+res = []
 
-dff=dict.fromkeys([])
+# res.append(df)
+res.append(df[:])
+
+df[0] = 4444
+
+print(res)
