@@ -1,6 +1,10 @@
 https://leetcode.com/problems/generate-parentheses/description/
 https://leetcode.com/problems/remove-invalid-parentheses/description/
-https://leetcode.com/problems/jump-game-ii/description/
 https://leetcode.com/problems/reverse-linked-list/description/
+
+do these 3
+
+
+
 https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/description/
 https://leetcode.com/problems/next-greater-element-iii/description/
