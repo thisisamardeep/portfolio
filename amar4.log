@@ -1,0 +1,63 @@
+/home/amardeep/Desktop/mysources/portfolio/venv9/bin/python /home/amardeep/Desktop/mysources/portfolio/test.py
+ 0-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 1, 0, ['('], [])
+    1-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 2, 0, ['(', '('], [])
+       2-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 0, ['(', '(', '('], [])
+          3-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 0, ['(', '(', '(', '('], [])
+          3<- None
+          3-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 1, ['(', '(', '(', ')'], [])
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 1, ['(', '(', '(', ')', '('], [])
+             4<- None
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 2, ['(', '(', '(', ')', ')'], [])
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 2, ['(', '(', '(', ')', ')', '('], [])
+                5<- None
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 3, ['(', '(', '(', ')', ')', ')'], [])
+                5<- None
+             4<- None
+          3<- None
+       2<- None
+       2-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 2, 1, ['(', '(', ')'], ['((()))'])
+          3-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 1, ['(', '(', ')', '('], ['((()))'])
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 1, ['(', '(', ')', '(', '('], ['((()))'])
+             4<- None
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 2, ['(', '(', ')', '(', ')'], ['((()))'])
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 2, ['(', '(', ')', '(', ')', '('], ['((()))'])
+                5<- None
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 3, ['(', '(', ')', '(', ')', ')'], ['((()))'])
+                5<- None
+             4<- None
+          3<- None
+          3-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 2, 2, ['(', '(', ')', ')'], ['((()))', '(()())'])
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 2, ['(', '(', ')', ')', '('], ['((()))', '(()())'])
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 2, ['(', '(', ')', ')', '(', '('], ['((()))', '(()())'])
+                5<- None
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 3, ['(', '(', ')', ')', '(', ')'], ['((()))', '(()())'])
+                5<- None
+             4<- None
+          3<- None
+       2<- None
+    1<- None
+    1-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 1, 1, ['(', ')'], ['((()))', '(()())', '(())()'])
+       2-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 2, 1, ['(', ')', '('], ['((()))', '(()())', '(())()'])
+          3-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 1, ['(', ')', '(', '('], ['((()))', '(()())', '(())()'])
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 1, ['(', ')', '(', '(', '('], ['((()))', '(()())', '(())()'])
+             4<- None
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 2, ['(', ')', '(', '(', ')'], ['((()))', '(()())', '(())()'])
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 2, ['(', ')', '(', '(', ')', '('], ['((()))', '(()())', '(())()'])
+                5<- None
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 3, ['(', ')', '(', '(', ')', ')'], ['((()))', '(()())', '(())()'])
+                5<- None
+             4<- None
+          3<- None
+          3-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 2, 2, ['(', ')', '(', ')'], ['((()))', '(()())', '(())()', '()(())'])
+             4-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 2, ['(', ')', '(', ')', '('], ['((()))', '(()())', '(())()', '()(())'])
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 4, 2, ['(', ')', '(', ')', '(', '('], ['((()))', '(()())', '(())()', '()(())'])
+                5<- None
+                5-> myrec(<__main__.Solution object at 0x7fc00b9a3e80>, 3, 3, 3, ['(', ')', '(', ')', '(', ')'], ['((()))', '(()())', '(())()', '()(())'])
+                5<- None
+             4<- None
+          3<- None
+       2<- None
+    1<- None
+ 0<- None
+['((()))', '(()())', '(())()', '()(())', '()()()']
+

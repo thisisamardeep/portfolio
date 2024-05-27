@@ -4,10 +4,10 @@ from recviz import recviz
 
 
 class Solution:
-    # @recviz
+    @recviz
     def myrec(self, n: int, left_used: int, right_used: int, partial_result: List[str], result: List[str],
               ):
-        print(id(partial_result))
+        # print(id(partial_result))
         if left_used > n or right_used > n:
             return
         if left_used == n and right_used == n:
@@ -39,3 +39,4 @@ df = Solution()
 err = df.generateParenthesis(3)
 
 print(err)
+
