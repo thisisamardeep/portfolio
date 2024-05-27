@@ -1,42 +1,63 @@
-from typing import List
+from typing import List, Set
 
 from recviz import recviz
 
 
+# we assume that before the call the curr index has not bee processed.
+
 class Solution:
+    def __init__(self):
+        self.max_size = 0
+
     @recviz
-    def myrec(self, n: int, left_used: int, right_used: int, partial_result: List[str], result: List[str],
-              ):
-        # print(id(partial_result))
-        if left_used > n or right_used > n:
+    def amar(self, s: str, partial: List[str], final_result: Set[str], curr_index: int, left_count: int,
+             right_count: int):
+        if right_count > left_count:
             return
-        if left_used == n and right_used == n:
-            result.append(''.join(partial_result))
+        if curr_index >= len(s):
+            if left_count == right_count:
+                final_result.add(''.join(partial))
+                self.max_size = max(self.max_size, len(partial))
+
             return
+        if s[curr_index] == "(":
+            partial.append(s[curr_index])
+            self.amar(s, partial, final_result, curr_index + 1, left_count + 1, right_count)
+            partial.pop()
+            self.amar(s, partial, final_result, curr_index + 1, left_count, right_count)
+        elif s[curr_index] == ")":
+            partial.append(s[curr_index])
+            self.amar(s, partial, final_result, curr_index + 1, left_count, right_count + 1)
+            partial.pop()
+            self.amar(s, partial, final_result, curr_index + 1, left_count, right_count)
+        else:
+            partial.append(s[curr_index])
+            self.amar(s, partial, final_result, curr_index + 1, left_count, right_count)
+            partial.pop()
 
-        if right_used < left_used:
-            partial_result.append("(")
-            self.myrec(n, left_used + 1, right_used, partial_result, result)
-            partial_result.pop()
-            partial_result.append(")")
-            self.myrec(n, left_used, right_used + 1, partial_result, result)
-            partial_result.pop()
-        elif right_used == left_used:
-            partial_result.append("(")
-            self.myrec(n, left_used + 1, right_used, partial_result, result)
-            partial_result.pop()
+        pass
 
-    def generateParenthesis(self, n: int) -> List[str]:
-        partial_result: List[str] = ["("]
-        result: List[str] = []
-        if n == 0:
-            return []
-        self.myrec(n, 1, 0, partial_result, result)
-        return result
+    def removeInvalidParentheses(self, s: str) -> List[str]:
+        partial = []
+        final_result = set()
+        curr_index = 0
+        self.amar(s, partial, final_result, curr_index, 0, 0)
+
+        final_result_list = []
+        for i in final_result:
+            if len(i) == self.max_size:
+                final_result_list.append(i)
+
+        return final_result_list
+        pass
 
 
-df = Solution()
-err = df.generateParenthesis(3)
+er = Solution()
 
-print(err)
+# sss = "(a)"
+# sss = "()())()"
+sss = "(a)())()"
+# sss = ")("
+res = er.removeInvalidParentheses(sss)
 
+# print(res)
