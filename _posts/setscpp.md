@@ -1,7 +1,6 @@
 ---
 title: sets in c++
 published: false
-share-description: ""
 tags: [ leetcode ]
 share-img: /img/rust.png
 readtime: true

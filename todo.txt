@@ -149,3 +149,5 @@ clang -Xclang -fdump-record-layouts <blah> dumps this kind of information (and -
 
 
 wrinte blog about small use case of empty base class optimization.
+
+/usr/bin/clang++  amarvim.cpp
