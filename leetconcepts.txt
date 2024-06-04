@@ -1,0 +1,9 @@
+disjoint set data structures
+
+relation must be transitive.Then only this concept
+
+You need to be able to find parent of each element.
+You must be be able to do union of 2 sets.
+Rank is used when we want to do union or track relationships.
+==================================================================
+
