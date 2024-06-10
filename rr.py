@@ -1,70 +1,37 @@
 from typing import List
 
-from typing import List
-
 
 class Solution:
-    def amar(self, str1, str2) -> bool:
-
-        list1 = list(str1)
-        list2 = list(str2)
-        count_of_matches = 0
-        count_of_differences = 0
-        for i in range(0, len(list1), 1):
-            if list1[i] == list2[i]:
-                count_of_matches = count_of_matches + 1
-            else:
-                count_of_differences = count_of_differences + 1
-        if count_of_differences == 0 or count_of_differences == 2:
-            print(str1)
-            print(str2)
-            print("True")
-            return True
-        else:
-            print(str1)
-            print(str2)
-            print("False")
-            return False
-
-    def numSimilarGroups(self, strs: List[str]) -> int:
-        if len(strs) == 0:
-            return 0
-        final_groups: List = []
-        final_groups.append([strs[0]])
-        for curr_string in strs[1:len(strs):1]:
-            found = False
-            index_found = []
-            for i in range(0, len(final_groups), 1):
-
-                for j in range(0, len(final_groups[i]), 1):
-                    str1 = curr_string
-                    str2 = final_groups[i][j]
-                    res = self.amar(str1, str2)
-                    if res:
-                        found = True
-                        final_groups[i].append(curr_string)
-                        index_found.append(i)
-                        # break
-                    else:
-                        pass
-
-            if found:
-                if len(index_found) == 1:
-                    pass
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        temp_sum = 0
+        max_difference = 200000
+        final_sum = 0
+        nums.sort()
+        for i in range(0, len(nums) - 2, 1):
+            first_pointer = i + 1
+            second_pointer = len(nums) - 1
+            while first_pointer < second_pointer:
+                temp_sum = nums[i] + nums[first_pointer] + nums[second_pointer]
+                if temp_sum >= target:
+                    difference = temp_sum - target
                 else:
-                    for k in index_found:
-                        final_groups[k].append(curr_string)
+                    difference = target - temp_sum
+                if difference <= max_difference:
+                    max_difference = difference
+                    final_sum = temp_sum
+                if difference == 0:
+                    return final_sum
+                if temp_sum >= target:
+                    second_pointer = second_pointer - 1
+                else:
+                    first_pointer = first_pointer + 1
+        return final_sum
 
-            else:
-                # print(curr_string)
-                final_groups.append([curr_string])
+# 0 3 5
+er = [-5, -5, -4, 0, 0, 3, 3, 4, 5]
+# print(er.sort())
+# print(er)
+s = Solution()
 
-        return len(final_groups)
-
-
-sd = Solution()
-
-eee = sd.numSimilarGroups(
-    ["kccomwcgcs", "socgcmcwkc", "sgckwcmcoc", "coswcmcgkc", "cowkccmsgc", "cosgmccwkc", "sgmkwcccoc", "coswmccgkc",
-     "kowcccmsgc", "kgcomwcccs"])
-print(eee)
+res = s.threeSumClosest(er, -2)
+print(res)

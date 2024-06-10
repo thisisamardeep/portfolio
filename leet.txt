@@ -3,16 +3,23 @@ https://leetcode.com/problems/next-greater-element-iii/description/
 https://leetcode.com/problems/valid-parentheses/description/
 https://leetcode.com/problems/maximum-repeating-substring/description/
 https://leetcode.com/problems/koko-eating-bananas/description/
-https://leetcode.com/problems/valid-mountain-array/description/
-https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
-https://leetcode.com/problems/my-calendar-i/description/
-https://leetcode.com/problems/similar-string-groups/description/
+https://leetcode.com/problems/first-missing-positive/description/
+https://leetcode.com/problems/01-matrix/description/
+https://leetcode.com/problems/longest-valid-parentheses/description/
+https://www.youtube.com/watch?v=_NT69eLpqks&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=2
+https://www.youtube.com/watch?v=6zhGS79oQ4k&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=3
+https://www.youtube.com/watch?v=hjR1IYVx9lY&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=4
+============================================================================================
 
 
-do these 3
+https://www.youtube.com/playlist?list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF do 1 question from this course daily
 
-
-
-
+https://www.youtube.com/watch?v=MHf6awe89xw&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=2
+and do it in python and c++
 
 First just find list of all possible subsets of the string
+
+
+not done
+
+https://leetcode.com/problems/similar-string-groups/description/
