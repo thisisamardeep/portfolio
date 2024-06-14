@@ -1,8 +1,9 @@
-https://leetcode.com/problems/minimum-amount-of-time-to-fill-cups/description/
-https://leetcode.com/problems/next-greater-element-iii/description/
-https://leetcode.com/problems/valid-parentheses/description/
 https://leetcode.com/problems/maximum-repeating-substring/description/
 https://leetcode.com/problems/koko-eating-bananas/description/
+
+
+need to finish the above 2
+
 https://leetcode.com/problems/first-missing-positive/description/
 https://leetcode.com/problems/01-matrix/description/
 https://leetcode.com/problems/longest-valid-parentheses/description/

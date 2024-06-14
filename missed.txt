@@ -1,0 +1,19 @@
+cpp
+
+
+234 / 10  give 23
+
+234 % 10 givees 4
+
+std::reverse(myarray.begin(), myarray.end());---- does revere in place this is not sort
+
+std::reverse(myarray.begin() + i + 1, myarray.end()); --> Tis does part reverse
+
+    vector<int> test = {1, 2, 3, 4, 5, 6};
+
+    std::reverse(test.begin() + 2, test.end());
+
+//    { 1, 2, 6, 5, 4, 3 }
+==============================================
+
+pow(10, 3)  is 1000
