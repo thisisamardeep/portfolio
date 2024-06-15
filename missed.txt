@@ -17,3 +17,5 @@ std::reverse(myarray.begin() + i + 1, myarray.end()); --> Tis does part reverse
 ==============================================
 
 pow(10, 3)  is 1000
+
+in cpp stack has push not push back
