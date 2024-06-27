@@ -52,3 +52,14 @@ It just truncates the fractional part
 
 == is tow objects have the same value
 is --references refer to the same object
+
+===================================
+The pop() method takes a single argument (index).
+prime_numbers = [2, 3, 5, 7]
+
+removes and returns the elements
+removed_element = prime_numbers.pop()
+
+=============================
+
+

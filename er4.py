@@ -1,6 +1,5 @@
-er = [4, 5, 6, 61]
+sd = [3, 4, 5, 6, ]
 
-e4 = er.pop()
+sd.insert(2, 44)
 
-print(er)
-print(e4)
+print(sd)

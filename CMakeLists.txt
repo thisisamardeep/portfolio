@@ -3,7 +3,7 @@ project(blog)
 #set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -save-temps -finstrument-functions -O0 -Og -g3 -ggdb3 -Wpadded -fno-elide-constructors -fstandalone-debug")
 
 set(CMAKE_CXX_STANDARD 17)
-SET(CMAKE_CXX_FLAGS "-O0 -Og -g3 -ggdb3 -Wpadded -fno-elide-constructors -fstandalone-debug")
+SET(CMAKE_CXX_FLAGS " -save-temps -finstrument-functions -O0 -g3 -ggdb3 -Wpadded -fno-elide-constructors -fstandalone-debug")
 #SET(CMAKE_CXX_FLAGS "-O0 -fno-elide-constructors -ggdb3")
 #SET(CMAKE_CXX_FLAGS "-O0")
 set(CMAKE_VERBOSE_MAKEFILE ON)
