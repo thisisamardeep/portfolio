@@ -10,7 +10,7 @@ set(CMAKE_VERBOSE_MAKEFILE ON)
 SET(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 
-add_executable(movechap8 movechap8.cpp)
+add_executable(traits main.cpp)
 #target_compile_options(blog PUBLIC -Wall -Wextra -Wpedantic -fno-elide-constructors -save-temps )
 #target_compile_options(blog PUBLIC -Wall -Wextra -Wpedantic -fno-elide-constructors -save-temps )
 
