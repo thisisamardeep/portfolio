@@ -16,7 +16,7 @@ add_executable(blog blog.cpp)
 
 
 
-add_executable(khud khud.cpp)
+#add_executable(khud khud.cpp)
 #target_compile_options(khud PUBLIC -Wall -Wextra -Wpedantic -fno-elide-constructors -save-temps )
 
 

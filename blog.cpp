@@ -6,32 +6,11 @@
 #include "mutex"
 
 
-class X {
-
-};
-
-void foo(const X &) {
-
-}
-
-//void foo(X) {
-//
-//}
-
-void foo(X &) {
-
-}
-
-void foo(X &&) {
-
-}
-
 int main() {
-    X v;
-    const X c;
-    foo(v);
-    foo(c);
-    foo(X{});
 
+    int ty = 56;
+    int r = 5;
+    int ff = ty % r;
+    std::cout << -5 % 2 << std::endl;
     return 0;
 };
