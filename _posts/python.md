@@ -65,3 +65,10 @@ removed_element = prime_numbers.pop()
 =============================
 
 
+How to copy one element into another .Create a true copy.
+
+from copy import deepcopy
+
+myobject=[45]
+newobject=deepcopy(myobject)
+

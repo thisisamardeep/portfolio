@@ -1,8 +1,12 @@
-class Solution:
-    def mySqrt(self, x: int) -> int:
-        pass
+"""
+need to have in mind that how to create deep copy.
 
 
-sd = Solution()
 
-res = sd.mySqrt(45)
+"""
+
+import copy
+from copy import deepcopy
+er = []
+
+er4 = copy.deepcopy(er)

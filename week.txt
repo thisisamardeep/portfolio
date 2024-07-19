@@ -1,4 +1,4 @@
-https://leetcode.com/problems/reaching-points/description/
+https://leetcode.com/problems/reaching-points/description/ done
 https://leetcode.com/problems/rotting-oranges/description/
 https://leetcode.com/problems/find-a-peak-element-ii/description/
 https://www.youtube.com/watch?v=AZOmHuHadxQ&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=9&t=326s&pp=iAQB done
