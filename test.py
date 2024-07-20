@@ -1,12 +1,7 @@
-"""
-need to have in mind that how to create deep copy.
+rt = [4, 5, 6, 78]
 
 
+rt.pop()
 
-"""
+print(rt)
 
-import copy
-from copy import deepcopy
-er = []
-
-er4 = copy.deepcopy(er)
