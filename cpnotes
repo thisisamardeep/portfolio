@@ -1,0 +1,2 @@
+in python when you have list inside list you append the sam object
+.So you need to copy using [::].

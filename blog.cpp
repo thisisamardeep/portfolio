@@ -11,8 +11,10 @@ using namespace std;
 
 int main() {
     vector<int> temp{4, 5};
-
-    std::cout << 56 % 3 << std::endl;
+    int rt = 107369779999;
+    int rt3 = 1073697799;
+    int reews = rt * rt3;
+    std::cout << reews << std::endl;
     return 0;
 };
 /***

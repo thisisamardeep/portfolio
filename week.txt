@@ -1,13 +1,19 @@
 
-bs10
-bs11
-bs12
-bs13
-bs14
-bs15
+bs10 done
+bs11 https://leetcode.com/problems/powx-n/solutions/1341862/python-2-fast-pow-solutions-follow-up-find-nth-root-of-a-number/
+bs12 https://leetcode.com/problems/koko-eating-bananas/description/
+bs13 https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/description/
+bs14 https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/
+bs15 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
 
 https://leetcode.com/problems/basic-calculator-ii/description/ understood
 https://leetcode.com/problems/check-if-an-original-string-exists-given-two-encoded-strings/description/
 https://leetcode.com/problems/kth-largest-element-in-an-array/description/ understood
 https://leetcode.com/problems/kth-missing-positive-number/description/ understood
+https://leetcode.com/problems/two-city-scheduling/description/ understood
+
+Monday
+
+https://leetcode.com/problems/basic-calculator-ii/description/ understood
+https://leetcode.com/problems/powx-n/
 https://leetcode.com/problems/two-city-scheduling/description/ understood
