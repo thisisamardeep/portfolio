@@ -6,8 +6,8 @@ bs13
 bs14
 bs15
 
-https://leetcode.com/problems/basic-calculator-ii/description/
+https://leetcode.com/problems/basic-calculator-ii/description/ understood
 https://leetcode.com/problems/check-if-an-original-string-exists-given-two-encoded-strings/description/
-https://leetcode.com/problems/kth-largest-element-in-an-array/description/
-https://leetcode.com/problems/kth-missing-positive-number/description/
-https://leetcode.com/problems/two-city-scheduling/description/
+https://leetcode.com/problems/kth-largest-element-in-an-array/description/ understood
+https://leetcode.com/problems/kth-missing-positive-number/description/ understood
+https://leetcode.com/problems/two-city-scheduling/description/ understood

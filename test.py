@@ -1,7 +1,5 @@
-rt = [4, 5, 6, 78]
+res = 5 / 2
 
+print(res)
 
-rt.pop()
-
-print(rt)
-
+print(5 // 2)
