@@ -12,8 +12,14 @@ https://leetcode.com/problems/kth-largest-element-in-an-array/description/ under
 https://leetcode.com/problems/kth-missing-positive-number/description/ understood
 https://leetcode.com/problems/two-city-scheduling/description/ understood
 
-Monday
 
-https://leetcode.com/problems/basic-calculator-ii/description/ understood
-https://leetcode.com/problems/powx-n/
-https://leetcode.com/problems/two-city-scheduling/description/ understood
+
+
+Tuesday
+
+https://leetcode.com/problems/two-city-scheduling/description/ quick method
+https://leetcode.com/problems/basic-calculator-ii/description/
+https://leetcode.com/problems/basic-calculator-ii/description/
+https://leetcode.com/problems/koko-eating-bananas/description/
+https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
+https://leetcode.ca/all/772.html#google_vignette
