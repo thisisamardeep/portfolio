@@ -75,3 +75,9 @@ from copy import deepcopy
 myobject=[45]
 newobject=deepcopy(myobject)
 
+========================================
+there is lamda in python
+x = lambda a, b : a * b
+costs.sort(key=lambda x: x[0] - x[1])
+
+=========================
