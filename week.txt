@@ -1,29 +1,15 @@
 
-bs10 done
 bs11 https://leetcode.com/problems/powx-n/solutions/1341862/python-2-fast-pow-solutions-follow-up-find-nth-root-of-a-number/
 bs12 https://leetcode.com/problems/koko-eating-bananas/description/
 bs13 https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/description/
 bs14 https://leetcode.com/problems/find-the-smallest-divisor-given-a-threshold/description/
-bs15 https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/ done
 
-https://leetcode.com/problems/basic-calculator-ii/description/ understood
+https://leetcode.com/problems/basic-calculator-ii/description/
 https://leetcode.com/problems/check-if-an-original-string-exists-given-two-encoded-strings/description/
 https://leetcode.com/problems/kth-largest-element-in-an-array/description/ understood
-https://leetcode.com/problems/kth-missing-positive-number/description/ done
-https://leetcode.com/problems/two-city-scheduling/description/ done
 
-tomorrow
+https://leetcode.com/problems/maximum-sum-bst-in-binary-tree/submissions/
+https://leetcode.com/problems/recover-binary-search-tree/description/
+https://github.com/doocs/leetcode/blob/main/solution/0200-0299/0230.Kth%20Smallest%20Element%20in%20a%20BST/README_EN.md
 
-https://leetcode.com/problems/kth-missing-positive-number/description/
-https://leetcode.com/problems/kth-largest-element-in-an-array/description/ done
-https://leetcode.com/problems/basic-calculator-ii/description/
-
-
-Tuesday
-
-https://leetcode.com/problems/two-city-scheduling/description/ done
-https://leetcode.com/problems/basic-calculator-ii/description/
-https://leetcode.com/problems/basic-calculator-ii/description/
-https://leetcode.com/problems/koko-eating-bananas/description/
-https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/description/
-https://leetcode.ca/all/772.html#google_vignette
+tracks binary search and trees
