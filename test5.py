@@ -1,108 +1,74 @@
+from typing import List
+
+
 class Solution:
 
-    def find_left(self, s, i):
-        res = i - 1
-        if res == 0:
-            return res
-        while True:
-            if res == 0:
-                return res
-            if s[res] not in ["*", "+", "-", "/"]:
-                res = res - 1
-            elif res == 0:
-                return res
+    def amar(self, bloomDay: List[int], m: int, k: int, test_days: int):
+        res = [0] * len(bloomDay)
+
+        for i in range(0, len(bloomDay), 1):
+            if bloomDay[i] <= test_days:
+                res[i] = 1
             else:
-                return res + 1
+                pass
 
-    def find_right(self, s, i):
-        res = i + 1
-        if res == len(s) - 1:
-            return res
-        while True:
-            if res == len(s) - 1:
-                return res
-            if s[res] not in ["*", "+", "-", "/"]:
-                res = res + 1
-            elif res == len(s) - 1:
-                return res
+        max_count = 0
+        my_temp_stack = []
+        for i in range(0, len(res), 1):
+            if res[i] == 1:
+                my_temp_stack.append(1)
+                if len(my_temp_stack) >= k:
+                    max_count = max_count + 1
+                    my_temp_stack.clear()
             else:
-                return res - 1
+                my_temp_stack.clear()
 
-    def calculate(self, s: str) -> int:
-        s = s.replace(" ", "")
+        if max_count >= m:
+            return True
+        else:
+            return False
 
-        while "+" in s or "-" in s or "-" in s or "/" in s:
-            pass
-        while True:
-            if "*" in s:
-                index = s.find("*")
-                left = self.find_left(s, index)
-                right = self.find_right(s, index)
+    def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
+        if m * k > len(bloomDay):
+            return -1
 
-                l1 = s[left:index:1]
-                r1 = s[index + 1: right + 1: 1]
+        high = bloomDay[0]
+        for i in range(0, len(bloomDay), 1):
+            high = max(high, bloomDay[i])
 
-                l11 = s[0:left:1]
-                r11 = s[right + 1:: 1]
+        low = 1
+        while low <= high:
+            mid = (low + high) // 2
 
-                s = l11 + str(int(l1) * int(r1)) + r11
-
+            if self.amar(bloomDay, m, k, low) is True:
+                return low
+            if (
+                    self.amar(bloomDay, m, k, low) is False
+                    and self.amar(bloomDay, m, k, low + 1) is True
+            ):
+                return low + 1
+            if (
+                    self.amar(bloomDay, m, k, high) is True
+                    and self.amar(bloomDay, m, k, high - 1) is False
+            ):
+                return high
+            if (
+                    self.amar(bloomDay, m, k, mid) is True
+                    and self.amar(bloomDay, m, k, mid - 1) is False
+            ):
+                return mid
+            if (
+                    self.amar(bloomDay, m, k, mid) is False
+                    and self.amar(bloomDay, m, k, mid + 1) is True
+            ):
+                return mid + 1
+            if self.amar(bloomDay, m, k, mid) is False:
+                low = mid
             else:
-                break
-        while True:
-            if "/" in s:
-                index = s.find("/")
-                left = self.find_left(s, index)
-                right = self.find_right(s, index)
-
-                l1 = s[left:index:1]
-                r1 = s[index + 1: right + 1: 1]
-
-                l11 = s[0:left:1]
-                r11 = s[right + 1:: 1]
-
-                s = l11 + str(int(l1) // int(r1)) + r11
-
-            else:
-                break
-
-        while True:
-            if "-" in s:
-                if s[0] == "-":
-                    break
-                index = s.find("-")
-                left = self.find_left(s, index)
-                right = self.find_right(s, index)
-
-                l1 = s[left:index:1]
-                r1 = s[index + 1: right + 1: 1]
-
-                l11 = s[0:left:1]
-                r11 = s[right + 1:: 1]
-
-                s = l11 + str(int(l1) - int(r1)) + r11
-
-            else:
-                break
-        while True:
-            if "+" in s:
-                index = s.find("+")
-                left = self.find_left(s, index)
-                right = self.find_right(s, index)
-
-                l1 = s[left:index:1]
-                r1 = s[index + 1: right + 1: 1]
-
-                l11 = s[0:left:1]
-                r11 = s[right + 1:: 1]
-
-                s = l11 + str(int(l1) + int(r1)) + r11
-
-            else:
-                break
-        return int(s)
+                high = mid
 
 
-fg = Solution()
-res = fg.calculate("2+3-4")
+sf = Solution()
+
+res = sf.minDays([1, 1, 1, 1], 3, 1)
 print(res)
