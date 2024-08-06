@@ -59,3 +59,17 @@ create a vector of size n with all values as 10
 vector<int> vect(n, 10); 
 
 ==========================
+
+Delete last element
+myvector.pop_back();
+
+return notthing
+================
+removes all elements and makes size 0
+retrusn none
+
+myvector.clear();
+
+
+
+=====================
