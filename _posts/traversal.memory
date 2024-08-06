@@ -14,3 +14,21 @@ class Solution:
             res.append(curr.val)
             curr = curr.right
         return res
+
+
+ std::vector<int> res{};
+        std::stack<TreeNode*> mystack{};
+        TreeNode* curr = root;
+
+        while (curr != nullptr || mystack.size() != 0) {
+            while (curr != nullptr) {
+                mystack.push(curr);
+                curr = curr->left;
+            }
+            curr = mystack.top();
+            mystack.pop();
+            res.push_back(curr->val);
+            curr = curr->right;
+        }
+
+        =========================================
