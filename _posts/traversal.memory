@@ -1,13 +1,4 @@
-# Definition for a binary tree node.
-class TreeNode:
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
-from typing import Optional, List
-
+in order iterative
 
 class Solution:
     def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
@@ -22,4 +13,4 @@ class Solution:
             curr = stack.pop()
             res.append(curr.val)
             curr = curr.right
-        return  res
+        return res
