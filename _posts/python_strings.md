@@ -19,3 +19,12 @@ How to convert a list of chars to string
 input = ['a', 'm', 'a', 'r']
 output = ''.join(input)
 //"amar"
+
+// python how to check if a string is numeric
+txt = "565543"
+
+x = txt.isnumeric()
+
+print(x)  //true
+
+===============================
