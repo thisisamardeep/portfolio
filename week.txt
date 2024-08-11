@@ -6,3 +6,11 @@ https://www.geeksforgeeks.org/problems/aggressive-cows/0
 https://www.naukri.com/code360/problems/allocate-books_1090540?utm_source=youtube&utm_medium=affiliate&utm_campaign=codestudio_Striver_BinarySeries
 https://www.youtube.com/watch?v=D2jMcmxU4bs&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=52
 https://www.youtube.com/watch?v=SXKAD2svfmI&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=51
+
+
+https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
+
+First do pot using python or c++
+then do via neetcode method python c++
+then do via union find method.
+
