@@ -1,3 +1,15 @@
-rt = [5, 67, 677]
+# Definition for a binary tree nod
 
-print(max(rt))
+from typing import Optional
+
+
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
+
+class Solution:
+    def rob(self, root: Optional[TreeNode]) -> int:
+        pass

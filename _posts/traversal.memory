@@ -33,3 +33,50 @@ in order iterative
         }
 
         =========================================
+
+
+
+        port order iterative
+
+
+class Solution:
+    def postorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+        if root is None:
+            return []
+        mynodes = []
+        mystatuses = []
+        # 0 procssed
+        # 1 pending
+        result = []
+        mynodes.append(root)
+        mystatuses.append(1)
+        while len(mynodes) != 0:
+            lastelement = mynodes[-1]
+            lastelementstatus = mystatuses[-1]
+            if lastelementstatus == 0:
+                result.append(lastelement.val)
+                mynodes.pop()
+                mystatuses.pop()
+            elif lastelementstatus == 1:
+                mystatuses[-1] = 0
+                if lastelement.right is not None:
+                    mynodes.append(lastelement.right)
+                    mystatuses.append(1)
+                if lastelement.left is not None:
+                    mynodes.append(lastelement.left)
+                    mystatuses.append(1)
+        return result
+
+
+
+
+
+
+
+
+
+                =========================================
+
+
+
+
