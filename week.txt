@@ -1,16 +1,12 @@
-https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
-https://leetcode.com/problems/house-robber-iii/description/
-https://leetcode.com/problems/kth-ancestor-of-a-tree-node/description/
-https://leetcode.com/problems/minimum-remove-to-make-valid-parentheses/description/
-https://www.geeksforgeeks.org/problems/aggressive-cows/0
-https://www.naukri.com/code360/problems/allocate-books_1090540?utm_source=youtube&utm_medium=affiliate&utm_campaign=codestudio_Striver_BinarySeries
-https://www.youtube.com/watch?v=D2jMcmxU4bs&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=52
-https://www.youtube.com/watch?v=SXKAD2svfmI&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=51
+https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/description/
+https://leetcode.com/problems/better-compression-of-string/description/
+https://leetcode.com/problems/house-robber/description/
+
+https://www.youtube.com/watch?v=R_Mfw4ew-Vo Aggressive Cows
+https://www.youtube.com/watch?v=Z0hwjftStI4&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=19&pp=iAQB  allocate books
+
+https://www.youtube.com/watch?v=Yt50Jfbd8Po&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=16&pp=iAQB
+https://www.youtube.com/watch?v=Rezetez59Nk&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=17&pp=iAQB
 
 
-https://leetcode.com/problems/longest-substring-without-repeating-characters/description/
-
-First do pot using python or c++
-then do via neetcode method python c++
-then do via union find method.
-
+Till L17

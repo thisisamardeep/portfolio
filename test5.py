@@ -1,74 +1,43 @@
 from typing import List
+from typing import Optional
+from recviz import recviz
+
+# Definition for a binary tree node.
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
 
 
 class Solution:
+    def rob(self, root: Optional[TreeNode]) -> int:
+        # @recviz
+        def dfs(root: TreeNode):
+            if root is None:
+                return [0, 0]
+            leftPair = dfs(root.left)
+            rightPair = dfs(root.right)
+            withRoot = leftPair[1] + rightPair[1] + root.val
+            withoutRoot = max(leftPair[0], leftPair[1]) + max(rightPair[0], rightPair[1])
 
-    def amar(self, bloomDay: List[int], m: int, k: int, test_days: int):
-        res = [0] * len(bloomDay)
+            return [withRoot, withoutRoot]
 
-        for i in range(0, len(bloomDay), 1):
-            if bloomDay[i] <= test_days:
-                res[i] = 1
-            else:
-                pass
-
-        max_count = 0
-        my_temp_stack = []
-        for i in range(0, len(res), 1):
-            if res[i] == 1:
-                my_temp_stack.append(1)
-                if len(my_temp_stack) >= k:
-                    max_count = max_count + 1
-                    my_temp_stack.clear()
-            else:
-                my_temp_stack.clear()
-
-        if max_count >= m:
-            return True
-        else:
-            return False
-
-    def minDays(self, bloomDay: List[int], m: int, k: int) -> int:
-        if m * k > len(bloomDay):
-            return -1
-
-        high = bloomDay[0]
-        for i in range(0, len(bloomDay), 1):
-            high = max(high, bloomDay[i])
-
-        low = 1
-        while low <= high:
-            mid = (low + high) // 2
-
-            if self.amar(bloomDay, m, k, low) is True:
-                return low
-            if (
-                    self.amar(bloomDay, m, k, low) is False
-                    and self.amar(bloomDay, m, k, low + 1) is True
-            ):
-                return low + 1
-            if (
-                    self.amar(bloomDay, m, k, high) is True
-                    and self.amar(bloomDay, m, k, high - 1) is False
-            ):
-                return high
-            if (
-                    self.amar(bloomDay, m, k, mid) is True
-                    and self.amar(bloomDay, m, k, mid - 1) is False
-            ):
-                return mid
-            if (
-                    self.amar(bloomDay, m, k, mid) is False
-                    and self.amar(bloomDay, m, k, mid + 1) is True
-            ):
-                return mid + 1
-            if self.amar(bloomDay, m, k, mid) is False:
-                low = mid
-            else:
-                high = mid
+        res = dfs(root)
+        return max(res[0], res[1])
 
 
-sf = Solution()
+t31 = TreeNode(3)
+t32 = TreeNode(3)
+t33 = TreeNode(3)
+t2 = TreeNode(2)
+t1 = TreeNode(1)
 
-res = sf.minDays([1, 1, 1, 1], 3, 1)
-print(res)
+t31.left = t2
+t31.right = t33
+t33.right = t1
+t2.right = t32
+
+dsddf = Solution()
+rrrr4 = dsddf.rob(t31)
+print(rrrr4)
