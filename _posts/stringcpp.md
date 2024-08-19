@@ -32,7 +32,7 @@ int main() {
 ```
 
 c++ substring has 2 overloaded functions substr.
-
+substring eetrunes a new string.
 
 ```cpp
 
