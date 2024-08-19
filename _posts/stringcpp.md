@@ -56,3 +56,17 @@ if it is yes then res !=0 else res is 0.
 So for all false cases res is 0.
 
 
+```cpp
+
+int main() {
+
+
+    std::string mystring{"35ddfhefss"};
+    int result =std::isdigit(mystring.at(2));
+    if (result == 0){
+        std::cout << result << std::endl;
+    }
+    return 0;
+}
+
+```

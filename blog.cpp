@@ -41,10 +41,9 @@ int main() {
 
 
     std::string mystring{"35ddfhefss"};
-    auto rrr =std::isdigit(mystring.at(2));
-    if (rrr == 0){
-        std::cout << rrr << std::endl;
-
+    auto result =std::isdigit(mystring.at(2));
+    if (result == 0){
+        std::cout << result << std::endl;
     }
     return 0;
 }
