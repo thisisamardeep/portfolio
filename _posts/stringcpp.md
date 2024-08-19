@@ -4,8 +4,8 @@ published: true
 tags: [ leetcode ]
 share-img: /img/rust.png
 readtime: true
-permalink: "/maps-in-cpp"
-share-description: "maps in c++"
+permalink: "/string-in-cpp"
+share-description: "string in c++"
 comments: false
 ---
 
@@ -32,7 +32,7 @@ int main() {
 ```
 
 c++ substring has 2 overloaded functions substr.
-substring eetrunes a new string.
+substring returns a new string.
 
 ```cpp
 
@@ -54,15 +54,18 @@ int res=std::isdigit(<<char>>)
 
 if it is yes then res !=0 else res is 0.
 So for all false cases res is 0.
-
+for all true cases res is non zero.
 
 ```cpp
 
 int main() {
 
-
+   
     std::string mystring{"35ddfhefss"};
     int result =std::isdigit(mystring.at(2));
+    // result will be 0
+    int result =std::isdigit(mystring.at(0));
+    // result will be non zero
     if (result == 0){
         std::cout << result << std::endl;
     }
