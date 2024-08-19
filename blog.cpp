@@ -41,11 +41,10 @@ int main() {
 
 
     std::string mystring{"35ddfhefss"};
-    // This will start at index pos and end till end of String
-    auto newString = mystring.substr(2);
-    std::cout << newString << std::endl;
-    // This will go for 3 more digits.So new string will have size 3
-    auto newStringOverload = mystring.substr(2,3);
-    std::cout << newStringOverload << std::endl;
+    auto rrr =std::isdigit(mystring.at(2));
+    if (rrr == 0){
+        std::cout << rrr << std::endl;
+
+    }
     return 0;
 }

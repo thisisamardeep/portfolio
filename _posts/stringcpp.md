@@ -49,3 +49,10 @@ std::cout << newStringOverload << std::endl;
 return 0;
 }
 ```
+c++ string how to check if a charaxcter is digit.
+int res=std::isdigit(<<char>>)
+
+if it is yes then res !=0 else res is 0.
+So for all false cases res is 0.
+
+
