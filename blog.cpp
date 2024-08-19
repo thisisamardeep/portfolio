@@ -18,51 +18,34 @@ using namespace std;
 
 class Solution {
 public:
-    string minRemoveToMakeValid(const string &s) {
-        std::string s1{""};
-        int count_excess_left = 0;
+    string betterCompression(const string &compressed) {
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s[i] == '(') {
-                count_excess_left = count_excess_left + 1;
-                s1 = s1 + s[i];
-            } else if (s[i] == ')') {
-                if (count_excess_left == 0) {
-                } else {
-                    s1 = s1 + s[i];
-                    count_excess_left = count_excess_left - 1;
-                }
-            } else {
-                s1 = s1 + s[i];
-            }
-        }
 
-        std::string s2{""};
-        int count_excess_right = 0;
-
-        for (int i = s1.length() - 1; i >= 0; i--) {
-            if (s1[i] == ')') {
-                count_excess_right = count_excess_right + 1;
-                s2 = s1[i] + s2;
-            } else if (s1[i] == '(') {
-                if (count_excess_right == 0) {
-                } else {
-                    s2 = s1[i] + s2;
-                    count_excess_right = count_excess_right - 1;
-                }
-            } else {
-                s2 = s1[i] + s2;
-            }
-        }
-        return s2;
+        return "34";
     }
 };
-
-
+//    Solution rr{};
+//    auto res = rr.betterCompression("a3c9b2c1");
+//    std::cout << res << std::endl;
+/**
+ *
+ *
+ * stl concepts needed.get substring in c++
+ * check if string is alpahet or number both via char or via string
+ * add in map
+ * update in map
+ * sort keys in map for both types of maps
+ * @return
+ */
 int main() {
-    Solution rr{};
-    auto res = rr.minRemoveToMakeValid("lee(t(c)o)de)");
-    std::cout << res << std::endl;
 
+
+    std::string mystring{"35ddfhefss"};
+    // This will start at index pos and end till end of String
+    auto newString = mystring.substr(2);
+    std::cout << newString << std::endl;
+    // This will go for 3 more digits.So new string will have size 3
+    auto newStringOverload = mystring.substr(2,3);
+    std::cout << newStringOverload << std::endl;
     return 0;
 }

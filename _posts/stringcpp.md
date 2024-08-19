@@ -1,0 +1,51 @@
+---
+title: maps in c++
+published: true
+tags: [ leetcode ]
+share-img: /img/rust.png
+readtime: true
+permalink: "/maps-in-cpp"
+share-description: "maps in c++"
+comments: false
+---
+
+
+How to loop over a string.
+We can loop over a string and each element is of type char.
+```cpp
+
+int main() {
+    std::string mystring{"35ddf"};
+    for (int i = 0; i < mystring.size(); i++) {
+        // access element of String
+        std::cout << mystring.at(i) << std::endl;
+        // access element of String
+        std::cout << mystring[i] << std::endl;
+    }
+    // Get last character of String
+    std::cout << mystring.back() << std::endl;
+    // Get First character of String
+    std::cout << mystring.front() << std::endl;
+//Front element is the element at index 0.
+    return 0;
+}
+```
+
+c++ substring has 2 overloaded functions substr.
+
+
+```cpp
+
+int main() {
+
+
+std::string mystring{"35ddfhefss"};
+// This will start at index pos and end till end of String
+auto newString = mystring.substr(2);
+std::cout << newString << std::endl;
+// This will go for 3 more digits.So new string will have size 3
+auto newStringOverload = mystring.substr(2,3);
+std::cout << newStringOverload << std::endl;
+return 0;
+}
+```

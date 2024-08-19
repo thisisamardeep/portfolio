@@ -81,3 +81,8 @@ x = lambda a, b : a * b
 costs.sort(key=lambda x: x[0] - x[1])
 
 =========================
+
+python dict keys as list
+list(my_dict.keys())
+
+================
