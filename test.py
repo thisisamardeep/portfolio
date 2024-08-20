@@ -1,39 +1,24 @@
+from typing import List
+
+
 class Solution:
-    def minRemoveToMakeValid(self, s: str) -> str:
+    def dfs(self, nums: List[int]) -> List:
+        if len(nums) == 1:
+            return [nums[0], 0]
+        if len(nums) > 1:
+            first = nums[0: len(nums) - 1: 1]
+            second = nums[len(nums) - 1: len(nums):1]
+            temp = self.dfs(first)
+            withres = second[0] + temp[1]
+            without = max(temp[0], temp[1])
+            return [withres, without]
 
-        new_list = []
-        leftminusright = 0
-        for i in s:
-            if i == "(":
-                leftminusright = leftminusright + 1
-                new_list.append(i)
-            elif i == ")":
-                if leftminusright == 0:
-                    pass
-                else:
-                    leftminusright = leftminusright - 1
-                    new_list.append(i)
-            else:
-                new_list.append(i)
-        new_list_second = []
-        secondminusleft = 0
-
-        for i in range(-1, -1 * len(new_list) - 1, -1):
-            if new_list[i] == ")":
-                secondminusleft = secondminusleft + 1
-                new_list_second.insert(0, new_list[i])
-            elif new_list[i] == "(":
-                if secondminusleft == 0:
-                    pass
-                else:
-                    secondminusleft = secondminusleft - 1
-                    new_list_second.insert(0, new_list[i])
-            else:
-                new_list_second.insert(0, new_list[i])
-        return "".join(new_list_second)
+    def rob(self, nums: List[int]) -> int:
+        res = self.dfs(nums=nums)
+        return max(res[0], res[1])
 
 
-dff = Solution()
-
-res = dff.minRemoveToMakeValid("lee(t(c)o)de)")
+sd = Solution()
+# res = sd.rob([1, 2, 3, 1])
+res = sd.rob([2, 7, 9, 3, 1])
 print(res)
