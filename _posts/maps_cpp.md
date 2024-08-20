@@ -67,9 +67,15 @@ int main() {
     m.insert(std::make_pair(23, "ee"));// second way
     m.insert(std::pair(34, "333")); // third way
     m.insert({2, "err"});  //fourth way
+    // In this way  copies are made.
 
     for (std::pair<int, std::string> item: m) {
         std::cout << item.first << std::endl; // we get all keys here
+    }
+    
+    // In this way no copies are made.
+    for (auto& item: m) {
+        std::cout << item.first << std::endl;
     }
     return 0;
 }

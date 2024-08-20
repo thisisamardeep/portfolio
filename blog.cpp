@@ -47,7 +47,7 @@ int main() {
     m.insert(std::pair(34, "333")); // third way
     m.insert({2, "err"});  //fourth way
 
-    for (std::pair<int, std::string> item: m) {
+    for (auto &item: m) {
         std::cout << item.first << std::endl;
     }
     return 0;
