@@ -32,3 +32,22 @@ int main() {
     return 0;
 }
 ```
+
+How to loop over all item of a unoredered map c++
+
+
+```cpp
+  std::unordered_map<int, std::string> m;
+    m[1] = "ee"; // first way
+    m.insert(std::make_pair(23, "ee"));// second way
+    m.insert(std::pair(34, "333")); // third way
+    m.insert({2, "err"});  //fourth way
+
+    std::unordered_map<int, std::string>::iterator it;
+    for (it = m.begin(); it != m.end(); it++) {
+        std::cout << it->first << std::endl;// You get all keys here
+        std::cout << it->second << std::endl; // you get all values here
+
+    }
+    return 0;
+```

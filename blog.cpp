@@ -14,8 +14,11 @@ using namespace std;
 #include "vector"
 #include <functional>
 #include "map"
+
 using namespace std;
+
 #include "string"
+
 class Solution {
 public:
     string betterCompression(const string &compressed) {
@@ -38,10 +41,17 @@ public:
  * @return
  */
 int main() {
-    std::unordered_map<int, std::string> m;
+    std::map<int, std::string> m;
     m[1] = "ee"; // first way
     m.insert(std::make_pair(23, "ee"));// second way
     m.insert(std::pair(34, "333")); // third way
     m.insert({2, "err"});  //fourth way
+
+    std::map<int, std::string>::iterator it;
+    for (it = m.begin(); it != m.end(); it++) {
+        std::cout << it->first << std::endl;// You get all keys here
+        std::cout << it->second << std::endl; // you get all values here
+
+    }
     return 0;
 }
