@@ -10,12 +10,10 @@ comments: false
 ---
 There are 2 types of map
 
-normal map(values are sorted by key)
+normal oredered map(values are sorted by key)
 
 unoredered map (values are not sorted by key)
 
-This describes ways to insert/update/delete/search elements from both 
-types of maps.
 
 
 List all possible ways to insert into ordered map.
@@ -35,7 +33,7 @@ int main() {
 }
 ```
 How to loop over all item of a  map c++
-
+We can use iterators.
 
 ```cpp
 
@@ -59,7 +57,8 @@ int main() {
 
 ```
 Second way to loop over all items of a map
-
+use range based for loop.
+Each element is a pair.
 
 ```cpp
 int main() {
