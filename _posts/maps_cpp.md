@@ -46,7 +46,6 @@ int main() {
     m.insert(std::pair(34, "333")); // third way
     m.insert({2, "err"});  //fourth way
 
-    std::map<int, std::string>::iterator it;
     for (it = m.begin(); it != m.end(); it++) {
         std::cout << it->first << std::endl;// You get all keys here
         std::cout << it->second << std::endl; // you get all values here
