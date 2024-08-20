@@ -51,3 +51,21 @@ How to loop over all item of a unoredered map c++
     }
     return 0;
 ```
+
+Second way to loop over all items of a map
+
+
+```cpp
+int main() {
+    std::unordered_map<int, std::string> m;
+    m[1] = "ee"; // first way
+    m.insert(std::make_pair(23, "ee"));// second way
+    m.insert(std::pair(34, "333")); // third way
+    m.insert({2, "err"});  //fourth way
+
+    for (std::pair<int, std::string> item: m) {
+        std::cout << item.first << std::endl;
+    }
+    return 0;
+}
+```
