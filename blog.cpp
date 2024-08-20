@@ -13,9 +13,9 @@ using namespace std;
 #include "thread"
 #include "vector"
 #include <functional>
-
+#include "map"
 using namespace std;
-
+#include "string"
 class Solution {
 public:
     string betterCompression(const string &compressed) {
@@ -38,7 +38,10 @@ public:
  * @return
  */
 int main() {
-
-
+    std::unordered_map<int, std::string> m;
+    m[1] = "ee"; // first way
+    m.insert(std::make_pair(23, "ee"));// second way
+    m.insert(std::pair(34, "333")); // third way
+    m.insert({2, "err"});  //fourth way
     return 0;
 }
