@@ -73,3 +73,19 @@ int main() {
 }
 
 ```
+
+Convert string to int.I have a string and i want a int.
+Say "345"
+
+```cpp
+
+int main() {
+
+
+    string str1 = "45";
+    int myint1 = stoi(str1);
+
+    return 0;
+}
+
+```

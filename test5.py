@@ -17,7 +17,7 @@ class Solution:
                 else:
                     break
             new_counter_string = counter_digit_second + 1
-            if compressed[counter_string] not in my_dict:reswaq `1
+            if compressed[counter_string] not in my_dict:
                 my_dict[compressed[counter_string]] = int(
                     compressed[counter_digit_first:counter_digit_second + 1:1])
             else:

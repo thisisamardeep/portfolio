@@ -7,48 +7,47 @@
 
 using namespace std;
 
-#include "iostream"
-#include "queue"
-#include "string"
-#include "thread"
-#include "vector"
-#include <functional>
-#include "map"
 
 using namespace std;
 
-#include "string"
 
 class Solution {
 public:
     string betterCompression(const string &compressed) {
+        std::unordered_map<char, int> mymap{};
+        int counter_string = 0;
+        int counter_digit_first = 0;
+        int counter_digit_second = 1;
+        int new_counter_string = -1;
+
+        while (counter_string < compressed.size()) {
+            counter_digit_first = counter_string + 1;
+            // Need to calculate counter_digit_second
+            for (int i = counter_digit_first; i < compressed.size(); i++) {
+                if (std::isdigit(compressed[i]) == 0) {
+                    break;
+
+                } else {
+                    counter_digit_second = i;
+                }
+            }
+            new_counter_string = counter_digit_second + 1;
+            if (mymap.count(compressed.at(counter_string)) == 0) {
+                mymap.insert(std::pair<char, int>{compressed.at(counter_string), 1});
+            } else {
+                mymap[compressed.at(counter_string)] = mymap[compressed.at(counter_string)] + ;
+            }
+            counter_string = new_counter_string;
+
+        }
 
 
         return "34";
     }
 };
-//    Solution rr{};
-//    auto res = rr.betterCompression("a3c9b2c1");
-//    std::cout << res << std::endl;
-/**
- *
- *
- * stl concepts needed.get substring in c++
- * check if string is alpahet or number both via char or via string
- * add in map
- * update in map
- * sort keys in map for both types of maps
- * @return
- */
-int main() {
-    std::unordered_map<int, std::string> m;
-    m[1] = "ee"; // first way
-    m.insert(std::make_pair(23, "ee"));// second way
-    m.insert(std::pair(34, "333")); // third way
-    m.insert({2, "err"});  //fourth way
 
-    for (auto &item: m) {
-        std::cout << item.first << std::endl;
-    }
+int main() {
+    Solution rer{};
+    auto res = rer.betterCompression("a3c9b2c1");
     return 0;
 }

@@ -1,12 +1,12 @@
 https://leetcode.com/problems/longest-substring-with-at-most-k-distinct-characters/description/ done
-https://leetcode.com/problems/better-compression-of-string/description/
-https://leetcode.com/problems/house-robber/description/
+https://leetcode.com/problems/better-compression-of-string/description/ need to do in cpp
+https://leetcode.com/problems/house-robber/description/ need to do in cpp
 
-https://www.youtube.com/watch?v=R_Mfw4ew-Vo Aggressive Cows
+https://www.youtube.com/watch?v=R_Mfw4ew-Vo Aggressive Cows need to do in cpp/python
 https://www.youtube.com/watch?v=Z0hwjftStI4&list=PLgUwDviBIf0pMFMWuuvDNMAkoQFi-h0ZF&index=19&pp=iAQB  allocate books
 
-https://www.youtube.com/watch?v=Yt50Jfbd8Po&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=16&pp=iAQB
-https://www.youtube.com/watch?v=Rezetez59Nk&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=17&pp=iAQB
+https://www.youtube.com/watch?v=Yt50Jfbd8Po&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=16&pp=iAQB need to do in cpp/python
+https://www.youtube.com/watch?v=Rezetez59Nk&list=PLgUwDviBIf0q8Hkd7bK2Bpryj2xVJk8Vk&index=17&pp=iAQB need to do in cpp/python
 
 
 Till L17
