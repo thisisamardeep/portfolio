@@ -24,6 +24,7 @@ The pause_mutex also uses an atomic flag, but instead of yielding, it calls the 
 CPU hint that improves performance on hyper-threaded processors by reducing power consumption and memory contention during busy-waiting.
 
 If you know that the wait time is quite less use the pause_mutex since it does not give away cpu time slice.
+Check your cpu manual if you have the PAUSE op.Mostly all processors have it.
 
 Please see  the  spin mutex complete implementation [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h)
 
