@@ -23,7 +23,10 @@ pause_mutex: CPU-Friendly Spinning
 The pause_mutex also uses an atomic flag, but instead of yielding, it calls the _mm_pause() instruction inside its spin loop. This is a low-level 
 CPU hint that improves performance on hyper-threaded processors by reducing power consumption and memory contention during busy-waiting.
 
-Please see  the  spin mutex complete implementation [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h) 
+If you know that the wait time is quite less use the pause_mutex since it does not give away cpu time slice.
+
+Please see  the  spin mutex complete implementation [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h)
+
 Please see  the  pause mutex complete implementation [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/pause-mutex.h) 
 
 
