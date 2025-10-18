@@ -62,19 +62,19 @@ and other thread is at this line
 _push_index.store(_push_index_new, std::memory_order_release);
 
 Since this a a barrier so to have a well defined world view we need to make sure that load operation is able to see all variables
-atomic/non atomic before the store operation.Please read standard what is the exact definition of 
- side effects and invariants.It is much more complex than what i mention here but this is core concept.
+atomic/non atomic before the store operation.Please read standard for the exact definition of 
+ side effects and invariants.It is much more complex than what i mentioned here but this is the  core idea.
 So to have a well defined world view we create 2 barriers.Rest all atomic operations are kept relaxed.
-We do not need Seqeuenction consistency here since we dont need total ordering.
+We do not need sequential consistency here since we dont need total ordering.
 
 Other than atomics the only thing used here in alignment to make sure that there is less cache misses.
 
 
-Now we come to the case 2.Our queue will also work where size of Elements is more than cache size but the benchmarks will
-not be good.Since if the size of elements is more than cache size them the cache eviction will increase and you get more memory traffic.
-One of the widely used ways is to use custom arena allocators.The core concept is in the queue we just pass the address of the objects.
+Now we come to the case 2.Our queue will also work where size of Elements is more than cache line size but the benchmarks will
+not be good.If the size of elements is more than cache line size them the cache eviction will increase and you get more memory traffic.
+One of the widely used ways is to use custom arena allocators.The core concept is that in the queue we just pass the address of the objects.
 So while popping from the queue we also copy the address into another Queue which has a consumer which is pinned to another thread.
 This pinned thread keep deallocating the objects in the arena allocator(generally we dont call free in hot path).
-These designs are almost always application specific .What works in one project will almost never work in another project.
+These designs are almost always application specific .What works in one project will almost never work in another project directly.
 
 
