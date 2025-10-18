@@ -41,8 +41,29 @@ if you have not read the standard in depth which most people dont do.When we use
 default order.Memory order and Cache line alignment is the core reason when our atomic queue is fast along with custom
 index pointers.
 
-We use 4 pointers 2 are cached and 2 are atomic.QueueAtomic stores elements in a contiguous buffer and uses two indices: 
+We use 4 pointers 2 are cached (and non atomic )and 2 are atomic.QueueAtomic stores elements in a contiguous buffer and uses two indices: 
 a producer index and a consumer index.The producer advances the push index and constructs objects in place; the consumer 
 reads objects, destroys them, and advances the pop index.
+
+Relaxed Ordering --> This means that compiler and processor are free to move around instructions as they see fit but only
+the specific operation is guaranteed to be atomic
+
+Acquire Release Barrier --> This means we are trying to create a fence in which we have well defined memory model.
+Well defined means from each cpu core point of view.
+
+In our queue we have 2 acquire release barriers.For push_index we need to make sure that all 
+loads are able to see all stores and the side effects of stores.What this means for our queue is that suppose we have 2 threads
+one is at this line
+
+push_index_cache = _push_index.load(std::memory_order_acquire);
+
+and other thread is at this line
+
+_push_index.store(_push_index_new, std::memory_order_release);
+
+Since this a a barrier so to have a well defined world view we need to make sure that load operation is able to see all variables
+atomic/non atomic before the store operation.Please read the section in standard what is the exact definition of 
+ side effects and invariants.
+
 
 
