@@ -1,5 +1,5 @@
 ---
-title: My thoughts on Spsc Queue with 1 billion test abd beats Boost
+title: My thoughts on Spsc Queue with 1 billion test and beats Boost
 published: true
 permalink: "/spsc_queue"
 tags: [mutex,contention]
