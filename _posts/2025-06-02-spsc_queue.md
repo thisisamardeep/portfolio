@@ -80,7 +80,6 @@ So to have a well defined world view we create 2 barriers.Rest all atomic operat
 We do not need sequential consistency here since we dont need total ordering.
 
 Other than atomics the only thing used here in alignment to make sure that there is less cache misses.
-Based on your cpu can double the alignment and benchmark it and find what works for you.
 One of the reasons we are able to beat boost is alignment  second reason being cached cursors.
 
 The reason why we keep capacity as power of 2 is since some times we use bitwise and instead of modulu for managing the counters but 
