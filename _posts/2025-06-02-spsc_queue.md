@@ -40,7 +40,7 @@ Please see the complete implementation of spsc using locks [here](https://github
 
 
 
-Now we will come up with the atomic queue.We will try to explain atomic queue is detail since memory model is tough to understand
+Now we will come up with the atomic queue.We will try to explain atomic queue in detail since memory model is tough to understand
 especially if you have not read the standard in depth .When we use atomics we need to understand that the penalty is greatest for the 
 default order.Memory order and Cache line alignment is the core reason why our atomic queue is fast along with  cached custom
 index pointers.
@@ -82,7 +82,7 @@ We do not need sequential consistency here since we dont need total ordering.
 Other than atomics the only thing used here in alignment to make sure that there is less cache misses.
 One of the reasons we are able to beat boost is alignment  second reason being cached cursors.
 
-The reason why we keep capacity as power of 2 is since some times we use bitwise and instead of modulu for managing the counters but 
+The reason why we keep capacity as power of 2 is since some times we use bitwise and instead of modulo for managing the counters but 
 that may or may not be possible in all cases so it is not used here.The Queue is developed with intention that anyone can just use it as
 a drop in replacement.
 Since And operation is just 1-2  cpu cycles you can get generally get better performance using bitwise and.
