@@ -99,7 +99,7 @@ These designs are almost always application specific .What works in one project 
 Please see the complete implementation of spsc using atomics [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h)
 
 Please find the below report of benchmark Testing.Please note for benchmark we have pinned threads to avoid noise due to cpu switching.
-```cpp
+```text
 
 Queue                      Time taken to push and then pop 100 Million integers(in seconds) 
 QueuewithAtomics                                   6.94 s    
