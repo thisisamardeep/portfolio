@@ -1,5 +1,5 @@
 ---
-title: My thoughts on Spsc Queue with 1 billion test and beats Boost
+title: My thoughts on Spsc Queue with 1 billion test that beats Boost
 published: true
 permalink: "/spsc_queue"
 tags: [mutex,contention]
@@ -13,21 +13,25 @@ memory we use bounded queue 99% of the time.Among the bounded queue there can be
 
 Case 1) The Objects which will be pushed and pulled can fit inside a single cache line
 
-Case 2) The Objects which will be pushed and pulled are in 2 or more cache line.(They are more than 64 bytes)
+Case 2) The Objects which will be pushed and pulled are in 2 or more cache lines.(They are more than 64 bytes)
 
-In this post we will handle only Case 1 and give pointers how to handle case 2.There is no general solution for case 2.
+In this post we will handle only Case 1 and give pointers how to handle Case 2.There is no general solution for Case 2.
 It is usually context specific and requirement specific.
 
-First we will design the spsc queue is ancient way and then benchmark it later with atomics.At end using atomics
-we will create a queue which is faster than the general purpose boost spsc queue.
+First we will design the spsc queue in ancient way and then benchmark it later with atomics.At end using atomics
+we will create a queue which is faster than the general purpose boost spsc queue and then benchmark  3 queues 
 
-We will show with benchmark that atomic queue gives almost 2 times better latency the queue with locks and it is able to insert/remove 1 billions
-rows in 80% of time taken by the boost spsc queue.
+1) Our Custom Queue with Locks
+2) Boost Lock Free Spsc
+3) Our Custom Queue with Atomics
+
+We will show with benchmark that atomic queue gives almost 2 times better latency than the queue with locks and 20% better
+performance as compared to Boost.
+
 
 First let us start simple we build a queue using mutexes plain old way.
 We have 2 pointers push and pop.Using mutexes we lock the entry into the push and pop functions.
-We use modulo operation since we need to reuse Queue like a circular buffer.(Almost similar to the way linux kernel
-manages the tcp packets and pushes them to user space .)
+We use modulo operation since we need to reuse Queue like a circular buffer.
 The push cursor has the index where the element will be inserted and pop has the index where
 it will be removed.We need to handle cases when queue is full or empty.
 This is a wait free queue  so it means if we are not able to push or pop we return immediately.
@@ -37,8 +41,8 @@ Please see the complete implementation of spsc using locks [here](https://github
 
 
 Now we will come up with the atomic queue.We will try to explain atomic queue is detail since memory model is tough to understand
-if you have not read the standard in depth which most people dont do.When we use atomics we need to understand that the penalty is greatest for the 
-default order.Memory order and Cache line alignment is the core reason when our atomic queue is fast along with custom
+especially if you have not read the standard in depth .When we use atomics we need to understand that the penalty is greatest for the 
+default order.Memory order and Cache line alignment is the core reason why our atomic queue is fast along with  cached custom
 index pointers.
 
 We use 4 pointers 2 are cached (and non atomic )and 2 are atomic.QueueAtomic stores elements in a contiguous buffer and uses two indices: 
@@ -49,32 +53,41 @@ Relaxed Ordering --> This means that compiler and processor are free to move aro
 the specific operation is guaranteed to be atomic
 
 Acquire Release Barrier --> This means we are trying to create a fence in which we have well defined memory model.
-Well defined means from each cpu core point of view.
+Well defined means from each cpu core point of view.C++11 has a well defined memory model which all compilers and processors
+need to follow.
+
+We need to note that instructions reordering can happen both and compiler level and processor level.
+Many times we generally generate the assembly from the compiler and try to look into it for bugs or performance reasons but
+dont look inside what the processor does.If you have linux machine with intel cpu you can disable prefetching and see the instructions
+actually being executed.This helps a lot in understanding atomics when we need to reason why we have cache line misses.For some cpus they fetch 
+in 2 chunks of cache lines so you might need to double your alignment to keep cache coherence traffic low.
 
 In our queue we have 2 acquire release barriers.For push_index we need to make sure that all 
 loads are able to see all stores and the side effects of stores.What this means for our queue is that suppose we have 2 threads
 one is at this line
 
-push_index_cache = _push_index.load(std::memory_order_acquire);
+push_index_cache = _push_index.load(std::memory_order_acquire); --> First thread is executing here
 
 and other thread is at this line
 
-_push_index.store(_push_index_new, std::memory_order_release);
+_push_index.store(_push_index_new, std::memory_order_release);   --> Second thread is executing here
 
-Since this a a barrier so to have a well defined world view we need to make sure that load operation is able to see all variables
-atomic/non atomic before the store operation.Please read standard for the exact definition of 
- side effects and invariants.It is much more complex than what i mentioned here but this is the  core idea.
+Since this is a barrier so to have a well defined world view we need to make sure that load operation is able to see all variables
+atomic/non atomic before the store operation.In our case we need happens before relation we dont need total ordering so side effects are less.
+Please read standard for the exact definition of  side effects and invariants.It is much more complex than what i mentioned here but this is the  core idea.
 So to have a well defined world view we create 2 barriers.Rest all atomic operations are kept relaxed.
 We do not need sequential consistency here since we dont need total ordering.
 
 Other than atomics the only thing used here in alignment to make sure that there is less cache misses.
+Based on your cpu can double the alignment and benchmark it and find what works for you.
 
-
-Now we come to the case 2.Our queue will also work where size of Elements is more than cache line size but the benchmarks will
-not be good.If the size of elements is more than cache line size them the cache eviction will increase and you get more memory traffic.
+Now we come to the case 2.Our queue will also work where size of elements is more than cache line size but the benchmarks will
+not be good.If the size of elements is more than cache line size then the cache eviction will increase and you get more memory traffic.
 One of the widely used ways is to use custom arena allocators.The core concept is that in the queue we just pass the address of the objects.
 So while popping from the queue we also copy the address into another Queue which has a consumer which is pinned to another thread.
 This pinned thread keep deallocating the objects in the arena allocator(generally we dont call free in hot path).
-These designs are almost always application specific .What works in one project will almost never work in another project directly.
+These designs are almost always application specific .What works in one project will almost never work in another project .
+
+
 
 
