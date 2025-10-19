@@ -81,6 +81,12 @@ We do not need sequential consistency here since we dont need total ordering.
 Other than atomics the only thing used here in alignment to make sure that there is less cache misses.
 Based on your cpu can double the alignment and benchmark it and find what works for you.
 
+The reason why we keep capacity as power of 2 is since some times we use bitwise and instead of modulu for managing the counters but 
+that may or may not be possible in all cases so it is not used here.The Queue is developed with intention that anyone can just use it as
+a drop in replacement.
+Since And operation is just 1-2  cpu cycles you can get generally get better performance using bitwise and.
+
+
 Now we come to the case 2.Our queue will also work where size of elements is more than cache line size but the benchmarks will
 not be good.If the size of elements is more than cache line size then the cache eviction will increase and you get more memory traffic.
 One of the widely used ways is to use custom arena allocators.The core concept is that in the queue we just pass the address of the objects.
@@ -89,6 +95,13 @@ This pinned thread keep deallocating the objects in the arena allocator(generall
 These designs are almost always application specific .What works in one project will almost never work in another project .
 
 Please see the complete implementation of spsc using atomics [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h)
+
+Please find the below report of benchmark Testing.Please note for benchmark we have pinned threads to avoid noise due to cpu switching.
+
+Queue                      Time taken to push and then pop 100 Million integers 
+QueuewithLocks                   
+SpscBoost
+QueuewithAtomics
 
 
 
