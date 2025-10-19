@@ -1,5 +1,5 @@
 ---
-title: My thoughts on Spsc Queue with 1 billion test that beats Boost
+title: My thoughts on Spsc Queue with 100 million test that beats Boost
 published: true
 permalink: "/spsc_queue"
 tags: [mutex,contention]
@@ -25,8 +25,8 @@ we will create a queue which is faster than the general purpose boost spsc queue
 2) Boost Lock Free Spsc
 3) Our Custom Queue with Atomics
 
-We will show with benchmark that atomic queue gives almost 2 times better latency than the queue with locks and 20% better
-performance as compared to Boost.
+We will show with benchmark that atomic queue gives almost 3 times better latency than the queue with locks and 2 times better
+performance as compared to Boost spsc.
 
 
 First let us start simple we build a queue using mutexes plain old way.
@@ -60,7 +60,8 @@ We need to note that instructions reordering can happen both and compiler level 
 Many times we generally generate the assembly from the compiler and try to look into it for bugs or performance reasons but
 dont look inside what the processor does.If you have linux machine with intel cpu you can disable prefetching and see the instructions
 actually being executed.This helps a lot in understanding atomics when we need to reason why we have cache line misses.For some cpus they fetch 
-in 2 chunks of cache lines so you might need to double your alignment to keep cache coherence traffic low.
+in 2 chunks of cache lines so you might need to double your alignment to keep cache coherence traffic low.For my intel cpu i 
+need to double the hardware alignnment to get best benchmarks.For your cpu it might be different.
 
 In our queue we have 2 acquire release barriers.For push_index we need to make sure that all 
 loads are able to see all stores and the side effects of stores.What this means for our queue is that suppose we have 2 threads
@@ -80,6 +81,7 @@ We do not need sequential consistency here since we dont need total ordering.
 
 Other than atomics the only thing used here in alignment to make sure that there is less cache misses.
 Based on your cpu can double the alignment and benchmark it and find what works for you.
+One of the reasons we are able to beat boost is alignment  second reason being cached cursors.
 
 The reason why we keep capacity as power of 2 is since some times we use bitwise and instead of modulu for managing the counters but 
 that may or may not be possible in all cases so it is not used here.The Queue is developed with intention that anyone can just use it as
@@ -98,11 +100,24 @@ Please see the complete implementation of spsc using atomics [here](https://gith
 
 Please find the below report of benchmark Testing.Please note for benchmark we have pinned threads to avoid noise due to cpu switching.
 
-Queue                      Time taken to push and then pop 100 Million integers 
-QueuewithLocks                   
-SpscBoost
-QueuewithAtomics
+Queue                      Time taken to push and then pop 100 Million integers(in seconds) 
+QueuewithAtomics                                   6.94 s    
+SpscBoost                                          10.7 s  
+QueuewithLocks                                     16.3 s
 
+Actual benchmark report
+Run on (8 X 3800.11 MHz CPU s)
+CPU Caches:
+L1 Data 48 KiB (x4)
+L1 Instruction 32 KiB (x4)
+L2 Unified 1280 KiB (x4)
+L3 Unified 12288 KiB (x1)
 
+--------------------------------------------------------------------------------
+Benchmark                                      Time             CPU   Iterations
+--------------------------------------------------------------------------------
+BM_QueueAtomic/iterations:5/real_time       6.94 s         0.018 s             5
+BM_BoostSpsc/iterations:5/real_time         10.7 s         0.018 s             5
+BM_QueueLocks/iterations:5/real_time        16.3 s         0.019 s             5
 
 
