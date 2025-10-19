@@ -36,7 +36,7 @@ The push cursor has the index where the element will be inserted and pop has the
 it will be removed.We need to handle cases when queue is full or empty.
 This is a wait free queue  so it means if we are not able to push or pop we return immediately.
 
-Please see the complete implementation of spsc using locks [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h)
+Please see the complete implementation of spsc using locks [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/spsc_queues/QueueLocks.h)
 
 
 
@@ -95,7 +95,7 @@ So while popping from the queue we also copy the address into another Queue whic
 This pinned thread keep deallocating the objects in the arena allocator(generally we dont call free in hot path).
 These designs are almost always application specific .What works in one project will almost never work in another project .
 
-Please see the complete implementation of spsc using atomics [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/mutexes/spin-mutex.h)
+Please see the complete implementation of spsc using atomics [here](https://github.com/thisisamardeep/async_toolkit/blob/master/include/spsc_queues/QueueAtomic.h)
 
 Please find the below report of benchmark Testing.Please note for benchmark we have pinned threads to avoid noise due to cpu switching.
 ```text
